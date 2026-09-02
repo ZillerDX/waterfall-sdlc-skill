@@ -8,7 +8,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Antigravity Compatible](https://img.shields.io/badge/Antigravity-Compatible-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Ready-D97706.svg)](https://anthropic.com)
-[![Version](https://img.shields.io/badge/Version-1.0.0-emerald.svg)](https://github.com/ZillerDX/waterfall-sdlc-skill)
+[![Cursor Ready](https://img.shields.io/badge/Cursor-Ready-0ea5e9.svg)](https://cursor.com)
+[![Codex Ready](https://img.shields.io/badge/Codex-Ready-10b981.svg)](https://github.com/features/copilot)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/ZillerDX/waterfall-sdlc-skill/pulls)
 
 </div>
 
@@ -56,52 +58,87 @@ graph TD
 
 ## 🚀 Quickstart & Installation
 
-### Option 1: Global Installation (Recommended for Antigravity)
-Install globally across all projects on your machine:
+Select your platform below. All commands are verified and copy-paste ready for **macOS / Linux (Bash)** and **Windows (PowerShell)**.
 
-```bash
-# Clone directly into your global plugins directory
-git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git ~/.gemini/config/plugins/waterfall-sdlc
+### 1. Google Antigravity (Global Plugin)
+Installs globally across all projects on your machine:
 
-# Or copy the single SKILL.md into global skills
-mkdir -p ~/.gemini/config/skills/waterfall-sdlc
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ~/.gemini/config/skills/waterfall-sdlc/SKILL.md
-```
+- **macOS / Linux / WSL**:
+  ```bash
+  git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git ~/.gemini/config/plugins/waterfall-sdlc
+  ```
+- **Windows (PowerShell)**:
+  ```powershell
+  git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git "$HOME\.gemini\config\plugins\waterfall-sdlc"
+  ```
 
-### Option 2: Workspace / Per-Project Installation
-Install strictly inside a specific repository:
+---
 
-```bash
-mkdir -p .agents/skills/waterfall-sdlc
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .agents/skills/waterfall-sdlc/SKILL.md
-```
+### 2. Per-Project / Universal Agents (`.agents`)
+Installs inside a specific repository for any agent conforming to the `.agents/skills` standard:
 
-### Option 3: Claude Code
-Install into Claude Code global skills directory:
+- **macOS / Linux / WSL**:
+  ```bash
+  mkdir -p .agents/skills/waterfall-sdlc
+  curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md \
+    -o .agents/skills/waterfall-sdlc/SKILL.md
+  ```
+- **Windows (PowerShell)**:
+  ```powershell
+  New-Item -ItemType Directory -Force -Path ".agents\skills\waterfall-sdlc" | Out-Null
+  curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ".agents\skills\waterfall-sdlc\SKILL.md"
+  ```
 
-```bash
-mkdir -p ~/.claude/skills/waterfall-sdlc
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ~/.claude/skills/waterfall-sdlc/SKILL.md
-```
+---
 
-### Option 4: Cursor (.cursor/rules)
-Install Waterfall SDLC as an automated project rule for Cursor:
+### 3. Claude Code (Anthropic)
+Installs into Claude Code global skills:
 
-```bash
-mkdir -p .cursor/rules
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .cursor/rules/waterfall-sdlc.mdc
-```
+- **macOS / Linux / WSL**:
+  ```bash
+  mkdir -p ~/.claude/skills/waterfall-sdlc
+  curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md \
+    -o ~/.claude/skills/waterfall-sdlc/SKILL.md
+  ```
+- **Windows (PowerShell)**:
+  ```powershell
+  New-Item -ItemType Directory -Force -Path "$HOME\.claude\skills\waterfall-sdlc" | Out-Null
+  curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o "$HOME\.claude\skills\waterfall-sdlc\SKILL.md"
+  ```
 
-### Option 5: OpenAI Codex & Autonomous Agents
-Equip OpenAI Codex or multi-agent environments:
+---
 
-```bash
-mkdir -p .codex/skills/waterfall-sdlc
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .codex/skills/waterfall-sdlc/SKILL.md
-```
+### 4. Cursor (.cursor/rules)
+Installs as an automated project rule for Cursor IDE:
 
-> [!TIP]
-> **Windows PowerShell Users**: On Windows, you can run `curl.exe -sSL <url> -o <dest>` or use the interactive command switcher on our [Live Website](https://zillerdx.github.io/waterfall-sdlc-skill/) with one-click copy for native PowerShell syntax (`New-Item` + `curl.exe`).
+- **macOS / Linux / WSL**:
+  ```bash
+  mkdir -p .cursor/rules
+  curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md \
+    -o .cursor/rules/waterfall-sdlc.mdc
+  ```
+- **Windows (PowerShell)**:
+  ```powershell
+  New-Item -ItemType Directory -Force -Path ".cursor\rules" | Out-Null
+  curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ".cursor\rules\waterfall-sdlc.mdc"
+  ```
+
+---
+
+### 5. OpenAI Codex & Autonomous Agents (`.codex/skills`)
+Installs into OpenAI Codex, GitHub Copilot instructions, or multi-agent workflows:
+
+- **macOS / Linux / WSL**:
+  ```bash
+  mkdir -p .codex/skills/waterfall-sdlc
+  curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md \
+    -o .codex/skills/waterfall-sdlc/SKILL.md
+  ```
+- **Windows (PowerShell)**:
+  ```powershell
+  New-Item -ItemType Directory -Force -Path ".codex\skills\waterfall-sdlc" | Out-Null
+  curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ".codex\skills\waterfall-sdlc\SKILL.md"
+  ```
 
 ---
 
