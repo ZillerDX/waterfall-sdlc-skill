@@ -1,11 +1,19 @@
 ﻿# Waterfall SDLC for AI Agents 🏗️
 
+<div align="center">
+
+[![Live Interactive Showcase](https://img.shields.io/badge/Live%20Showcase-zillerdx.github.io%2Fwaterfall--sdlc--skill-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://zillerdx.github.io/waterfall-sdlc-skill/)
+<br>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Antigravity Compatible](https://img.shields.io/badge/Antigravity-Compatible-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Ready-D97706.svg)](https://anthropic.com)
 [![Version](https://img.shields.io/badge/Version-1.0.0-emerald.svg)](https://github.com/ZillerDX/waterfall-sdlc-skill)
 
-> **End AI premature coding.** A disciplined, quality-gated 7-phase Software Development Life Cycle (SDLC) skill designed for AI coding agents (**Antigravity, Claude Code, Cursor, Codex, OpenCode**).
+</div>
+
+> 🌐 **Interactive Web Showcase & Simulator**: **[https://zillerdx.github.io/waterfall-sdlc-skill/](https://zillerdx.github.io/waterfall-sdlc-skill/)**  
+> Explore the live 7-phase animated lifecycle, interactive terminal simulator, and copyable prompt templates.
 
 ---
 

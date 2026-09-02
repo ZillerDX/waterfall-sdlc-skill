@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
@@ -38,32 +38,55 @@
   <style>
     body {
       font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #09090b;
+      background-color: #070709;
       color: #f4f4f5;
     }
-    .bg-grid-pattern {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 24px 24px;
+    .bg-grid-subtle {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 10%, #000 50%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 10%, #000 50%, transparent 100%);
     }
-    .glow-conic {
-      background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%);
+    .glass-card {
+      background: rgba(16, 16, 22, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .timeline-line {
-      background: linear-gradient(180deg, #3b82f6 0%, #10b981 50%, #8b5cf6 100%);
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 14px 40px -10px rgba(59, 130, 246, 0.2);
     }
-    .badge-pulse {
-      animation: pulse-glow 2.5s infinite;
+    .text-gradient {
+      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    @keyframes pulse-glow {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.03); }
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.08); }
     }
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-40px, 20px) scale(1.12); }
+    }
+    .aurora-1 { animation: float1 9s ease-in-out infinite; }
+    .aurora-2 { animation: float2 11s ease-in-out infinite; }
+    .terminal-scroll::-webkit-scrollbar { width: 5px; }
+    .terminal-scroll::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
   </style>
 </head>
-<body class="min-h-screen selection:bg-blue-500/20 selection:text-blue-300">
-  <!-- Top Radial Glow & Grid Background -->
-  <div class="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0"></div>
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 glow-conic pointer-events-none z-0"></div>
+<body class="min-h-screen selection:bg-blue-500/20 selection:text-blue-300 relative overflow-x-hidden">
+  <!-- Dynamic Glowing Aurora & Grid Backdrop -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="aurora-1 absolute -top-40 left-1/4 w-[600px] h-[500px] bg-blue-600/15 blur-[140px] rounded-full"></div>
+    <div class="aurora-2 absolute top-20 right-1/4 w-[550px] h-[450px] bg-indigo-600/15 blur-[140px] rounded-full"></div>
+    <div class="aurora-1 absolute top-[45%] left-1/3 w-[650px] h-[450px] bg-emerald-600/10 blur-[150px] rounded-full"></div>
+    <div class="absolute inset-0 bg-grid-subtle"></div>
+  </div>
 
   <!-- Navigation Bar -->
   <header class="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/85 backdrop-blur-md">
@@ -96,69 +119,108 @@
 
   <!-- Hero Section -->
   <main class="relative z-10">
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-12 text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono font-medium mb-6 badge-pulse">
-        <span class="size-2 rounded-full bg-blue-400"></span>
-        Zero Premature Coding • 100% Verified Quality Gates
-      </div>
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-        Disciplined Waterfall SDLC<br>
-        <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent">For Autonomous AI Coding Agents</span>
-      </h1>
-      <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-        Prevent AI coding agents from jumping straight into messy implementation code. Enforce a sequential, 7-phase quality gate lifecycle: from requirements and architectural blueprints to verified production delivery.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-3">
-        <a href="#installation" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium shadow-sm transition-all">
-          <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-          </svg>
-          Install Skill
-        </a>
-        <a href="#use-cases" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-850 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 text-sm font-medium transition-all">
-          <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"/>
-          </svg>
-          Explore Prompt Templates
-        </a>
-      </div>
-
-      <!-- Comparison Metrics Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-16 text-left">
-        <div class="p-5 rounded-xl bg-zinc-900/60 border border-red-900/30 shadow-xs">
-          <div class="flex items-center gap-2 text-red-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
-            <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
-            </svg>
-            Standard AI Coding Behavior
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Hero Left Column -->
+        <div class="lg:col-span-6 text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-xs font-mono font-medium mb-6 shadow-xs">
+            <span class="relative flex size-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full size-2 bg-blue-500"></span>
+            </span>
+            <span>Stop AI Premature Coding</span>
+            <span class="text-zinc-600">•</span>
+            <span class="text-zinc-400 font-mono">7 Quality Gates</span>
           </div>
-          <ul class="space-y-2 text-xs sm:text-sm text-zinc-400">
-            <li class="flex items-start gap-2"><span>•</span> Hallucinates unasked features; no clear scope boundaries.</li>
-            <li class="flex items-start gap-2"><span>•</span> Improvises database schema on the fly during code generation.</li>
-            <li class="flex items-start gap-2"><span>•</span> Declares "Everything is complete" without running tests or build.</li>
-          </ul>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-6 leading-[1.12]">
+            Disciplined Waterfall SDLC<br>
+            <span class="text-gradient">For Autonomous AI Coding Agents</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-zinc-400 max-w-xl mb-8 leading-relaxed font-normal">
+            Eliminate messy, hallucinated code. Enforce a strict sequential methodology for <strong class="text-zinc-200">Antigravity, Claude Code, Cursor, and Codex</strong>: no coding starts before design sign-off, and no claims without test proof.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap items-center gap-3.5 mb-10">
+            <a href="#installation" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98]">
+              <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              <span>Install Skill</span>
+            </a>
+            <a href="#use-cases" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-850 text-zinc-200 border border-zinc-700/80 text-sm font-medium transition-all hover:border-zinc-500 hover:scale-[1.02] active:scale-[0.98]">
+              <svg class="size-4 shrink-0 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <span>Prompt Templates</span>
+            </a>
+          </div>
+
+          <!-- Feature Highlights Mini Grid -->
+          <div class="grid grid-cols-2 gap-3 pt-6 border-t border-zinc-850">
+            <div class="flex items-start gap-2.5">
+              <div class="size-5 rounded-md bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
+                <svg class="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4 class="text-xs font-semibold text-zinc-200">Pre-Flight Scale Triage</h4>
+                <p class="text-[11px] text-zinc-400 leading-normal">Fast-track small patches; gate full systems.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <div class="size-5 rounded-md bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                <svg class="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4 class="text-xs font-semibold text-zinc-200">Local-First, Deploy-Last</h4>
+                <p class="text-[11px] text-zinc-400 leading-normal">Iterate on localhost to save tokens & latency.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="p-5 rounded-xl bg-zinc-900/60 border border-emerald-900/40 shadow-xs">
-          <div class="flex items-center gap-2 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
-            <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            With Waterfall SDLC Skill
+        <!-- Hero Right Column: Animated Interactive Simulator Terminal -->
+        <div class="lg:col-span-6" id="simulator">
+          <div class="rounded-2xl bg-zinc-950/90 border border-zinc-800 shadow-2xl overflow-hidden glass-card">
+            
+            <!-- Terminal Header -->
+            <div class="px-4 py-3 bg-zinc-900/90 border-b border-zinc-800/80 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="size-3 rounded-full bg-red-500/80"></span>
+                <span class="size-3 rounded-full bg-yellow-500/80"></span>
+                <span class="size-3 rounded-full bg-emerald-500/80"></span>
+                <span class="text-xs font-mono text-zinc-400 ml-2 font-medium">antigravity :: waterfall-sdlc simulator</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span id="sim-status" class="text-[10px] font-mono font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 flex items-center gap-1.5">
+                  <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Agent Running
+                </span>
+                <button onclick="restartSimulation()" class="text-[11px] text-zinc-400 hover:text-white px-2 py-0.5 rounded bg-zinc-800 hover:bg-zinc-700 transition-all font-mono">Replay</button>
+              </div>
+            </div>
+
+            <!-- Terminal Logs Box -->
+            <div class="p-5 font-mono text-xs leading-relaxed text-zinc-300 h-[340px] overflow-y-auto terminal-scroll space-y-2 select-text" id="terminal-screen">
+              <!-- Logs stream in via JS -->
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="h-1.5 w-full bg-zinc-900 overflow-hidden">
+              <div id="sim-progress-bar" class="h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-400 transition-all duration-300 w-0"></div>
+            </div>
           </div>
-          <ul class="space-y-2 text-xs sm:text-sm text-zinc-300">
-            <li class="flex items-start gap-2"><span>•</span> Pins down Requirements & Acceptance Criteria in Phase 1.</li>
-            <li class="flex items-start gap-2"><span>•</span> Produces full Architectural Blueprint (ERD + API) before coding.</li>
-            <li class="flex items-start gap-2"><span>•</span> Enforces Evidence-First Verification (Unit Tests + Build Exit Code: 0).</li>
-          </ul>
         </div>
+
       </div>
     </section>
 
     <!-- Workflow Section -->
-    <section id="workflow" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
+    <section id="workflow" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
       <div class="text-center mb-12">
         <span class="text-xs uppercase tracking-wider font-mono font-semibold text-blue-400">Quality-Gated Lifecycle</span>
         <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">The 7 Progressive Phases</h2>
@@ -177,7 +239,7 @@
     </section>
 
     <!-- Use Cases & Prompt Templates -->
-    <section id="use-cases" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
+    <section id="use-cases" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
       <div class="text-center mb-12">
         <span class="text-xs uppercase tracking-wider font-mono font-semibold text-emerald-400">Battle-Tested Prompts</span>
         <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">How to Prompt AI with Waterfall SDLC</h2>
@@ -456,9 +518,74 @@ curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/s
       setTimeout(() => btnText.innerText = "Copy", 2000);
     }
 
+    // Terminal Simulator Logic
+    const terminalLogs = [
+      { time: "00:01", text: "[SYSTEM] Waterfall SDLC Master Dispatcher initialized.", color: "text-zinc-400" },
+      { time: "00:03", text: "[TASK] Request: 'Build fullstack personal portfolio showcase'", color: "text-white font-semibold" },
+      { time: "00:05", text: "[PHASE 1: REQUIREMENTS] Defining scope, user personas & boundaries...", color: "text-blue-400" },
+      { time: "00:08", text: "  -> Acceptance Criteria locked (Public Read-Only vs Admin CMS).", color: "text-zinc-300" },
+      { time: "00:10", text: "  -> Gate 1 CLEARED. Generating specification artifact.", color: "text-emerald-400" },
+      { time: "00:13", text: "[PHASE 2: ANALYSIS] Evaluating Next.js 15, Tailwind CSS, Supabase R2...", color: "text-cyan-400" },
+      { time: "00:15", text: "  -> Feasibility confirmed. Risk matrix recorded.", color: "text-zinc-300" },
+      { time: "00:18", text: "[PHASE 3: DESIGN] Synthesizing Schema ERD & OpenAPI specs...", color: "text-teal-400" },
+      { time: "00:21", text: "  -> UI tokens: Lucide vector icons only, 4px grid, tracking-tight.", color: "text-zinc-300" },
+      { time: "00:24", text: "  -> [QUALITY GATE] Blueprint presented to user. Awaiting Sign-Off...", color: "text-amber-400 font-semibold" },
+      { time: "00:27", text: "  -> [USER] 'Approved! Proceed to code.'", color: "text-purple-300 font-semibold" },
+      { time: "00:30", text: "[PHASE 4: CODING] Generating strict typed models & components...", color: "text-emerald-400" },
+      { time: "00:33", text: "  -> Codebase builds cleanly. 0 lint warnings, 0 type errors.", color: "text-zinc-300" },
+      { time: "00:36", text: "[PHASE 5: TESTING] Executing automated test suite...", color: "text-green-400" },
+      { time: "00:38", text: "  -> Vitest: 18/18 tests passed (Exit Code: 0).", color: "text-emerald-300 font-medium" },
+      { time: "00:40", text: "[PHASE 6: DEPLOY] Production build verified locally on localhost.", color: "text-blue-400" },
+      { time: "00:42", text: "  -> Single-shot push to GitHub & deployment triggered.", color: "text-zinc-300" },
+      { time: "00:45", text: "[PHASE 7: HANDOVER] README & operational runbook committed.", color: "text-indigo-400" },
+      { time: "00:47", text: "[SUCCESS] Project delivered with 100% proof & zero hallucinations.", color: "text-emerald-400 font-bold" }
+    ];
+
+    let simIndex = 0;
+    let simInterval = null;
+
+    function runSimulation() {
+      const screen = document.getElementById('terminal-screen');
+      const progressBar = document.getElementById('sim-progress-bar');
+      if (!screen) return;
+      screen.innerHTML = '';
+      simIndex = 0;
+      clearInterval(simInterval);
+
+      simInterval = setInterval(() => {
+        if (simIndex < terminalLogs.length) {
+          const log = terminalLogs[simIndex];
+          const line = document.createElement('div');
+          line.className = `${log.color} flex items-start gap-2`;
+          line.innerHTML = `<span class="text-zinc-600 select-none text-xs font-mono">${log.time}</span><span>${log.text}</span>`;
+          screen.appendChild(line);
+          screen.scrollTop = screen.scrollHeight;
+          simIndex++;
+          if (progressBar) {
+            progressBar.style.width = `${(simIndex / terminalLogs.length) * 100}%`;
+          }
+        } else {
+          clearInterval(simInterval);
+          const status = document.getElementById('sim-status');
+          if (status) {
+            status.innerHTML = '<span class="size-1.5 rounded-full bg-emerald-400"></span> Finished';
+          }
+        }
+      }, 350);
+    }
+
+    function restartSimulation() {
+      const status = document.getElementById('sim-status');
+      if (status) {
+        status.innerHTML = '<span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Agent Running';
+      }
+      runSimulation();
+    }
+
     // Init
     window.addEventListener('DOMContentLoaded', () => {
       renderPhaseTabs();
+      runSimulation();
       switchUseCase(0);
       document.getElementById('install-code-content').innerText = installSnippets['antigravity'];
     });
