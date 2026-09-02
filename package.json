@@ -1,0 +1,8 @@
+﻿{
+  "name": "waterfall-sdlc-skill",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Waterfall SDLC methodology for AI coding agents",
+  "author": "Tanathon Chanapha (https://github.com/ZillerDX)",
+  "license": "MIT",
+  "repository": "https://github.com/ZillerDX/waterfall-sdlc-skill"
+}

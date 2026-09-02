@@ -1,0 +1,23 @@
+﻿{
+  "name": "waterfall-sdlc",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Waterfall SDLC methodology for AI coding agents: disciplined 7-phase quality-gated lifecycle",
+  "author": {
+    "name": "Tanathon Chanapha",
+    "url": "https://github.com/ZillerDX"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZillerDX/waterfall-sdlc-skill.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "antigravity",
+    "claude-code",
+    "cursor",
+    "ai-agent",
+    "sdlc",
+    "waterfall",
+    "skills"
+  ]
+}

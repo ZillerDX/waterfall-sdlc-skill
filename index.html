@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waterfall SDLC for AI Agents | Disciplined Software Engineering Lifecycle</title>
+  <meta name="description" content="A quality-gated 7-phase Software Development Life Cycle (SDLC) skill for Antigravity, Claude Code, Cursor, and Codex AI agents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            zinc: {
+              950: '#09090b',
+              900: '#121215',
+              850: '#18181c',
+              800: '#222227',
+              700: '#32323a',
+            },
+            primary: {
+              DEFAULT: '#3b82f6',
+              foreground: '#ffffff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #09090b;
+      color: #f4f4f5;
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .glow-conic {
+      background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15), transparent 70%);
+    }
+    .timeline-line {
+      background: linear-gradient(180deg, #3b82f6 0%, #10b981 50%, #8b5cf6 100%);
+    }
+    .badge-pulse {
+      animation: pulse-glow 2.5s infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.03); }
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-blue-500/20 selection:text-blue-300">
+  <!-- Top Radial Glow & Grid Background -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 glow-conic pointer-events-none z-0"></div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/85 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="size-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-mono font-bold text-sm shadow-sm">
+          <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-semibold tracking-tight text-zinc-100 text-sm sm:text-base">Waterfall SDLC</span>
+          <span class="text-xs uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-mono font-medium">v1.0.0</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="#workflow" class="text-xs sm:text-sm text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">7-Phase Lifecycle</a>
+        <a href="#use-cases" class="text-xs sm:text-sm text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">Use Cases</a>
+        <a href="#installation" class="text-xs sm:text-sm text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">Installation</a>
+        <a href="https://github.com/ZillerDX/waterfall-sdlc-skill" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-zinc-850 hover:bg-zinc-800 border border-zinc-700/80 transition-all text-zinc-200">
+          <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          GitHub Repo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="relative z-10">
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-12 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono font-medium mb-6 badge-pulse">
+        <span class="size-2 rounded-full bg-blue-400"></span>
+        Zero Premature Coding • 100% Verified Quality Gates
+      </div>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+        Disciplined Waterfall SDLC<br>
+        <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400 bg-clip-text text-transparent">For Autonomous AI Coding Agents</span>
+      </h1>
+      <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        Prevent AI coding agents from jumping straight into messy implementation code. Enforce a sequential, 7-phase quality gate lifecycle: from requirements and architectural blueprints to verified production delivery.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a href="#installation" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium shadow-sm transition-all">
+          <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+          Install Skill
+        </a>
+        <a href="#use-cases" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-850 hover:bg-zinc-800 text-zinc-200 border border-zinc-700/80 text-sm font-medium transition-all">
+          <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          Explore Prompt Templates
+        </a>
+      </div>
+
+      <!-- Comparison Metrics Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-16 text-left">
+        <div class="p-5 rounded-xl bg-zinc-900/60 border border-red-900/30 shadow-xs">
+          <div class="flex items-center gap-2 text-red-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+            </svg>
+            Standard AI Coding Behavior
+          </div>
+          <ul class="space-y-2 text-xs sm:text-sm text-zinc-400">
+            <li class="flex items-start gap-2"><span>•</span> Hallucinates unasked features; no clear scope boundaries.</li>
+            <li class="flex items-start gap-2"><span>•</span> Improvises database schema on the fly during code generation.</li>
+            <li class="flex items-start gap-2"><span>•</span> Declares "Everything is complete" without running tests or build.</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-xl bg-zinc-900/60 border border-emerald-900/40 shadow-xs">
+          <div class="flex items-center gap-2 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            With Waterfall SDLC Skill
+          </div>
+          <ul class="space-y-2 text-xs sm:text-sm text-zinc-300">
+            <li class="flex items-start gap-2"><span>•</span> Pins down Requirements & Acceptance Criteria in Phase 1.</li>
+            <li class="flex items-start gap-2"><span>•</span> Produces full Architectural Blueprint (ERD + API) before coding.</li>
+            <li class="flex items-start gap-2"><span>•</span> Enforces Evidence-First Verification (Unit Tests + Build Exit Code: 0).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-wider font-mono font-semibold text-blue-400">Quality-Gated Lifecycle</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">The 7 Progressive Phases</h2>
+        <p class="text-sm text-zinc-400 mt-2">Click any phase below to inspect its core activities and gate deliverables.</p>
+      </div>
+
+      <!-- Interactive Flow Tabs -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 mb-8" id="phase-tabs">
+        <!-- Buttons injected by JS -->
+      </div>
+
+      <!-- Active Phase Detail Card -->
+      <div id="phase-detail-card" class="p-6 sm:p-8 rounded-2xl bg-zinc-900/80 border border-zinc-800 shadow-md transition-all">
+        <!-- Content injected by JS -->
+      </div>
+    </section>
+
+    <!-- Use Cases & Prompt Templates -->
+    <section id="use-cases" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-wider font-mono font-semibold text-emerald-400">Battle-Tested Prompts</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">How to Prompt AI with Waterfall SDLC</h2>
+        <p class="text-sm text-zinc-400 mt-2">Copy-paste ready templates crafted for real-world projects.</p>
+      </div>
+
+      <!-- Tab Buttons for Use Cases -->
+      <div class="flex items-center justify-center gap-2 mb-8 flex-wrap" id="usecase-tabs">
+        <button onclick="switchUseCase(0)" class="usecase-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all bg-blue-600 text-white shadow-xs">Full-Stack Application</button>
+        <button onclick="switchUseCase(1)" class="usecase-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all bg-zinc-850 text-zinc-400 hover:text-zinc-200 border border-zinc-800">Backend API & Webhooks</button>
+        <button onclick="switchUseCase(2)" class="usecase-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all bg-zinc-850 text-zinc-400 hover:text-zinc-200 border border-zinc-800">Personal Portfolio Showcase</button>
+      </div>
+
+      <!-- Prompt Preview Box -->
+      <div class="rounded-xl bg-zinc-900 border border-zinc-800 overflow-hidden shadow-md">
+        <div class="px-4 py-3 bg-zinc-950/80 border-b border-zinc-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="size-3 rounded-full bg-zinc-700"></span>
+            <span class="size-3 rounded-full bg-zinc-700"></span>
+            <span class="size-3 rounded-full bg-zinc-700"></span>
+            <span id="usecase-title" class="text-xs font-mono text-zinc-400 ml-2">Prompt Template</span>
+          </div>
+          <button id="copy-prompt-btn" onclick="copyPromptContent()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors">
+            <svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span id="copy-prompt-text">Copy Prompt</span>
+          </button>
+        </div>
+        <pre class="p-5 text-xs sm:text-sm font-mono text-zinc-200 whitespace-pre-wrap leading-relaxed overflow-x-auto" id="usecase-content"></pre>
+      </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="max-w-4xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
+      <div class="text-center mb-10">
+        <span class="text-xs uppercase tracking-wider font-mono font-semibold text-blue-400">Installation & Setup</span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">Get Started in Seconds</h2>
+        <p class="text-sm text-zinc-400 mt-2">Equip your coding agent with Waterfall SDLC across any platform.</p>
+      </div>
+
+      <!-- Installation Tabs -->
+      <div class="flex items-center justify-center gap-2 mb-6" id="install-tabs">
+        <button onclick="switchInstall('antigravity')" class="install-btn active px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-800 text-white border border-zinc-700">Antigravity (Global)</button>
+        <button onclick="switchInstall('workspace')" class="install-btn px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800">Per-Project (.agents)</button>
+        <button onclick="switchInstall('claude')" class="install-btn px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800">Claude Code</button>
+      </div>
+
+      <!-- Code Box -->
+      <div class="rounded-xl bg-zinc-900 border border-zinc-800 overflow-hidden shadow-xs">
+        <div class="px-4 py-2.5 bg-zinc-950/80 border-b border-zinc-800 flex items-center justify-between">
+          <span class="text-xs font-mono text-zinc-400">Terminal Command</span>
+          <button id="copy-install-btn" onclick="copyInstallContent()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors">
+            <svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span id="copy-install-text">Copy</span>
+          </button>
+        </div>
+        <pre class="p-4 text-xs sm:text-sm font-mono text-emerald-400 overflow-x-auto" id="install-code-content"></pre>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800/80 bg-zinc-950 py-10 relative z-10 text-center text-xs text-zinc-500 font-mono">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        Released under <a href="https://opensource.org/licenses/MIT" target="_blank" class="underline hover:text-zinc-300">MIT License</a> • Crafted by <a href="https://github.com/ZillerDX" target="_blank" class="text-zinc-300 hover:text-white font-medium">Tanathon Chanapha (ZillerDX)</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/ZillerDX/waterfall-sdlc-skill" target="_blank" class="hover:text-zinc-300 transition-colors">GitHub</a>
+        <a href="https://antigravity.google" target="_blank" class="hover:text-zinc-300 transition-colors">Google Antigravity</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    const phases = [
+      {
+        id: 1,
+        name: "Requirements",
+        subtitle: "Scope & User Stories",
+        objective: "Pin down functional/non-functional goals, boundary scopes, and explicit acceptance criteria.",
+        deliverable: "Requirements Specification Document + Acceptance Criteria Checklist",
+        rules: ["Define in-scope vs out-of-scope", "Identify primary user personas", "Establish testing criteria upfront"],
+        color: "from-blue-500 to-cyan-500"
+      },
+      {
+        id: 2,
+        name: "Analysis",
+        subtitle: "Tech Stack & Feasibility",
+        objective: "Evaluate technical feasibility, third-party library compatibility, and system constraints.",
+        deliverable: "Tech Stack Decision Matrix + Risk Mitigation Plan",
+        rules: ["Verify dependency compatibility", "Identify architectural bottlenecks", "Assess third-party API rate limits"],
+        color: "from-cyan-500 to-teal-500"
+      },
+      {
+        id: 3,
+        name: "Design",
+        subtitle: "Architectural Blueprint",
+        objective: "Produce complete technical blueprints (Database Schema, API Contracts, UI Component Tree) before coding.",
+        deliverable: "Schema ERD + OpenAPI/Interface Contracts + UI Hierarchy",
+        rules: ["No coding allowed during design", "Strict vector icons per frontend-design", "Get user sign-off before proceeding"],
+        color: "from-teal-500 to-emerald-500"
+      },
+      {
+        id: 4,
+        name: "Implementation",
+        subtitle: "Disciplined Coding",
+        objective: "Translate the approved blueprint into modular, clean, strongly-typed source code.",
+        deliverable: "Clean, linted codebase adhering 100% to the approved architecture",
+        rules: ["Follow blueprint strictly (no improvising)", "Enforce TypeScript strict types", "Run continuous local syntax checks"],
+        color: "from-emerald-500 to-green-500"
+      },
+      {
+        id: 5,
+        name: "Testing",
+        subtitle: "Verification & Quality",
+        objective: "Formally prove that the implementation satisfies all initial requirements through automated suites.",
+        deliverable: "Test Suite execution report with 100% Pass Rate (Exit Code: 0)",
+        rules: ["Unit test business logic", "Integration test API routes", "Verify all Phase 1 acceptance criteria"],
+        color: "from-green-500 to-amber-500"
+      },
+      {
+        id: 6,
+        name: "Deployment",
+        subtitle: "Packaging & Release",
+        objective: "Prepare release artifacts and environment configurations for single-shot, reproducible deployment.",
+        deliverable: "Verified Production Build + Docker / Deployment Runbook",
+        rules: ["Document all .env variables", "Verify local production build first", "Single-shot deploy to Cloud/Vercel/Firebase"],
+        color: "from-amber-500 to-indigo-500"
+      },
+      {
+        id: 7,
+        name: "Support",
+        subtitle: "Docs & Maintenance",
+        objective: "Ensure long-term system maintainability, operational runbooks, and developer onboarding clarity.",
+        deliverable: "Comprehensive README + Troubleshooting Guide + Health Check endpoints",
+        rules: ["Document setup steps clearly", "Outline error monitoring guidelines", "Commit learnings to memory (claude-mem)"],
+        color: "from-indigo-500 to-purple-500"
+      }
+    ];
+
+    let currentPhase = 0;
+
+    function renderPhaseTabs() {
+      const container = document.getElementById('phase-tabs');
+      container.innerHTML = phases.map((p, idx) => `
+        <button onclick="selectPhase(${idx})" class="phase-btn text-left p-3 rounded-xl border transition-all ${idx === currentPhase ? 'bg-zinc-850 border-blue-500/50 shadow-xs' : 'bg-zinc-900/60 border-zinc-800/80 hover:bg-zinc-850/60'}">
+          <div class="text-[10px] font-mono text-zinc-500">PHASE 0${p.id}</div>
+          <div class="text-xs font-semibold text-zinc-200 mt-0.5">${p.name}</div>
+        </button>
+      `).join('');
+      renderPhaseDetail();
+    }
+
+    function selectPhase(idx) {
+      currentPhase = idx;
+      renderPhaseTabs();
+    }
+
+    function renderPhaseDetail() {
+      const p = phases[currentPhase];
+      const card = document.getElementById('phase-detail-card');
+      card.innerHTML = `
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-6 mb-6">
+          <div>
+            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-mono font-medium mb-2">Phase ${p.id} of 7</div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">${p.name}: <span class="text-zinc-400 font-normal">${p.subtitle}</span></h3>
+          </div>
+          <div class="px-4 py-2 rounded-xl bg-zinc-950 border border-zinc-800">
+            <span class="text-[11px] font-mono text-zinc-500 uppercase tracking-wider block">Required Deliverable</span>
+            <span class="text-xs sm:text-sm font-semibold text-emerald-400 font-mono">${p.deliverable}</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2 font-semibold">Core Objective</h4>
+            <p class="text-sm text-zinc-300 leading-relaxed">${p.objective}</p>
+          </div>
+          <div>
+            <h4 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2 font-semibold">Non-Negotiable Phase Rules</h4>
+            <ul class="space-y-1.5 text-xs sm:text-sm text-zinc-300">
+              ${p.rules.map(r => `<li class="flex items-center gap-2"><svg class="size-3.5 text-blue-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>${r}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `;
+    }
+
+    // Use Case Data
+    const useCases = [
+      {
+        title: "Full-Stack Application Template",
+        prompt: `Please develop a full-stack web application following Waterfall SDLC strictly:
+1. Requirements Phase:
+   - Identify target users, core workflows, and acceptance criteria.
+   - List what is in-scope vs out-of-scope.
+2. Analysis Phase:
+   - Propose the tech stack (Next.js, Tailwind, Supabase/Prisma) and analyze dependencies.
+3. Design Phase:
+   - Deliver the complete Database Schema (ERD), API specifications, and UI Component Hierarchy.
+   - Strictly adhere to frontend-design standards (Lucide icons only, no emojis, professional typography).
+4. STOP and present the Architecture Blueprint for my sign-off before writing any application code.`
+      },
+      {
+        title: "Backend API & Webhooks Template",
+        prompt: `We need to architect an authenticated Webhook & Payment processing backend service.
+Apply the Waterfall SDLC skill:
+- Phase 1 & 2: Define all webhook event payloads, idempotent retry criteria, and failure recovery paths.
+- Phase 3: Present the database transaction state machine and endpoint contract.
+- Phase 4 & 5: Once approved, implement using Test-Driven Development (TDD) and verify 100% test pass rate locally.`
+      },
+      {
+        title: "Personal Portfolio & Showcase Template",
+        prompt: `Help me build a personal portfolio & showcase web application.
+Enforce Waterfall SDLC and frontend-design:
+- Public Mode: Read-only profile, project gallery with image viewer and downloadable PDF documents.
+- Admin Mode: Form to upload images, attach PDFs, and add project details.
+- Propose the tech stack and database schema before coding, and verify on localhost before final build.`
+      }
+    ];
+
+    let currentUseCase = 0;
+    function switchUseCase(idx) {
+      currentUseCase = idx;
+      document.querySelectorAll('.usecase-btn').forEach((b, i) => {
+        if (i === idx) {
+          b.className = "usecase-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all bg-blue-600 text-white shadow-xs";
+        } else {
+          b.className = "usecase-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all bg-zinc-850 text-zinc-400 hover:text-zinc-200 border border-zinc-800";
+        }
+      });
+      document.getElementById('usecase-title').innerText = useCases[idx].title;
+      document.getElementById('usecase-content').innerText = useCases[idx].prompt;
+    }
+
+    function copyPromptContent() {
+      const text = useCases[currentUseCase].prompt;
+      navigator.clipboard.writeText(text);
+      const btnText = document.getElementById('copy-prompt-text');
+      btnText.innerText = "Copied!";
+      setTimeout(() => btnText.innerText = "Copy Prompt", 2000);
+    }
+
+    // Install Commands
+    const installSnippets = {
+      antigravity: `# Clone directly into your global plugins directory
+git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git ~/.gemini/config/plugins/waterfall-sdlc`,
+      workspace: `# Install inside your project repository
+mkdir -p .agents/skills/waterfall-sdlc
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .agents/skills/waterfall-sdlc/SKILL.md`,
+      claude: `# Install into Claude Code
+mkdir -p ~/.claude/skills/waterfall-sdlc
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ~/.claude/skills/waterfall-sdlc/SKILL.md`
+    };
+
+    let activeInstall = 'antigravity';
+    function switchInstall(type) {
+      activeInstall = type;
+      document.querySelectorAll('.install-btn').forEach(b => {
+        b.className = "install-btn px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800";
+      });
+      event.target.className = "install-btn active px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-800 text-white border border-zinc-700";
+      document.getElementById('install-code-content').innerText = installSnippets[type];
+    }
+
+    function copyInstallContent() {
+      const text = installSnippets[activeInstall];
+      navigator.clipboard.writeText(text);
+      const btnText = document.getElementById('copy-install-text');
+      btnText.innerText = "Copied!";
+      setTimeout(() => btnText.innerText = "Copy", 2000);
+    }
+
+    // Init
+    window.addEventListener('DOMContentLoaded', () => {
+      renderPhaseTabs();
+      switchUseCase(0);
+      document.getElementById('install-code-content').innerText = installSnippets['antigravity'];
+    });
+  </script>
+</body>
+</html>
