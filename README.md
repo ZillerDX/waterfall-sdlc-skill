@@ -100,6 +100,9 @@ mkdir -p .codex/skills/waterfall-sdlc
 curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .codex/skills/waterfall-sdlc/SKILL.md
 ```
 
+> [!TIP]
+> **Windows PowerShell Users**: On Windows, you can run `curl.exe -sSL <url> -o <dest>` or use the interactive command switcher on our [Live Website](https://zillerdx.github.io/waterfall-sdlc-skill/) with one-click copy for native PowerShell syntax (`New-Item` + `curl.exe`).
+
 ---
 
 ## 💡 Practical Prompt Templates

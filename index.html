@@ -295,17 +295,23 @@
       </div>
 
       <!-- Code Box -->
-      <div class="rounded-xl bg-zinc-900 border border-zinc-800 overflow-hidden shadow-xs">
-        <div class="px-4 py-2.5 bg-zinc-950/80 border-b border-zinc-800 flex items-center justify-between">
-          <span class="text-xs font-mono text-zinc-400">Terminal Command</span>
-          <button id="copy-install-btn" onclick="copyInstallContent()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors">
+      <div class="rounded-2xl bg-zinc-900/90 border border-zinc-800 shadow-md overflow-hidden">
+        <div class="px-4 py-3 bg-zinc-950/90 border-b border-zinc-800 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono text-zinc-400 font-semibold uppercase tracking-wider">Terminal</span>
+            <div class="flex items-center rounded-lg bg-zinc-900 border border-zinc-800 p-0.5" id="shell-toggle">
+              <button onclick="switchShell('bash')" id="shell-btn-bash" class="px-2.5 py-1 text-xs font-mono rounded-md text-white bg-zinc-800 shadow-xs transition-all font-medium">Bash / Mac / Linux</button>
+              <button onclick="switchShell('powershell')" id="shell-btn-powershell" class="px-2.5 py-1 text-xs font-mono rounded-md text-zinc-400 hover:text-zinc-200 transition-all font-medium">PowerShell (Windows)</button>
+            </div>
+          </div>
+          <button id="copy-install-btn" onclick="copyInstallContent()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-200 transition-colors shadow-xs">
             <svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
             </svg>
-            <span id="copy-install-text">Copy</span>
+            <span id="copy-install-text">Copy Command</span>
           </button>
         </div>
-        <pre class="p-4 text-xs sm:text-sm font-mono text-emerald-400 overflow-x-auto" id="install-code-content"></pre>
+        <pre class="p-5 sm:p-6 text-xs sm:text-sm font-mono text-emerald-400 whitespace-pre-wrap break-all sm:break-normal leading-relaxed overflow-x-auto" id="install-code-content"></pre>
       </div>
     </section>
   </main>
@@ -495,40 +501,83 @@ Enforce Waterfall SDLC and frontend-design:
       setTimeout(() => btnText.innerText = "Copy Prompt", 2000);
     }
 
-    // Install Commands
+    // Install Commands Dictionary (Multi-OS: Bash vs PowerShell)
+    let currentShell = 'bash';
+    let activeInstall = 'antigravity';
+
     const installSnippets = {
-      antigravity: `# Clone directly into your global plugins directory
+      bash: {
+        antigravity: `# Clone directly into your global plugins directory
 git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git ~/.gemini/config/plugins/waterfall-sdlc`,
-      workspace: `# Install inside your project repository (.agents)
+        workspace: `# Install inside your project repository (.agents)
 mkdir -p .agents/skills/waterfall-sdlc
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .agents/skills/waterfall-sdlc/SKILL.md`,
-      claude: `# Install into Claude Code
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md \\
+  -o .agents/skills/waterfall-sdlc/SKILL.md`,
+        claude: `# Install into Claude Code global skills
 mkdir -p ~/.claude/skills/waterfall-sdlc
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ~/.claude/skills/waterfall-sdlc/SKILL.md`,
-      cursor: `# Install into Cursor project rules (.cursor/rules)
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md \\
+  -o ~/.claude/skills/waterfall-sdlc/SKILL.md`,
+        cursor: `# Install into Cursor project rules (.cursor/rules)
 mkdir -p .cursor/rules
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .cursor/rules/waterfall-sdlc.mdc`,
-      codex: `# Install for OpenAI Codex & Autonomous Agents
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md \\
+  -o .cursor/rules/waterfall-sdlc.mdc`,
+        codex: `# Install for OpenAI Codex & Autonomous Agents
 mkdir -p .codex/skills/waterfall-sdlc
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .codex/skills/waterfall-sdlc/SKILL.md`
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md \\
+  -o .codex/skills/waterfall-sdlc/SKILL.md`
+      },
+      powershell: {
+        antigravity: `# Clone directly into your global plugins directory (Windows)
+git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git "$HOME\\.gemini\\config\\plugins\\waterfall-sdlc"`,
+        workspace: `# Install inside your project repository (.agents)
+New-Item -ItemType Directory -Force -Path ".agents\\skills\\waterfall-sdlc" | Out-Null
+curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ".agents\\skills\\waterfall-sdlc\\SKILL.md"`,
+        claude: `# Install into Claude Code global skills (Windows)
+New-Item -ItemType Directory -Force -Path "$HOME\\.claude\\skills\\waterfall-sdlc" | Out-Null
+curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o "$HOME\\.claude\\skills\\waterfall-sdlc\\SKILL.md"`,
+        cursor: `# Install into Cursor project rules (.cursor\\rules)
+New-Item -ItemType Directory -Force -Path ".cursor\\rules" | Out-Null
+curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ".cursor\\rules\\waterfall-sdlc.mdc"`,
+        codex: `# Install for OpenAI Codex & Autonomous Agents
+New-Item -ItemType Directory -Force -Path ".codex\\skills\\waterfall-sdlc" | Out-Null
+curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ".codex\\skills\\waterfall-sdlc\\SKILL.md"`
+      }
     };
 
-    let activeInstall = 'antigravity';
+    function updateInstallDisplay() {
+      const snippet = installSnippets[currentShell][activeInstall];
+      document.getElementById('install-code-content').innerText = snippet;
+    }
+
     function switchInstall(type) {
       activeInstall = type;
       document.querySelectorAll('.install-btn').forEach(b => {
         b.className = "install-btn px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800";
       });
-      event.target.className = "install-btn active px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-800 text-white border border-zinc-700";
-      document.getElementById('install-code-content').innerText = installSnippets[type];
+      event.target.className = "install-btn active px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-800 text-white border border-zinc-700 shadow-xs";
+      updateInstallDisplay();
+    }
+
+    function switchShell(shell) {
+      currentShell = shell;
+      const bashBtn = document.getElementById('shell-btn-bash');
+      const psBtn = document.getElementById('shell-btn-powershell');
+      if (shell === 'bash') {
+        bashBtn.className = "px-2.5 py-1 text-xs font-mono rounded-md text-white bg-zinc-800 shadow-xs transition-all font-medium";
+        psBtn.className = "px-2.5 py-1 text-xs font-mono rounded-md text-zinc-400 hover:text-zinc-200 transition-all font-medium";
+      } else {
+        psBtn.className = "px-2.5 py-1 text-xs font-mono rounded-md text-white bg-zinc-800 shadow-xs transition-all font-medium";
+        bashBtn.className = "px-2.5 py-1 text-xs font-mono rounded-md text-zinc-400 hover:text-zinc-200 transition-all font-medium";
+      }
+      updateInstallDisplay();
     }
 
     function copyInstallContent() {
-      const text = installSnippets[activeInstall];
+      const text = installSnippets[currentShell][activeInstall];
       navigator.clipboard.writeText(text);
       const btnText = document.getElementById('copy-install-text');
       btnText.innerText = "Copied!";
-      setTimeout(() => btnText.innerText = "Copy", 2000);
+      setTimeout(() => btnText.innerText = "Copy Command", 2000);
     }
 
     // Terminal Simulator Logic
@@ -600,7 +649,7 @@ curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/s
       renderPhaseTabs();
       runSimulation();
       switchUseCase(0);
-      document.getElementById('install-code-content').innerText = installSnippets['antigravity'];
+      updateInstallDisplay();
     });
   </script>
 </body>
