@@ -1,4 +1,4 @@
-﻿# Waterfall SDLC for AI Agents 🏗️
+# Waterfall SDLC for AI Agents 🏗️
 
 <div align="center">
 
@@ -76,10 +76,29 @@ mkdir -p .agents/skills/waterfall-sdlc
 curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .agents/skills/waterfall-sdlc/SKILL.md
 ```
 
-### Option 3: Claude Code / Cursor / Codex
-Place the skill file in your project or agent configuration folder:
-- **Claude Code**: Copy to `~/.claude/skills/waterfall-sdlc/SKILL.md`
-- **Cursor / Codex**: Place inside `.cursor/rules/` or `.agents/skills/`
+### Option 3: Claude Code
+Install into Claude Code global skills directory:
+
+```bash
+mkdir -p ~/.claude/skills/waterfall-sdlc
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ~/.claude/skills/waterfall-sdlc/SKILL.md
+```
+
+### Option 4: Cursor (.cursor/rules)
+Install Waterfall SDLC as an automated project rule for Cursor:
+
+```bash
+mkdir -p .cursor/rules
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .cursor/rules/waterfall-sdlc.mdc
+```
+
+### Option 5: OpenAI Codex & Autonomous Agents
+Equip OpenAI Codex or multi-agent environments:
+
+```bash
+mkdir -p .codex/skills/waterfall-sdlc
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .codex/skills/waterfall-sdlc/SKILL.md
+```
 
 ---
 

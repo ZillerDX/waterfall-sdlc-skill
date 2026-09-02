@@ -89,29 +89,33 @@
   </div>
 
   <!-- Navigation Bar -->
-  <header class="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/85 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="size-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-mono font-bold text-sm shadow-sm">
-          <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
+  <header class="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/85 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="size-9 rounded-xl bg-gradient-to-br from-blue-500 via-indigo-500 to-emerald-400 p-[1px] shadow-sm group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-zinc-950 rounded-[11px] flex items-center justify-center text-blue-400">
+            <svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="6" height="4" rx="1"/>
+              <rect x="9" y="10" width="6" height="4" rx="1"/>
+              <rect x="15" y="17" width="6" height="4" rx="1"/>
+              <path d="M6 7v4a1 1 0 0 0 1 1h2"/>
+              <path d="M12 14v4a1 1 0 0 0 1 1h2"/>
+            </svg>
+          </div>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="font-semibold tracking-tight text-zinc-100 text-sm sm:text-base">Waterfall SDLC</span>
-          <span class="text-xs uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 font-mono font-medium">v1.0.0</span>
-        </div>
-      </div>
+        <span class="font-bold tracking-tight text-white text-base sm:text-lg">Waterfall SDLC</span>
+      </a>
 
-      <div class="flex items-center gap-4">
-        <a href="#workflow" class="text-xs sm:text-sm text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">7-Phase Lifecycle</a>
-        <a href="#use-cases" class="text-xs sm:text-sm text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">Use Cases</a>
-        <a href="#installation" class="text-xs sm:text-sm text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">Installation</a>
-        <a href="https://github.com/ZillerDX/waterfall-sdlc-skill" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-zinc-850 hover:bg-zinc-800 border border-zinc-700/80 transition-all text-zinc-200">
+      <div class="flex items-center gap-6">
+        <a href="#simulator" class="text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors hidden md:block">Live Simulation</a>
+        <a href="#workflow" class="text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">7-Phase Lifecycle</a>
+        <a href="#use-cases" class="text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">Use Cases</a>
+        <a href="#installation" class="text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">Installation</a>
+        <a href="https://github.com/ZillerDX/waterfall-sdlc-skill" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-zinc-900 hover:bg-zinc-850 border border-zinc-700/80 transition-all text-zinc-200 hover:border-zinc-500 shadow-xs">
           <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
           </svg>
-          GitHub Repo
+          <span>GitHub Repo</span>
         </a>
       </div>
     </div>
@@ -119,7 +123,7 @@
 
   <!-- Hero Section -->
   <main class="relative z-10">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-16">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-16">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <!-- Hero Left Column -->
@@ -220,7 +224,7 @@
     </section>
 
     <!-- Workflow Section -->
-    <section id="workflow" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
+    <section id="workflow" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-zinc-850">
       <div class="text-center mb-12">
         <span class="text-xs uppercase tracking-wider font-mono font-semibold text-blue-400">Quality-Gated Lifecycle</span>
         <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">The 7 Progressive Phases</h2>
@@ -239,7 +243,7 @@
     </section>
 
     <!-- Use Cases & Prompt Templates -->
-    <section id="use-cases" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
+    <section id="use-cases" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-zinc-850">
       <div class="text-center mb-12">
         <span class="text-xs uppercase tracking-wider font-mono font-semibold text-emerald-400">Battle-Tested Prompts</span>
         <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">How to Prompt AI with Waterfall SDLC</h2>
@@ -274,18 +278,20 @@
     </section>
 
     <!-- Installation Section -->
-    <section id="installation" class="max-w-4xl mx-auto px-4 sm:px-6 py-16 border-t border-zinc-850">
+    <section id="installation" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-zinc-850">
       <div class="text-center mb-10">
         <span class="text-xs uppercase tracking-wider font-mono font-semibold text-blue-400">Installation & Setup</span>
         <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">Get Started in Seconds</h2>
         <p class="text-sm text-zinc-400 mt-2">Equip your coding agent with Waterfall SDLC across any platform.</p>
       </div>
 
-      <!-- Installation Tabs -->
-      <div class="flex items-center justify-center gap-2 mb-6" id="install-tabs">
-        <button onclick="switchInstall('antigravity')" class="install-btn active px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-800 text-white border border-zinc-700">Antigravity (Global)</button>
+      <!-- Installation Tabs with Cursor and Codex -->
+      <div class="flex items-center justify-center gap-2 mb-6 flex-wrap" id="install-tabs">
+        <button onclick="switchInstall('antigravity')" class="install-btn active px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-800 text-white border border-zinc-700 shadow-xs">Antigravity (Global)</button>
         <button onclick="switchInstall('workspace')" class="install-btn px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800">Per-Project (.agents)</button>
         <button onclick="switchInstall('claude')" class="install-btn px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800">Claude Code</button>
+        <button onclick="switchInstall('cursor')" class="install-btn px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800">Cursor (.cursorrules)</button>
+        <button onclick="switchInstall('codex')" class="install-btn px-4 py-1.5 rounded-lg text-xs font-mono font-medium transition-all bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800">Codex / Agents</button>
       </div>
 
       <!-- Code Box -->
@@ -306,7 +312,7 @@
 
   <!-- Footer -->
   <footer class="border-t border-zinc-800/80 bg-zinc-950 py-10 relative z-10 text-center text-xs text-zinc-500 font-mono">
-    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         Released under <a href="https://opensource.org/licenses/MIT" target="_blank" class="underline hover:text-zinc-300">MIT License</a> • Crafted by <a href="https://github.com/ZillerDX" target="_blank" class="text-zinc-300 hover:text-white font-medium">Tanathon Chanapha (ZillerDX)</a>
       </div>
@@ -316,6 +322,7 @@
       </div>
     </div>
   </footer>
+
 
   <!-- Interactive Scripts -->
   <script>
@@ -492,12 +499,18 @@ Enforce Waterfall SDLC and frontend-design:
     const installSnippets = {
       antigravity: `# Clone directly into your global plugins directory
 git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git ~/.gemini/config/plugins/waterfall-sdlc`,
-      workspace: `# Install inside your project repository
+      workspace: `# Install inside your project repository (.agents)
 mkdir -p .agents/skills/waterfall-sdlc
 curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .agents/skills/waterfall-sdlc/SKILL.md`,
       claude: `# Install into Claude Code
 mkdir -p ~/.claude/skills/waterfall-sdlc
-curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ~/.claude/skills/waterfall-sdlc/SKILL.md`
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o ~/.claude/skills/waterfall-sdlc/SKILL.md`,
+      cursor: `# Install into Cursor project rules (.cursor/rules)
+mkdir -p .cursor/rules
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .cursor/rules/waterfall-sdlc.mdc`,
+      codex: `# Install for OpenAI Codex & Autonomous Agents
+mkdir -p .codex/skills/waterfall-sdlc
+curl -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/main/skills/waterfall-sdlc/SKILL.md -o .codex/skills/waterfall-sdlc/SKILL.md`
     };
 
     let activeInstall = 'antigravity';
