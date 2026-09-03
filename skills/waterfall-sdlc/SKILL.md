@@ -20,8 +20,8 @@ graph TD
     P2 -->|Gate 2 Sign-off| P3["3. Architectural Design"]
     P3 -->|Gate 3 Sign-off| P4["4. Implementation (Coding)"]
     P4 -->|Gate 4 Pass| P5["5. Verification & Testing"]
-    P5 <-->|Agile Inner Loop: Bugfix & Refactor| P4
-    P5 -->|Gate 5 Pass (100% Tests)| P6["6. Deployment & Packaging"]
+    P5 -.->|Agile Inner Loop - Bugfix & Refactor| P4
+    P5 -->|Gate 5 Pass - 100% Tests| P6["6. Deployment & Packaging"]
     P6 -->|Gate 6 Sign-off| P7["7. Support & Maintenance"]
 ```
 

@@ -40,8 +40,8 @@ graph TD
     P2 -->|Gate 2 Sign-off| P3["3. Architectural Design<br/>(DB Schema, API Specs, Component Tree)"]
     P3 -->|Gate 3 Sign-off| P4["4. Implementation (Coding)<br/>(100% Blueprint-Adherent Clean Code)"]
     P4 -->|Gate 4 Pass| P5["5. Verification & Testing<br/>(Unit/Integration Tests, 100% Pass Rate)"]
-    P5 <-->|Agile Inner Loop: Bugfix & Refactor| P4
-    P5 -->|Gate 5 Pass (100% Proof)| P6["6. Deployment & Packaging<br/>(Build Verification, .env.example, Docker)"]
+    P5 -.->|Agile Inner Loop - Bugfix & Refactor| P4
+    P5 -->|Gate 5 Pass - 100% Test Proof| P6["6. Deployment & Packaging<br/>(Build Verification, .env.example, Docker)"]
     P6 -->|Gate 6 Sign-off| P7["7. Support & Handover<br/>(README, Runbooks & Health Monitoring)"]
 ```
 
