@@ -19,8 +19,9 @@ graph TD
     P1["1. Requirements Gathering"] -->|Gate 1 Sign-off| P2["2. System Analysis"]
     P2 -->|Gate 2 Sign-off| P3["3. Architectural Design"]
     P3 -->|Gate 3 Sign-off| P4["4. Implementation (Coding)"]
-    P4 -->|Gate 4 Sign-off| P5["5. Verification & Testing"]
-    P5 -->|Gate 5 Sign-off| P6["6. Deployment & Packaging"]
+    P4 -->|Gate 4 Pass| P5["5. Verification & Testing"]
+    P5 <-->|Agile Inner Loop: Bugfix & Refactor| P4
+    P5 -->|Gate 5 Pass (100% Tests)| P6["6. Deployment & Packaging"]
     P6 -->|Gate 6 Sign-off| P7["7. Support & Maintenance"]
 ```
 
@@ -128,7 +129,12 @@ graph TD
 
 ## Phase Gate Rules & Best Practices
 
-1. **Sequential Integrity**: Do not skip backward or forward arbitrarily. When an issue arises in Phase 5 (Testing), evaluate whether it is an Implementation bug (Phase 4) or a Design flaw (Phase 3), document the root cause, and rectify systematically.
+1. **Sequential Gates with Pragmatic Agile Inner Loop (Anti-Rigidity Guardrail)**:
+   - Upfront Waterfall discipline (Gate 1 ➔ 2 ➔ 3) ensures no premature coding and locks the architecture blueprint before implementation.
+   - **Never Impede Iterative Bug Fixing & Refactoring (4 ⇄ 5 Inner Loop)**: Waterfall must NEVER become an inflexible barrier to fixing bugs or cleaning up code. Once implementation starts, Phase 4 (Coding) and Phase 5 (Testing) operate as an agile, high-speed feedback loop:
+     - When tests fail, UI bugs appear, or code needs refactoring, immediately diagnose and fix directly in Phase 4 and re-verify in Phase 5.
+     - **Do NOT reset back to Phase 1 or stop for administrative sign-off on code-level bug fixes!**
+   - **Escalation Threshold**: Only escalate back to Phase 1 (Requirements) or Phase 3 (Design Blueprint) if the user explicitly changes feature scope or a fundamental architectural assumption breaks. All standard bugs and refactoring belong in the 4 ⇄ 5 loop.
 2. **Deliverables at Every Phase**: Always produce clear, visible deliverables (in chat, markdown artifacts, or schema files) before declaring a phase complete.
 3. **Mandatory Pre-Launch Port Purge (Check & Kill First)**: Never launch a dev server or re-run a service on port 3000 without executing the Port Purge one-liner first. If a previous background task is running, terminate it via `manage_task(Action='kill')`. Never allow multiple server tasks to collide or crash with `EADDRINUSE`.
 4. **Mandatory Clickable Localhost Preview Link**: Never finish a task or leave background dev servers running without outputting a clickable markdown link `[http://localhost:<port>](http://localhost:<port>)` directly in the chat response for the user to open with one click.

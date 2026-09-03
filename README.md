@@ -39,8 +39,9 @@ graph TD
     P1["1. Requirements Gathering<br/>(Scope, User Stories & Acceptance Criteria)"] -->|Gate 1 Sign-off| P2["2. Feasibility & Analysis<br/>(Tech Stack, Dependencies & Risk Matrix)"]
     P2 -->|Gate 2 Sign-off| P3["3. Architectural Design<br/>(DB Schema, API Specs, Component Tree)"]
     P3 -->|Gate 3 Sign-off| P4["4. Implementation (Coding)<br/>(100% Blueprint-Adherent Clean Code)"]
-    P4 -->|Gate 4 Sign-off| P5["5. Verification & Testing<br/>(Unit/Integration Tests, 100% Pass Rate)"]
-    P5 -->|Gate 5 Sign-off| P6["6. Deployment & Packaging<br/>(Build Verification, .env.example, Docker)"]
+    P4 -->|Gate 4 Pass| P5["5. Verification & Testing<br/>(Unit/Integration Tests, 100% Pass Rate)"]
+    P5 <-->|Agile Inner Loop: Bugfix & Refactor| P4
+    P5 -->|Gate 5 Pass (100% Proof)| P6["6. Deployment & Packaging<br/>(Build Verification, .env.example, Docker)"]
     P6 -->|Gate 6 Sign-off| P7["7. Support & Handover<br/>(README, Runbooks & Health Monitoring)"]
 ```
 
@@ -53,6 +54,12 @@ graph TD
 | **5. Testing** | Formally prove that the implementation satisfies all initial requirements | Pre-Flight Port Check + Automated Test Suite (Exit Code: 0) |
 | **6. Deployment** | Package release artifacts for reproducible, error-free execution | Verified Production Build + Docker / Deployment Scripts |
 | **7. Support** | Ensure long-term maintainability and operational clarity | Complete README + Runbook + **Clickable Localhost Preview** |
+
+> [!NOTE]
+> **Anti-Rigidity Guardrail (Agile Inner Loop 4 ⇄ 5)**:
+> Waterfall SDLC must **never** become an inflexible bureaucracy that hinders rapid iterative bug fixing or refactoring.
+> - **High-Speed Feedback Loop**: When unit tests fail or styling bugs emerge in Phase 5, the agent immediately refactors and fixes code directly in Phase 4 and re-tests in Phase 5. No administrative overhead or re-starting from Phase 1 is required for implementation-level defects.
+> - **Escalation Threshold**: Only escalate back to Phase 1 or 3 if the user explicitly changes feature scope or if a fundamental architectural flaw requires updating the schema.
 
 > [!IMPORTANT]
 > **Zero Port Collision & Instant Preview Guarantees**:
