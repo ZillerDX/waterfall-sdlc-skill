@@ -83,9 +83,14 @@ graph TD
   1. **Automated Unit Tests**: Test core business logic, helpers, and utility functions.
   2. **Integration Tests**: Verify API endpoints, database operations, and data flow across components.
   3. **Local Dev Server & Live Verification**:
-     - **Pre-Flight Port Availability Check (MANDATORY)**: Never blindly bind or test against `localhost:3000`. Inspect port status before launching (`Get-NetTCPConnection -LocalPort <port>` on Windows, `lsof -i :<port>` on Unix).
-     - If occupied: kill the stale/orphaned process cleanly, or bind to an explicit free port (e.g. `PORT=3001` or `npm run dev -- -p 3001`).
-     - Always confirm the actual listening port from terminal logs before sending test requests.
+     - **Mandatory Pre-Launch Port Purge (Check & Kill First)**: Never blindly bind or re-run on `localhost:3000` without clearing the port first.
+       1. **Inspect & Kill Existing PID**:
+          - Windows (PowerShell):
+            `Get-NetTCPConnection -LocalPort <port> -ErrorAction SilentlyContinue | ForEach-Object { $p = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue; Write-Host "Killing stale process on port <port>: PID $($_.OwningProcess) ($($p.ProcessName))"; Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }`
+          - Linux / macOS:
+            `fuser -k <port>/tcp 2>/dev/null || lsof -ti :<port> | xargs -r kill -9 2>/dev/null || true`
+       2. **Kill Previous Background Tasks**: If a server task was previously launched in the background, terminate it using `manage_task(Action='kill')` on that task ID BEFORE starting a new server.
+       3. **Confirm Listening Port**: Always verify the exact port from server output logs before issuing test requests.
   4. **Edge Case Validation**: Empty states, invalid inputs, boundary numbers, network failures, error handling.
   5. **Requirement Traceability**: Check each item against the Acceptance Criteria defined in Phase 1.
 - **Gate 5 Deliverable**:
@@ -125,7 +130,7 @@ graph TD
 
 1. **Sequential Integrity**: Do not skip backward or forward arbitrarily. When an issue arises in Phase 5 (Testing), evaluate whether it is an Implementation bug (Phase 4) or a Design flaw (Phase 3), document the root cause, and rectify systematically.
 2. **Deliverables at Every Phase**: Always produce clear, visible deliverables (in chat, markdown artifacts, or schema files) before declaring a phase complete.
-3. **Pre-Flight Port Availability Check**: Before launching any dev server (Next.js, Vite, Express, Flask, etc.) or testing against localhost, always verify the port is free. If occupied, kill the stale PID or bind to an explicit alternative port (`PORT=3001`). Never let a server crash with `EADDRINUSE`.
+3. **Mandatory Pre-Launch Port Purge (Check & Kill First)**: Never launch a dev server or re-run a service on port 3000 without executing the Port Purge one-liner first. If a previous background task is running, terminate it via `manage_task(Action='kill')`. Never allow multiple server tasks to collide or crash with `EADDRINUSE`.
 4. **Mandatory Clickable Localhost Preview Link**: Never finish a task or leave background dev servers running without outputting a clickable markdown link `[http://localhost:<port>](http://localhost:<port>)` directly in the chat response for the user to open with one click.
 5. **Synergy with Other Skills**:
    - In Phase 3 & 4 (UI Design): Seamlessly invoke `frontend-design` for clean vector iconography and polished design systems.

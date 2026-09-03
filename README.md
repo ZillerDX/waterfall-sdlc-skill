@@ -56,8 +56,11 @@ graph TD
 
 > [!IMPORTANT]
 > **Zero Port Collision & Instant Preview Guarantees**:
-> 1. **Pre-Flight Port Check**: Agents running Waterfall SDLC *must* check whether a port (e.g. 3000) is occupied (`Get-NetTCPConnection` / `lsof -i`) before launching dev servers, preventing `EADDRINUSE` crashes or stale proxy calls.
-> 2. **Mandatory Clickable Link**: The agent *must* output a direct, clickable markdown link (e.g. `👉 **Live Local Preview**: [http://localhost:3000](http://localhost:3000)`) in the chat so you can preview the app with a single click.
+> 1. **Mandatory Pre-Launch Port Purge (Check & Kill First)**: Agents running Waterfall SDLC *must* run the automated port purge command to inspect and forcefully kill any stale process occupying the target port before launching servers:
+>    - **Windows**: `Get-NetTCPConnection -LocalPort <port> -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }`
+>    - **Linux / macOS**: `fuser -k <port>/tcp 2>/dev/null || lsof -ti :<port> | xargs -r kill -9 2>/dev/null || true`
+> 2. **Terminate Background Tasks**: If a dev server was previously launched in the background, the agent must terminate it cleanly before starting a new one.
+> 3. **Mandatory Clickable Link**: The agent *must* output a direct, clickable markdown link (e.g. `👉 **Live Local Preview**: [http://localhost:3000](http://localhost:3000)`) in the chat so you can test the app with a single click.
 
 ---
 

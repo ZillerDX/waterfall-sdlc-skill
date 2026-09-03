@@ -862,9 +862,10 @@ Enforcing frontend-design standards: Lucide vector icons only, 4px grid, trackin
       {
         type: 'tool',
         toolName: 'RunCommand',
-        arg: 'Get-NetTCPConnection -LocalPort 3000',
-        details: `Checking port availability...
-Port 3000: FREE (No PID collision). Dev server safe to bind.`
+        arg: 'Get-NetTCPConnection -LocalPort 3000 | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }',
+        details: `Pre-Launch Port Purge: Inspecting port 3000...
+Detected stale node process (PID: 14208) -> Forcefully terminated with Stop-Process.
+Port 3000 now 100% FREED. Zero port collision guaranteed.`
       },
       {
         type: 'tool',
