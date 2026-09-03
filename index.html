@@ -119,8 +119,10 @@
         <span class="font-bold tracking-tight text-white text-base sm:text-lg">Waterfall SDLC</span>
       </a>
 
-      <div class="flex items-center gap-6">
-        <a href="#simulator" class="text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors hidden md:block">Live Simulation</a>
+        <button onclick="openClaudeTerminalModal()" class="text-xs sm:text-sm font-medium text-amber-400 hover:text-amber-300 transition-all hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 cursor-pointer shadow-xs">
+          <span class="size-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span>Live Simulation</span>
+        </button>
         <a href="#workflow" class="text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">7-Phase Lifecycle</a>
         <a href="#use-cases" class="text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">Use Cases</a>
         <a href="#installation" class="text-xs sm:text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors hidden sm:block">Installation</a>
@@ -213,11 +215,11 @@
                 <span class="text-xs font-mono text-zinc-400 ml-2 font-medium">antigravity :: waterfall-sdlc simulator</span>
               </div>
               <div class="flex items-center gap-2">
-                <span id="sim-status" class="text-[10px] font-mono font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 flex items-center gap-1.5">
-                  <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  Agent Running
-                </span>
-                <button onclick="restartSimulation()" class="text-[11px] text-zinc-400 hover:text-white px-2 py-0.5 rounded bg-zinc-800 hover:bg-zinc-700 transition-all font-mono">Replay</button>
+                <button onclick="openClaudeTerminalModal()" class="text-[11px] text-amber-400 hover:text-amber-300 px-2 py-0.5 rounded bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 transition-all font-mono flex items-center gap-1 cursor-pointer">
+                  <svg class="size-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Claude Code Mode</span>
+                </button>
+                <button onclick="restartSimulation()" class="text-[11px] text-zinc-400 hover:text-white px-2 py-0.5 rounded bg-zinc-800 hover:bg-zinc-700 transition-all font-mono cursor-pointer">Replay</button>
               </div>
             </div>
 
@@ -328,6 +330,63 @@
       </div>
     </section>
   </main>
+
+  <!-- Claude Code Terminal Modal Simulation -->
+  <div id="claude-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md transition-all duration-300" onclick="handleModalBackdropClick(event)">
+    <div class="relative w-full max-w-4xl bg-[#090a0f] border border-amber-500/30 rounded-2xl shadow-2xl shadow-amber-950/20 overflow-hidden flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+      
+      <!-- Claude Code Terminal Title Bar -->
+      <div class="px-4 py-3 bg-zinc-900/95 border-b border-zinc-800 flex items-center justify-between select-none">
+        <div class="flex items-center gap-2.5">
+          <button onclick="closeClaudeTerminalModal()" class="size-3.5 rounded-full bg-red-500 hover:bg-red-600 transition-colors flex items-center justify-center group cursor-pointer" title="Close">
+            <svg class="size-2 text-red-950 opacity-0 group-hover:opacity-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+          <span class="size-3.5 rounded-full bg-yellow-500/80 cursor-default"></span>
+          <span class="size-3.5 rounded-full bg-emerald-500/80 cursor-default"></span>
+          
+          <div class="flex items-center gap-2 ml-3">
+            <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-amber-500/15 border border-amber-500/30 text-amber-300">
+              <span class="size-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+              Claude Code CLI
+            </span>
+            <span class="text-xs font-mono text-zinc-400 hidden sm:inline">~/projects/saas-dashboard — claude-3-7-sonnet</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button id="claude-speed-btn" onclick="toggleClaudeSpeed()" class="text-[11px] font-mono text-zinc-300 hover:text-white px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 transition-colors cursor-pointer">
+            Speed: <span id="claude-speed-label" class="text-amber-400 font-semibold">1x</span>
+          </button>
+          <button onclick="restartClaudeSimulation()" class="text-[11px] font-mono text-zinc-300 hover:text-white px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 transition-colors flex items-center gap-1 cursor-pointer">
+            <svg class="size-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
+            Replay
+          </button>
+          <button onclick="closeClaudeTerminalModal()" class="text-xs font-mono text-zinc-400 hover:text-white px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 transition-colors cursor-pointer" title="Close (Esc)">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Terminal Body Content -->
+      <div id="claude-terminal-body" class="p-4 sm:p-6 font-mono text-xs sm:text-sm text-zinc-200 overflow-y-auto space-y-3 bg-[#08080c] select-text flex-1 min-h-[420px] max-h-[65vh] terminal-scroll">
+        <!-- Claude simulation logs stream here -->
+      </div>
+
+      <!-- Bottom Status & Progress Bar -->
+      <div class="bg-zinc-950 px-4 py-2.5 border-t border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-400">
+        <div class="flex items-center gap-2">
+          <span class="size-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span id="claude-phase-badge" class="text-zinc-300">Phase: Initializing Waterfall SDLC...</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span id="claude-progress-text" class="text-zinc-400">0%</span>
+          <div class="w-32 sm:w-48 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+            <div id="claude-progress-bar" class="h-full bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-400 w-0 transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="border-t border-zinc-800/80 bg-zinc-950 py-10 relative z-10 text-center text-xs text-zinc-500 font-mono">
@@ -655,6 +714,301 @@ curl.exe -sSL https://raw.githubusercontent.com/ZillerDX/waterfall-sdlc-skill/ma
         status.innerHTML = '<span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Agent Running';
       }
       runSimulation();
+    }
+
+    // ==========================================
+    // Claude Code Terminal Simulation Logic
+    // ==========================================
+    let claudeSpeed = 1; // 1 = normal, 2 = fast
+    let claudeSimInterval = null;
+    let claudeSimIndex = 0;
+
+    const claudeSimulationScript = [
+      {
+        type: 'banner',
+        content: `╭── Claude Code v0.2.29 ──────────────────────────────────────────────────────────╮
+│ Model: claude-3-7-sonnet-thought   •   Skill: waterfall-sdlc (Loaded & Active)  │
+╰─────────────────────────────────────────────────────────────────────────────────╯`
+      },
+      {
+        type: 'prompt',
+        content: `claude "Build a fullstack SaaS dashboard with auth, database & Stripe. Enforce Waterfall SDLC strictly."`
+      },
+      {
+        type: 'thought',
+        content: `⠋ Thinking: Analyzing user request scale against master AGENTS.md triage matrix...`
+      },
+      {
+        type: 'thought',
+        content: `⚡ Pre-Flight Scale Triage: Greenfield Multi-Tier System detected -> [Level 3: System-Track].`
+      },
+      {
+        type: 'thought',
+        content: `🔒 Mandatory Invariant: "No coding before design sign-off." Initializing 7-Phase Quality Gate Pipeline.`
+      },
+      {
+        type: 'phase',
+        badge: 'PHASE 1/7',
+        phaseName: 'Phase 1: Requirements Gathering',
+        content: `● Phase 1: Requirements Gathering & Acceptance Criteria`
+      },
+      {
+        type: 'tool',
+        toolName: 'WriteFile',
+        arg: 'docs/requirements_spec.md',
+        details: `Writing functional requirements, user personas (Admin, Member, Viewer), and explicit out-of-scope boundaries.`
+      },
+      {
+        type: 'gate',
+        content: `✔ [QUALITY GATE 1 CLEARED] Requirements specification locked. Acceptance criteria defined.`
+      },
+      {
+        type: 'phase',
+        badge: 'PHASE 2/7',
+        phaseName: 'Phase 2: System Feasibility & Analysis',
+        content: `● Phase 2: System Feasibility & Tech Analysis`
+      },
+      {
+        type: 'tool',
+        toolName: 'RunCommand',
+        arg: 'npx depcheck',
+        details: `Evaluating stack: Next.js 15 App Router, Tailwind v4, Supabase, Stripe SDK.
+Checking dependency tree for CVEs & deprecations: 0 vulnerabilities found.`
+      },
+      {
+        type: 'gate',
+        content: `✔ [QUALITY GATE 2 CLEARED] Tech stack decision matrix signed. Feasibility 100% verified.`
+      },
+      {
+        type: 'phase',
+        badge: 'PHASE 3/7',
+        phaseName: 'Phase 3: Architectural Design (Blueprint)',
+        content: `● Phase 3: Architectural Blueprint Design`
+      },
+      {
+        type: 'tool',
+        toolName: 'WriteFile',
+        arg: 'docs/architecture_blueprint.md',
+        details: `Synthesizing complete database ERD (4 tables with RLS), API specifications, and Component Tree.
+Enforcing frontend-design standards: Lucide vector icons only, 4px grid, tracking-tight typography.`
+      },
+      {
+        type: 'gate_pause',
+        content: `⚠️ [STOPPED AT QUALITY GATE 3] Mandatory human sign-off required before writing any application code.`
+      },
+      {
+        type: 'interactive',
+        content: `? Approve Architectural Blueprint to proceed to Phase 4 (Implementation)? (y/n) › y
+✔ [HUMAN APPROVAL RECEIVED] Architectural Blueprint locked. Handing off to code implementation.`
+      },
+      {
+        type: 'phase',
+        badge: 'PHASE 4/7',
+        phaseName: 'Phase 4: Implementation (Coding)',
+        content: `● Phase 4: Disciplined Implementation`
+      },
+      {
+        type: 'tool',
+        toolName: 'WriteFile',
+        arg: 'src/lib/db.ts',
+        details: `Initializing strictly-typed Supabase client and Prisma schema models.`
+      },
+      {
+        type: 'tool',
+        toolName: 'WriteFile',
+        arg: 'src/components/Dashboard.tsx',
+        details: `Building responsive dashboard with Lucide vector icons, 4-state micro-interactions & zero emoji UI.`
+      },
+      {
+        type: 'tool',
+        toolName: 'RunCommand',
+        arg: 'npx tsc --noEmit',
+        details: `TypeScript strict check: 0 errors, 0 warnings.`
+      },
+      {
+        type: 'gate',
+        content: `✔ [QUALITY GATE 4 CLEARED] Implementation complete. 100% compliant with approved blueprint.`
+      },
+      {
+        type: 'phase',
+        badge: 'PHASE 5/7',
+        phaseName: 'Phase 5: Automated Testing',
+        content: `● Phase 5: Evidence-First Testing`
+      },
+      {
+        type: 'tool',
+        toolName: 'RunCommand',
+        arg: 'npx vitest run',
+        details: ` ✓ tests/auth.test.ts (6 tests passed)
+ ✓ tests/billing.test.ts (8 tests passed)
+ ✓ tests/dashboard.test.ts (12 tests passed)
+ Test Files  3 passed (3)
+      Tests  26 passed (26)
+   Duration  1.12s
+ Exit Code: 0 (Pass)`
+      },
+      {
+        type: 'gate',
+        content: `✔ [QUALITY GATE 5 CLEARED] Automated test evidence verified (100% pass rate).`
+      },
+      {
+        type: 'phase',
+        badge: 'PHASE 6/7',
+        phaseName: 'Phase 6: Deployment & Packaging',
+        content: `● Phase 6: Deployment Packaging & Local-First Verification`
+      },
+      {
+        type: 'tool',
+        toolName: 'RunCommand',
+        arg: 'npm run build',
+        details: `Creating optimized production bundle...
+Route (app)                              Size     First Load JS
+┌ ○ /                                    5.2 kB         92.4 kB
+├ ○ /dashboard                           12.8 kB        99.8 kB
+└ ƒ /api/webhooks/stripe                 0 kB             85 kB
+Localhost build test passed cleanly.`
+      },
+      {
+        type: 'gate',
+        content: `✔ [QUALITY GATE 6 CLEARED] Release bundle packaged and verified.`
+      },
+      {
+        type: 'phase',
+        badge: 'PHASE 7/7',
+        phaseName: 'Phase 7: Operational Support & Handover',
+        content: `● Phase 7: Operational Support & Handover`
+      },
+      {
+        type: 'tool',
+        toolName: 'WriteFile',
+        arg: 'docs/RUNBOOK.md',
+        details: `Generating operational maintenance runbooks, environment variable templates, and health check endpoints.`
+      },
+      {
+        type: 'success',
+        content: `╭─────────────────────────────────────────────────────────────────────────────────╮
+│ 🎉 WATERFALL SDLC SPRINT COMPLETE: All 7 Quality Gates Passed!                  │
+│ • Evidence Verified (Vitest Exit Code: 0) • 0 Premature Coding • 0 Slop         │
+╰─────────────────────────────────────────────────────────────────────────────────╯`
+      }
+    ];
+
+    function openClaudeTerminalModal() {
+      const modal = document.getElementById('claude-modal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      restartClaudeSimulation();
+    }
+
+    function closeClaudeTerminalModal() {
+      const modal = document.getElementById('claude-modal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+      clearInterval(claudeSimInterval);
+    }
+
+    function handleModalBackdropClick(e) {
+      if (e.target.id === 'claude-modal') {
+        closeClaudeTerminalModal();
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeClaudeTerminalModal();
+      }
+    });
+
+    function toggleClaudeSpeed() {
+      claudeSpeed = claudeSpeed === 1 ? 2 : 1;
+      document.getElementById('claude-speed-label').innerText = `${claudeSpeed}x`;
+      if (claudeSimInterval) {
+        clearInterval(claudeSimInterval);
+        startClaudeSimulationLoop();
+      }
+    }
+
+    function restartClaudeSimulation() {
+      clearInterval(claudeSimInterval);
+      claudeSimIndex = 0;
+      const body = document.getElementById('claude-terminal-body');
+      if (body) body.innerHTML = '';
+      startClaudeSimulationLoop();
+    }
+
+    function startClaudeSimulationLoop() {
+      const body = document.getElementById('claude-terminal-body');
+      const progressBar = document.getElementById('claude-progress-bar');
+      const progressText = document.getElementById('claude-progress-text');
+      const phaseBadge = document.getElementById('claude-phase-badge');
+      const delay = claudeSpeed === 1 ? 400 : 180;
+
+      claudeSimInterval = setInterval(() => {
+        if (claudeSimIndex < claudeSimulationScript.length) {
+          const step = claudeSimulationScript[claudeSimIndex];
+          const lineEl = document.createElement('div');
+
+          if (step.type === 'banner') {
+            lineEl.className = 'text-amber-400 font-mono text-xs whitespace-pre leading-tight opacity-90 select-none';
+            lineEl.innerText = step.content;
+          } else if (step.type === 'prompt') {
+            lineEl.className = 'flex items-center gap-2 text-white font-semibold pt-1';
+            lineEl.innerHTML = `<span class="text-amber-400 font-bold">></span><span class="text-zinc-100">${step.content}</span>`;
+          } else if (step.type === 'thought') {
+            lineEl.className = 'text-zinc-400 italic text-xs pl-3 border-l-2 border-zinc-700/60';
+            lineEl.innerText = step.content;
+          } else if (step.type === 'phase') {
+            lineEl.className = 'pt-2 pb-1 border-t border-zinc-800/80';
+            lineEl.innerHTML = `
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-blue-500/20 text-blue-300 border border-blue-500/30">${step.badge}</span>
+                <span class="text-blue-400 font-semibold text-xs sm:text-sm">${step.content}</span>
+              </div>
+            `;
+            if (phaseBadge) phaseBadge.innerText = step.phaseName;
+          } else if (step.type === 'tool') {
+            lineEl.className = 'my-1 rounded-lg bg-zinc-900/80 border border-zinc-800 p-2.5 text-xs text-zinc-300 shadow-xs';
+            lineEl.innerHTML = `
+              <div class="flex items-center justify-between text-zinc-400 mb-1">
+                <span class="inline-flex items-center gap-1.5 font-semibold text-amber-300/90">
+                  <span class="size-1.5 rounded-full bg-amber-400"></span>
+                  Tool: ${step.toolName}
+                </span>
+                <span class="font-mono text-[11px] text-zinc-500">${step.arg}</span>
+              </div>
+              <pre class="font-mono text-[11px] text-zinc-400 whitespace-pre-wrap leading-relaxed">${step.details}</pre>
+            `;
+          } else if (step.type === 'gate_pause') {
+            lineEl.className = 'p-3 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold';
+            lineEl.innerText = step.content;
+          } else if (step.type === 'interactive') {
+            lineEl.className = 'p-3 rounded-lg bg-purple-500/10 border border-purple-500/30 text-xs font-mono text-purple-200 whitespace-pre-wrap leading-relaxed';
+            lineEl.innerText = step.content;
+          } else if (step.type === 'gate') {
+            lineEl.className = 'text-emerald-400 font-mono text-xs font-medium pl-2 flex items-center gap-1.5';
+            lineEl.innerText = step.content;
+          } else if (step.type === 'success') {
+            lineEl.className = 'text-emerald-300 font-mono text-xs whitespace-pre leading-relaxed pt-2';
+            lineEl.innerText = step.content;
+            if (phaseBadge) phaseBadge.innerText = 'Completed: All 7 Gates Passed';
+          }
+
+          body.appendChild(lineEl);
+          body.scrollTop = body.scrollHeight;
+          claudeSimIndex++;
+
+          const pct = Math.round((claudeSimIndex / claudeSimulationScript.length) * 100);
+          if (progressBar) progressBar.style.width = `${pct}%`;
+          if (progressText) progressText.innerText = `${pct}%`;
+
+        } else {
+          clearInterval(claudeSimInterval);
+        }
+      }, delay);
     }
 
     // Init
