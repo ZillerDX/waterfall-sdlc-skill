@@ -50,9 +50,14 @@ graph TD
 | **2. Analysis** | Evaluate tech stack compatibility, dependencies, and architectural risks | Tech Stack Decision Matrix + Risk Mitigation Plan |
 | **3. Design** | Produce complete technical blueprints before writing a single line of code | ERD / Database Schema + API Contracts + UI Hierarchy |
 | **4. Implementation** | Translate the approved design into modular, clean, strongly-typed code | Complete codebase with zero syntax/type errors |
-| **5. Testing** | Formally prove that the implementation satisfies all initial requirements | Automated Test Suite results (Exit Code: 0) |
+| **5. Testing** | Formally prove that the implementation satisfies all initial requirements | Pre-Flight Port Check + Automated Test Suite (Exit Code: 0) |
 | **6. Deployment** | Package release artifacts for reproducible, error-free execution | Verified Production Build + Docker / Deployment Scripts |
-| **7. Support** | Ensure long-term maintainability and operational clarity | Complete README + Maintenance Runbook + Health Checks |
+| **7. Support** | Ensure long-term maintainability and operational clarity | Complete README + Runbook + **Clickable Localhost Preview** |
+
+> [!IMPORTANT]
+> **Zero Port Collision & Instant Preview Guarantees**:
+> 1. **Pre-Flight Port Check**: Agents running Waterfall SDLC *must* check whether a port (e.g. 3000) is occupied (`Get-NetTCPConnection` / `lsof -i`) before launching dev servers, preventing `EADDRINUSE` crashes or stale proxy calls.
+> 2. **Mandatory Clickable Link**: The agent *must* output a direct, clickable markdown link (e.g. `👉 **Live Local Preview**: [http://localhost:3000](http://localhost:3000)`) in the chat so you can preview the app with a single click.
 
 ---
 

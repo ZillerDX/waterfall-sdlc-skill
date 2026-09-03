@@ -1,4 +1,4 @@
-﻿---
+---
 name: waterfall-sdlc
 description: Sequential, quality-gated Software Development Life Cycle (SDLC) following the Waterfall methodology. Enforces a disciplined 7-phase progression: Requirements -> Analysis -> Design -> Implementation -> Testing -> Deployment -> Support. Prevents premature coding and hallucinations by requiring explicit gate deliverables at each phase.
 ---
@@ -82,8 +82,12 @@ graph TD
 - **Activities**:
   1. **Automated Unit Tests**: Test core business logic, helpers, and utility functions.
   2. **Integration Tests**: Verify API endpoints, database operations, and data flow across components.
-  3. **Edge Case Validation**: Empty states, invalid inputs, boundary numbers, network failures, error handling.
-  4. **Requirement Traceability**: Check each item against the Acceptance Criteria defined in Phase 1.
+  3. **Local Dev Server & Live Verification**:
+     - **Pre-Flight Port Availability Check (MANDATORY)**: Never blindly bind or test against `localhost:3000`. Inspect port status before launching (`Get-NetTCPConnection -LocalPort <port>` on Windows, `lsof -i :<port>` on Unix).
+     - If occupied: kill the stale/orphaned process cleanly, or bind to an explicit free port (e.g. `PORT=3001` or `npm run dev -- -p 3001`).
+     - Always confirm the actual listening port from terminal logs before sending test requests.
+  4. **Edge Case Validation**: Empty states, invalid inputs, boundary numbers, network failures, error handling.
+  5. **Requirement Traceability**: Check each item against the Acceptance Criteria defined in Phase 1.
 - **Gate 5 Deliverable**:
   - Test suite run results with 100% pass rate.
   - Verification audit matrix comparing requirements vs. actual results.
@@ -108,8 +112,12 @@ graph TD
   1. Comprehensive `README.md` with setup, environment vars, and execution commands.
   2. Architecture notes and maintenance runbooks.
   3. Logging, error reporting, and operational health check endpoints.
+  4. **Mandatory Clickable Localhost Preview Delivery**:
+     - Whenever a local application is built and verified, the AI agent **MUST** output a prominent, clickable markdown link in the chat response:
+       `👉 **Live Local Preview**: [http://localhost:<actual_port>](http://localhost:<actual_port>)`
+     - State the exact port, status, and concise test credentials or routes.
 - **Gate 7 Deliverable**:
-  - Final Project Handover Walkthrough and documentation package.
+  - Final Project Handover Walkthrough and documentation package with direct localhost preview link.
 
 ---
 
@@ -117,6 +125,8 @@ graph TD
 
 1. **Sequential Integrity**: Do not skip backward or forward arbitrarily. When an issue arises in Phase 5 (Testing), evaluate whether it is an Implementation bug (Phase 4) or a Design flaw (Phase 3), document the root cause, and rectify systematically.
 2. **Deliverables at Every Phase**: Always produce clear, visible deliverables (in chat, markdown artifacts, or schema files) before declaring a phase complete.
-3. **Synergy with Other Skills**:
+3. **Pre-Flight Port Availability Check**: Before launching any dev server (Next.js, Vite, Express, Flask, etc.) or testing against localhost, always verify the port is free. If occupied, kill the stale PID or bind to an explicit alternative port (`PORT=3001`). Never let a server crash with `EADDRINUSE`.
+4. **Mandatory Clickable Localhost Preview Link**: Never finish a task or leave background dev servers running without outputting a clickable markdown link `[http://localhost:<port>](http://localhost:<port>)` directly in the chat response for the user to open with one click.
+5. **Synergy with Other Skills**:
    - In Phase 3 & 4 (UI Design): Seamlessly invoke `frontend-design` for clean vector iconography and polished design systems.
    - In Phase 4 & 5 (Testing): Seamlessly invoke `test-driven-development` and `systematic-debugging` for test execution and bug isolation.

@@ -449,7 +449,7 @@
         subtitle: "Verification & Quality",
         objective: "Formally prove that the implementation satisfies all initial requirements through automated suites.",
         deliverable: "Test Suite execution report with 100% Pass Rate (Exit Code: 0)",
-        rules: ["Unit test business logic", "Integration test API routes", "Verify all Phase 1 acceptance criteria"],
+        rules: ["Pre-flight port check: verify port is free", "Unit test business logic & integration test APIs", "Verify all Phase 1 acceptance criteria"],
         color: "from-green-500 to-amber-500"
       },
       {
@@ -457,7 +457,7 @@
         name: "Deployment",
         subtitle: "Packaging & Release",
         objective: "Prepare release artifacts and environment configurations for single-shot, reproducible deployment.",
-        deliverable: "Verified Production Build + Docker / Deployment Runbook",
+        deliverable: "Verified Production Build + Zero Port Collision Guarantee",
         rules: ["Document all .env variables", "Verify local production build first", "Single-shot deploy to Cloud/Vercel/Firebase"],
         color: "from-amber-500 to-indigo-500"
       },
@@ -466,8 +466,8 @@
         name: "Support",
         subtitle: "Docs & Maintenance",
         objective: "Ensure long-term system maintainability, operational runbooks, and developer onboarding clarity.",
-        deliverable: "Comprehensive README + Troubleshooting Guide + Health Check endpoints",
-        rules: ["Document setup steps clearly", "Outline error monitoring guidelines", "Commit learnings to memory (claude-mem)"],
+        deliverable: "Comprehensive README + Runbook + Clickable Localhost Preview Link",
+        rules: ["Mandatory clickable localhost link in chat", "Outline operational runbooks", "Commit learnings to memory (claude-mem)"],
         color: "from-indigo-500 to-purple-500"
       }
     ];
@@ -862,17 +862,24 @@ Enforcing frontend-design standards: Lucide vector icons only, 4px grid, trackin
       {
         type: 'tool',
         toolName: 'RunCommand',
+        arg: 'Get-NetTCPConnection -LocalPort 3000',
+        details: `Checking port availability...
+Port 3000: FREE (No PID collision). Dev server safe to bind.`
+      },
+      {
+        type: 'tool',
+        toolName: 'RunCommand',
         arg: 'npm run build',
         details: `Creating optimized production bundle...
 Route (app)                              Size     First Load JS
 ┌ ○ /                                    5.2 kB         92.4 kB
 ├ ○ /dashboard                           12.8 kB        99.8 kB
 └ ƒ /api/webhooks/stripe                 0 kB             85 kB
-Localhost build test passed cleanly.`
+Localhost build verification: 100% passed.`
       },
       {
         type: 'gate',
-        content: `✔ [QUALITY GATE 6 CLEARED] Release bundle packaged and verified.`
+        content: `✔ [QUALITY GATE 6 CLEARED] Release bundle packaged. Zero port collisions.`
       },
       {
         type: 'phase',
@@ -887,10 +894,15 @@ Localhost build test passed cleanly.`
         details: `Generating operational maintenance runbooks, environment variable templates, and health check endpoints.`
       },
       {
+        type: 'preview',
+        url: 'http://localhost:3000',
+        content: `Live Local Preview: http://localhost:3000`
+      },
+      {
         type: 'success',
         content: `╭─────────────────────────────────────────────────────────────────────────────────╮
 │ 🎉 WATERFALL SDLC SPRINT COMPLETE: All 7 Quality Gates Passed!                  │
-│ • Evidence Verified (Vitest Exit Code: 0) • 0 Premature Coding • 0 Slop         │
+│ • Evidence Verified (Vitest Exit Code: 0) • 0 Port Collisions • Clickable Link   │
 ╰─────────────────────────────────────────────────────────────────────────────────╯`
       }
     ];
@@ -993,6 +1005,16 @@ Localhost build test passed cleanly.`
           } else if (step.type === 'gate') {
             lineEl.className = 'text-emerald-400 font-mono text-xs font-medium pl-2 flex items-center gap-1.5';
             lineEl.innerText = step.content;
+          } else if (step.type === 'preview') {
+            lineEl.className = 'my-2 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold flex items-center justify-between gap-3 shadow-xs';
+            lineEl.innerHTML = `
+              <div class="flex items-center gap-2">
+                <span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>👉 <strong>Live Local Preview:</strong></span>
+                <a href="${step.url}" target="_blank" rel="noopener" class="underline text-emerald-300 hover:text-white font-mono transition-colors">${step.url}</a>
+              </div>
+              <a href="${step.url}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-200 text-[11px] font-mono border border-emerald-500/40 transition-all">Open ↗</a>
+            `;
           } else if (step.type === 'success') {
             lineEl.className = 'text-emerald-300 font-mono text-xs whitespace-pre leading-relaxed pt-2';
             lineEl.innerText = step.content;
