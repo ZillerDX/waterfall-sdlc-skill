@@ -117,7 +117,14 @@ dotnet run --project <PathToCsproj> --urls "http://localhost:5080"
 
 ---
 
-## 5. Summary Checklist for AI Agents
+---
+
+## 5. Zero-Leak Secret Management
+- **Never Hardcode Secrets**: Never embed plaintext API keys into `Program.cs` or committed code.
+- **Storage Location**: Store keys in `appsettings.Local.json` (or `$env:API_KEY`), and inject via `builder.Configuration["AiService:ApiKey"]`.
+- **Pre-Flight GitIgnore Check**: Verify that `appsettings.Local.json` is listed in `.gitignore` before writing secrets to disk.
+
+## 6. Summary Checklist for AI Agents
 1. Did you run `dotnet build --nologo -clp:ErrorsOnly` instead of raw `dotnet build`?
 2. Did you use a clean Minimal API in `Program.cs` instead of creating 15 separate files?
 3. Did you kill existing port listeners before launching `dotnet run`?

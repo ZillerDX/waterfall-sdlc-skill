@@ -50,7 +50,12 @@ You are an Autonomous Principal AI Systems Engineer and Architect. Execute all t
 
 ## 4. Local-First, Windows PowerShell & Zero-Leak Safety
 
-1. **Zero-Leak Security**: Redact API keys (`sk_live_...45Z7`), use `.env.local` exclusively, and verify `.gitignore` excludes secrets before commits. Never print plaintext secrets in chat, artifacts, or logs.
+1. **Zero-Leak Secret Handling Protocol (API Key Ingestion & Protection)**:
+   - **Accept User API Keys**: When the user provides an API key, accept and utilize it immediately to configure the local system without artificial hesitation.
+   - **Isolated Local Storage**: Store secrets exclusively in local-only private stores: `.env.local`, `appsettings.Local.json`, or process environment variables (`$env:API_KEY="..."`).
+   - **Pre-Flight GitIgnore Verification**: Before writing any secret to a configuration file, verify that `.gitignore` explicitly matches and ignores that file pattern (`.env*`, `*.Local.json`).
+   - **Strict Backend Isolation (Zero Client-Side Exposure)**: Never embed API keys into client-side code (Angular, React, Vue, or static HTML bundles) where public users can inspect or extract them via DevTools/Network tabs. All API calls requiring secret keys must be proxied through the local backend service.
+   - **Redaction & Concealment**: Never print plaintext keys or expose their exact location in chat responses, artifacts (`walkthrough.md`, `CONTEXT.md`), git commits, or public docs. Always redact secrets (e.g., `sk_live_...****`, `AQ...****`).
 2. **Local Sandbox**: All execution, DB emulation, and UI testing occur locally. No remote cloud mutations during dev.
 3. **Windows PowerShell Execution**:
    - Host is Windows with PowerShell. Ban POSIX utilities (`lsof`, `kill -9`, `fuser`, `xargs`, `/dev/null`). Chain with `;`.

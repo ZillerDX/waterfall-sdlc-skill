@@ -123,7 +123,13 @@ export class DashboardComponent {
 
 ---
 
-## 5. Summary Checklist for AI Agents
+---
+
+## 5. Zero-Leak Frontend Security & API Proxying
+- **Strict Ban on Client Secrets**: Never store API keys, tokens, or private credentials inside Angular client-side code (`environment.ts`, services, components).
+- **Backend Proxy Mandate**: All requests requiring external AI credentials (e.g. Gemini, OpenAI, GitHub tokens) must route through local backend endpoints (`/api/...`). The client only communicates with the trusted backend.
+
+## 6. Summary Checklist for AI Agents
 1. Did you set `$env:NG_CLI_ANALYTICS="false"` before calling CLI?
 2. Did you use Single-File Standalone Components (`template: ...`) for fast iteration?
 3. Did you use `signal()` and `computed()` instead of heavy RxJS subjects?
