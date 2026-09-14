@@ -1,7 +1,7 @@
 {
   "name": "waterfall-sdlc",
-  "version": "1.1.0",
-  "description": "Enterprise-grade Waterfall SDLC & Frontend Design system with Master AGENTS.md dispatcher for AI coding agents",
+  "version": "1.2.0",
+  "description": "Enterprise-grade Waterfall SDLC, Modern Frontend Design, C# .NET 9 Tooling, and Angular Modern standards with Master AGENTS.md dispatcher",
   "author": {
     "name": "Tanathon Chanapha",
     "url": "https://github.com/ZillerDX"
@@ -20,6 +20,8 @@
     "sdlc",
     "waterfall",
     "frontend-design",
+    "csharp-tooling",
+    "angular-modern",
     "agents-dispatcher",
     "skills"
   ]

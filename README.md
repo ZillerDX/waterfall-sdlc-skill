@@ -5,7 +5,7 @@
 [![Live Interactive Showcase](https://img.shields.io/badge/Live%20Showcase-zillerdx.github.io%2Fwaterfall--sdlc--skill-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://zillerdx.github.io/waterfall-sdlc-skill/)
 <br>
 
-[![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-emerald.svg)](https://github.com/ZillerDX/waterfall-sdlc-skill/releases)
+[![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-emerald.svg)](https://github.com/ZillerDX/waterfall-sdlc-skill/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Antigravity Compatible](https://img.shields.io/badge/Antigravity-Compatible-4285F4.svg)](https://antigravity.google)
 [![Claude Code Ready](https://img.shields.io/badge/Claude%20Code-Ready-D97706.svg)](https://anthropic.com)
@@ -61,8 +61,12 @@ waterfall-sdlc-skill/
 ├── skills/
 │   ├── waterfall-sdlc/
 │   │   └── SKILL.md                   # 🏗️ 7-Phase SDLC Quality Gate Engine
-│   └── frontend-design/
-│       └── SKILL.md                   # 🎨 Studio Aesthetics + Defensive UX Engine
+│   ├── frontend-design/
+│   │   └── SKILL.md                   # 🎨 Studio Aesthetics + Defensive UX Engine
+│   ├── csharp-tooling/
+│   │   └── SKILL.md                   # ⚡ C# .NET 9 Minimal APIs & Filtered MSBuild
+│   └── angular-modern/
+│       └── SKILL.md                   # 🅰️ Angular 19+ Single-File Components & Signals
 ├── .github/
 │   └── workflows/
 │       ├── validate-skills.yml        # ⚙️ CI Lint for Skills & Manifests
@@ -93,7 +97,21 @@ Transforms sloppy AI interfaces into Linear/Stripe-caliber digital products:
   - Spatial separation of destructive actions to prevent accidental clicks.
 - **Ruthless Anti-Slop Guard**: Vector SVG icons only (Lucide/Heroicons). Pure ban on emojis as icons.
 
-### 3. `AGENTS.md` (Master Autonomous Systems Dispatcher)
+### 3. `csharp-tooling` (C# .NET 9 Lean Architecture & Zero-Spam MSBuild)
+Engineered specifically to eliminate C# boilerplate sprawl and prevent MSBuild token explosions:
+- **Zero-Spam MSBuild Diagnostics**: Mandates `dotnet build --nologo -clp:ErrorsOnly` (cuts redundant build output by 95%).
+- **Lean Minimal APIs**: Enforces .NET 9 Minimal APIs (`Program.cs` single-file slices) for MVPs/Spikes, banning 15-file controller sprawl.
+- **Zero Port-Collision Protocol**: Automated 1-liner port sanitation before launching `dotnet run`.
+- **EF Core Quick-Start**: `EnsureCreated()` SQLite/in-memory patterns with cyclic reference serialization guards.
+
+### 4. `angular-modern` (Angular 18/19+ Single-File Components & Signals)
+Optimized for high-speed agentic frontend engineering without interactive CLI hangs:
+- **Non-Interactive CLI Hygiene**: Auto-enforces `$env:NG_CLI_ANALYTICS="false"` to prevent background CLI hangs.
+- **Single-File Standalone Components (SFC)**: Combines template, styles, and logic in one `.ts` file, reducing tool-call roundtrips by 75%.
+- **Angular Signals**: Native `signal()` and `computed()` state architecture over heavy RxJS `BehaviorSubject` boilerplate.
+- **Strict HMR Retention**: Strict ban on `npm run build` loops during UI iteration; keeps `ng serve` active for sub-second hot updates.
+
+### 5. `AGENTS.md` (Master Autonomous Systems Dispatcher)
 A 76-line high-density operational handbook coordinating autonomous agents:
 - **High-IQ Token Economy**: AST and diagnostics (`smart_outline`, `ast-grep`, LSP) over raw file dumps. Dedicated exemption for full `SKILL.md` reads.
 - **Layered Memory Funnel**: Seamless integration with `claude-mem` cross-session database.
