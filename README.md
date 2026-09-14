@@ -240,14 +240,14 @@ Installs as project rules for Cursor IDE:
 
 | Companion Skill / Tool | Role in `AGENTS.md` Workflow | Source Repository / Package |
 | :--- | :--- | :--- |
-| **`ponytail`** | **Code Minimalism & YAGNI**: Enforces simplest possible solutions, bans speculative abstractions, standard library over external dependencies. | [FootyBrain / Ponytail Suite](https://github.com/SkyShineTH/FootyBrain) |
+| **`ponytail`** | **Code Minimalism & YAGNI**: Enforces simplest possible solutions, bans speculative abstractions, standard library over external dependencies. | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) |
 | **`context7`** | **Live Docs / Zero Hallucinations**: Fetches version-specific official docs for modern libraries (Next.js 15, React 19, Tailwind v4, Supabase). | [@upstash/context7-mcp](https://github.com/upstash/context7) |
-| **`claude-mem`** | **Persistent Cross-Session Memory**: AST indexing and layered observation funnel persisting decisions across conversations. | [thedotdash/claude-mem](https://github.com/thedotdash/claude-mem) |
+| **`claude-mem`** | **Persistent Cross-Session Memory**: AST indexing and layered observation funnel persisting decisions across conversations. | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) |
 | **`ast-grep`** | **Structural AST Code Search & Rewrite**: Fast multi-file semantic search and code transformations without token waste. | [ast-grep/ast-grep](https://github.com/ast-grep/ast-grep) |
 | **`superpowers`** | **TDD & Systematic Debugging**: Enforces strict test-driven development loops, unit test generation, and hypothesis-driven debugging. | [obra/superpowers](https://github.com/obra/superpowers) |
-| **`domain-modeling`** | **Zero Entity Drift**: Maintains strict naming consistency across Database, API, and UI in `CONTEXT.md`. | [FootyBrain / Domain Modeling](https://github.com/SkyShineTH/FootyBrain) |
-| **`pr-review-toolkit`** | **Multi-Lens Code Review**: 6-pass specialized inspection (correctness, performance, silent failures, types, security, simplicity). | [FootyBrain / PR Toolkit](https://github.com/SkyShineTH/FootyBrain) |
-| **`commit-commands`** | **Atomic Conventional Commits**: Professional git staging, semantic commit messages, and clean branch hygiene. | [FootyBrain / Commit Commands](https://github.com/SkyShineTH/FootyBrain) |
+| **`domain-modeling`** | **Zero Entity Drift**: Maintains strict naming consistency across Database, API, and UI in `CONTEXT.md`. | [mattpocock/skills](https://github.com/mattpocock/skills) |
+| **`pr-review-toolkit`** | **Multi-Lens Code Review**: 6-pass specialized inspection (correctness, performance, silent failures, types, security, simplicity). | [anthropics/claude-plugins](https://github.com/anthropics/claude-plugins) |
+| **`commit-commands`** | **Atomic Conventional Commits**: Professional git staging, semantic commit messages, and clean branch hygiene. | [anthropics/claude-plugins](https://github.com/anthropics/claude-plugins) |
 | **`playwright`** | **Headless Visual & Error Audit**: Automated browser verification across desktop (1280px), tablet (768px), and mobile (375px) with 0 console errors. | [microsoft/playwright](https://github.com/microsoft/playwright) |
 
 ---
