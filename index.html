@@ -326,7 +326,7 @@
         <div class="flex items-center justify-between gap-3 mb-2 flex-wrap">
           <div class="flex items-center gap-2">
             <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30 uppercase tracking-wider">⚡ Universal AI Prompt</span>
-            <span class="text-xs sm:text-sm font-semibold text-white">ติดตั้งอัตโนมัติด้วยคำสั่งเดียว (Antigravity, Claude Code, Cursor, Codex)</span>
+            <span class="text-xs sm:text-sm font-semibold text-white">One-Prompt Autonomous Installation (Antigravity, Claude Code, Cursor, Codex)</span>
           </div>
           <button onclick="copyOnePrompt()" id="copy-one-prompt-btn" class="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition-colors shadow-xs cursor-pointer">
             <svg class="size-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -336,10 +336,10 @@
           </button>
         </div>
         <p class="text-xs sm:text-sm text-zinc-300 mt-2 leading-relaxed">
-          เมื่อย้ายเครื่องใหม่ หรือเปิด Workspace ใน AI Coding Assistants เพียงส่งคำสั่งนี้ให้ Agent เพื่อติดตั้ง Waterfall SDLC + Frontend Design + Master AGENTS.md ทันที:
+          When setting up a new machine or initializing a workspace in AI coding assistants, simply send this single prompt to your agent to install Waterfall SDLC, Frontend Design, and Master AGENTS.md immediately:
         </p>
         <div class="mt-3 p-3.5 rounded-xl bg-zinc-950/90 border border-zinc-800 flex items-center justify-between gap-3">
-          <code class="font-mono text-xs sm:text-sm text-emerald-400 select-all font-medium break-all">ติดตั้ง https://github.com/ZillerDX/waterfall-sdlc-skill</code>
+          <code class="font-mono text-xs sm:text-sm text-emerald-400 select-all font-medium break-all">Install https://github.com/ZillerDX/waterfall-sdlc-skill and set up the master AGENTS.md workflow</code>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-4 pt-3 border-t border-zinc-800/80 text-[11px] font-mono text-zinc-400">
           <div class="flex items-center gap-1.5 text-zinc-300">
@@ -767,7 +767,7 @@ Enforce Waterfall SDLC and frontend-design:
     }
 
     function copyOnePrompt() {
-      const text = "ติดตั้ง https://github.com/ZillerDX/waterfall-sdlc-skill";
+      const text = "Install https://github.com/ZillerDX/waterfall-sdlc-skill and set up the master AGENTS.md workflow";
       navigator.clipboard.writeText(text);
       const btn = document.getElementById('copy-one-prompt-btn');
       const textEl = document.getElementById('copy-one-prompt-text');

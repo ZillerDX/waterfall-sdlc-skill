@@ -27,7 +27,8 @@ jobs:
             const fs = require('fs');
             ['plugin.json', 'package.json'].forEach(file => {
               if (fs.existsSync(file)) {
-                JSON.parse(fs.readFileSync(file, 'utf8'));
+                const raw = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
+                JSON.parse(raw);
                 console.log('Valid JSON: ' + file);
               }
             });
@@ -43,7 +44,7 @@ jobs:
               fs.readdirSync(skillsDir).forEach(dir => {
                 const skillFile = path.join(skillsDir, dir, 'SKILL.md');
                 if (fs.existsSync(skillFile)) {
-                  const content = fs.readFileSync(skillFile, 'utf8');
+                  const content = fs.readFileSync(skillFile, 'utf8').replace(/^\uFEFF/, '');
                   if (!content.startsWith('---')) {
                     throw new Error('Missing frontmatter in ' + skillFile);
                   }

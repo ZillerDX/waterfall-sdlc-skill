@@ -32,19 +32,15 @@ When developers ask an AI coding assistant to *"build an application"* or *"add 
 
 ---
 
-## ⚡ One-Prompt Autonomous Installation (ติดตั้งอัตโนมัติด้วยคำสั่งเดียว)
+## ⚡ One-Prompt Autonomous Installation
 
-When setting up a new machine or initializing a workspace in **Google Antigravity**, **Claude Code**, **Cursor**, or **OpenAI Codex**, you don't need to manually run multiple shell commands. Simply instruct your AI agent with a single prompt:
-
-```text
-ติดตั้ง https://github.com/ZillerDX/waterfall-sdlc-skill
-```
-
-*or in English:*
+When setting up a new machine or initializing a workspace in **Google Antigravity**, **Claude Code**, **Cursor**, or **OpenAI Codex**, you do not need to manually execute multiple terminal commands. Simply instruct your AI agent with a single prompt:
 
 ```text
 Install https://github.com/ZillerDX/waterfall-sdlc-skill and set up the master AGENTS.md workflow
 ```
+
+*(or simply `Install https://github.com/ZillerDX/waterfall-sdlc-skill`)*
 
 ### What the AI Agent will do automatically:
 1. **Clone the Suite**: Clones this repository into the appropriate global plugin or skills directory (e.g. `~/.gemini/config/plugins/waterfall-sdlc` or `~/.claude/skills/`).
