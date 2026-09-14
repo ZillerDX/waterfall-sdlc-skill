@@ -1,7 +1,7 @@
-﻿{
+{
   "name": "waterfall-sdlc",
-  "version": "1.0.0",
-  "description": "Enterprise-grade Waterfall SDLC methodology for AI coding agents: disciplined 7-phase quality-gated lifecycle",
+  "version": "1.1.0",
+  "description": "Enterprise-grade Waterfall SDLC & Frontend Design system with Master AGENTS.md dispatcher for AI coding agents",
   "author": {
     "name": "Tanathon Chanapha",
     "url": "https://github.com/ZillerDX"
@@ -15,9 +15,12 @@
     "antigravity",
     "claude-code",
     "cursor",
+    "codex",
     "ai-agent",
     "sdlc",
     "waterfall",
+    "frontend-design",
+    "agents-dispatcher",
     "skills"
   ]
 }

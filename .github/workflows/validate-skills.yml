@@ -1,0 +1,64 @@
+name: Validate Skills & Manifests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate JSON Manifests
+        run: |
+          node -e "
+            const fs = require('fs');
+            ['plugin.json', 'package.json'].forEach(file => {
+              if (fs.existsSync(file)) {
+                JSON.parse(fs.readFileSync(file, 'utf8'));
+                console.log('Valid JSON: ' + file);
+              }
+            });
+          "
+
+      - name: Validate Skills Frontmatter
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const skillsDir = 'skills';
+            if (fs.existsSync(skillsDir)) {
+              fs.readdirSync(skillsDir).forEach(dir => {
+                const skillFile = path.join(skillsDir, dir, 'SKILL.md');
+                if (fs.existsSync(skillFile)) {
+                  const content = fs.readFileSync(skillFile, 'utf8');
+                  if (!content.startsWith('---')) {
+                    throw new Error('Missing frontmatter in ' + skillFile);
+                  }
+                  console.log('Valid skill frontmatter: ' + skillFile);
+                }
+              });
+            }
+          "
+
+      - name: Check AGENTS.md
+        run: |
+          node -e "
+            const fs = require('fs');
+            if (!fs.existsSync('AGENTS.md')) {
+              throw new Error('AGENTS.md missing in repository root!');
+            }
+            console.log('AGENTS.md present and verified.');
+          "
