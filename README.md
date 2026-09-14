@@ -1,4 +1,4 @@
-# Waterfall SDLC & Autonomous Engineering Suite 🏗️🎨🧠
+# Waterfall SDLC & Autonomous Engineering Suite
 
 <div align="center">
 
@@ -70,7 +70,7 @@ waterfall-sdlc-skill/
 └── index.html                         # 🌐 Live Interactive Web Simulator
 ```
 
-### 1. 🏗️ `waterfall-sdlc` (7-Phase SDLC Quality Gate)
+### 1. `waterfall-sdlc` (7-Phase SDLC Quality Gate)
 Enforces a sequential, quality-gated engineering lifecycle:
 - **Phase 1: Requirements Gathering** (Scope, personas, acceptance criteria)
 - **Phase 2: Feasibility & Analysis** (Tech stack matrix, dependency risk audit)
@@ -80,7 +80,7 @@ Enforces a sequential, quality-gated engineering lifecycle:
 - **Phase 6: Deployment & Packaging** (Production build verification, zero-leak secrets)
 - **Phase 7: Support & Handover** (Runbooks, documentation, **clickable localhost preview**)
 
-### 2. 🎨 `frontend-design` (Studio Aesthetic + Matt Pocock Defensive UX)
+### 2. `frontend-design` (Studio Aesthetic + Matt Pocock Defensive UX)
 Transforms sloppy AI interfaces into Linear/Stripe-caliber digital products:
 - **Two Registers**: High-contrast Cinematic (marketing/landing) vs High-density Instrument (dashboards/apps).
 - **Design Tokens First**: Strict token scales for color, type, and spacing. Zero arbitrary CSS values.
@@ -93,7 +93,7 @@ Transforms sloppy AI interfaces into Linear/Stripe-caliber digital products:
   - Spatial separation of destructive actions to prevent accidental clicks.
 - **Ruthless Anti-Slop Guard**: Vector SVG icons only (Lucide/Heroicons). Pure ban on emojis as icons.
 
-### 3. 🧠 `AGENTS.md` (Master Autonomous Systems Dispatcher)
+### 3. `AGENTS.md` (Master Autonomous Systems Dispatcher)
 A 76-line high-density operational handbook coordinating autonomous agents:
 - **High-IQ Token Economy**: AST and diagnostics (`smart_outline`, `ast-grep`, LSP) over raw file dumps. Dedicated exemption for full `SKILL.md` reads.
 - **Layered Memory Funnel**: Seamless integration with `claude-mem` cross-session database.
