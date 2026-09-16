@@ -1,4 +1,4 @@
-name: Validate Skills & Manifests
+name: Validate Skills & Security
 
 on:
   push:
@@ -9,8 +9,38 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
+  security-scan:
+    name: Pre-Flight Secret & Hygiene Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Scan for Leaked Secrets & Private Keys
+        run: |
+          echo "Scanning for accidentally committed API keys and credentials..."
+          # Reject real unmasked secrets
+          if grep -rEI "(sk_live_[0-9a-zA-Z]{20,}|ghp_[0-9a-zA-Z]{30,}|AQ\.[0-9a-zA-Z_\-]{30,}|AIzaSy[0-9a-zA-Z_\-]{30,})" --exclude-dir={.git,node_modules} .; then
+            echo "::error::Potential live unmasked secret detected! Rejecting build."
+            exit 1
+          fi
+          echo "Zero plaintext secrets found. Scan passed."
+
+      - name: Verify Git Hygiene (.gitignore & sensitive file check)
+        run: |
+          if [ -f .env ] || [ -f .env.local ] || [ -f appsettings.Local.json ]; then
+            echo "::error::Sensitive environment file tracked in repository!"
+            exit 1
+          fi
+          echo "No sensitive local environment files tracked."
+
   validate:
+    name: Validate Skills & Manifests
+    needs: security-scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -27,7 +57,7 @@ jobs:
             const fs = require('fs');
             ['plugin.json', 'package.json'].forEach(file => {
               if (fs.existsSync(file)) {
-                const raw = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
+                const raw = fs.readFileSync(file, 'utf8').replace(/^﻿/, '');
                 JSON.parse(raw);
                 console.log('Valid JSON: ' + file);
               }
@@ -44,7 +74,7 @@ jobs:
               fs.readdirSync(skillsDir).forEach(dir => {
                 const skillFile = path.join(skillsDir, dir, 'SKILL.md');
                 if (fs.existsSync(skillFile)) {
-                  const content = fs.readFileSync(skillFile, 'utf8').replace(/^\uFEFF/, '');
+                  const content = fs.readFileSync(skillFile, 'utf8').replace(/^﻿/, '');
                   if (!content.startsWith('---')) {
                     throw new Error('Missing frontmatter in ' + skillFile);
                   }
@@ -54,12 +84,16 @@ jobs:
             }
           "
 
-      - name: Check AGENTS.md
+      - name: Verify AGENTS.md & Link Integrity
         run: |
           node -e "
             const fs = require('fs');
             if (!fs.existsSync('AGENTS.md')) {
               throw new Error('AGENTS.md missing in repository root!');
             }
-            console.log('AGENTS.md present and verified.');
+            const content = fs.readFileSync('AGENTS.md', 'utf8');
+            if (!content.includes('Master Autonomous Systems Dispatcher')) {
+              throw new Error('AGENTS.md content corrupted or incomplete!');
+            }
+            console.log('AGENTS.md present, verified, and intact.');
           "
