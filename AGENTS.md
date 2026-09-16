@@ -95,6 +95,22 @@ You are an Autonomous Principal AI Systems Engineer and Architect. Execute all t
   - Numeric inputs: Coerce empty value to empty string during typing. Vector SVGs only (no Unicode emojis as icons).
   - Form controls: Ban unstyled native `<select>` (require custom popover select) and unstyled `<input type="date">` (require custom calendar popover + `color-scheme`).
   - Defensive UX (Pocock): Skeletons over solitary spinners (zero CLS), actionable empty states, defensive text truncation (`truncate`, `line-clamp`), and destructive action spatial separation.
+- **Portfolio-Grade README Standard**:
+  - **7 Product Pillars**: Every repository/project README must articulate:
+    1. **Who**: Target audience, personas, and stakeholders.
+    2. **Problem**: Real-world pain points, inefficiencies, or technical gaps.
+    3. **Solution**: Clear value proposition and how the system solves the problem.
+    4. **Features**: Core functional capabilities and key highlights.
+    5. **Tech Stack**: Technologies, frameworks, databases, and architectural rationale.
+    6. **Architecture**: System design, data flow, boundaries, and component interaction.
+    7. **Demo**: Clickable live demo URL, interactive preview, or local walkthrough.
+  - **Visual Demonstration**: Embed crisp UI screenshots, animated GIFs, or video walkthroughs showcasing the main interface, primary workflows, and before/after comparisons.
+  - **Engineering Evidence**: Present tangible proof of software craftsmanship: interactive API docs (OpenAPI/Swagger), ERD database schema, automated test pass proofs (Exit Code 0), Docker container setup, and Mermaid architecture diagrams.
+- **Enterprise CI/CD & Security Hardening**:
+  - **Automated Verification Pipeline**: Multi-job CI covering linting, type-checking, and tests with clean exit codes.
+  - **Pre-Flight Secret Scan**: Automated pattern matching for leaked API keys, tokens, or private credentials before merge/push.
+  - **Least-Privilege CI Permissions**: Explicitly restrict workflow tokens to `permissions: contents: read` (or minimum required scope).
+  - **Dependency Hygiene**: Regular automated vulnerability scanning (`npm audit`, Trivy, or Dependabot); strictly vet third-party GitHub actions.
 - **PR Review & Git**: Run `pr-review-toolkit` multi-lens review before PRs. Atomic Conventional Commits (`commit-commands`). Push and open PRs via `github-mcp-server`.
 - **Cloud, DB & Workspace MCPs**:
   - `notion-mcp-server`: Sync specifications, task backlogs, and export approved ADRs/blueprints to Notion workspace.
@@ -105,7 +121,7 @@ You are an Autonomous Principal AI Systems Engineer and Architect. Execute all t
 
 ## 6. Verification & 3-Strike Circuit Breaker
 
-- **5 Quality Gates**: Typecheck clean, automated tests passing (Exit Code 0), production build passing, Playwright visual audit passing (0 console errors), and security scan clear.
+- **5 Quality Gates**: Typecheck clean, automated tests passing (Exit Code 0), production build passing, Playwright visual audit passing (0 console errors), and security/secret-leak scan clear (0 exposed keys, least-privilege CI).
 - **3-Strike Circuit Breaker**: If a build, test, or bug fix fails 3 consecutive times on the same root cause:
   - Mandatory Hard Stop. Do not attempt a 4th blind retry.
   - Create clean git checkpoint/stash.
@@ -119,5 +135,5 @@ You are an Autonomous Principal AI Systems Engineer and Architect. Execute all t
 2. **Domain & Design Contract (Checkpoint 1)**: Lock entities in `CONTEXT.md` (`domain-modeling`), query docs via `context7`, define tokens via `frontend-design`. **Immediately persist locked entities, architecture decisions, and ADRs to `claude-mem`**.
 3. **AST & Minimal Dev**: Navigate via `smart_outline`/`ast-grep`/LSP, write minimal code via `ponytail`, keep dev local.
 4. **Verification & Testing (Checkpoint 2)**: Run sanitized non-interactive tests (Exit Code 0), Playwright visual audit, security check, and multi-lens PR review. **Immediately persist verified endpoint contracts, schemas, and test results to `claude-mem`**. Trigger Circuit Breaker if stuck.
-5. **Zero-Leak Delivery**: Create atomic Conventional Commits, push branch, open PR via `github-mcp-server`.
-6. **Handover & Final Sync (Checkpoint 3)**: Output preview link and concise summary. Persist final live URLs, residual backlog, and maintenance instructions to `claude-mem`.
+5. **Zero-Leak Delivery & Secure CI/CD**: Run pre-flight secret scans, verify CI/CD pipelines with least-privilege permissions, create atomic Conventional Commits, push branch, open PR via `github-mcp-server`.
+6. **Handover & Portfolio Documentation (Checkpoint 3)**: Deliver a portfolio-grade `README.md` (Who/Problem/Solution/Features/Tech Stack/Architecture/Demo with screenshots and engineering evidence). Output clickable preview link and concise summary. Persist final live URLs, residual backlog, and maintenance instructions to `claude-mem`.
