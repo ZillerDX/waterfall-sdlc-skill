@@ -97,9 +97,45 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 6. Pre-Flight Visual Reasoning Checklist
+---
+
+## 6. Thai & Multilingual Typography & Button Layout Discipline
+
+1. **Button Single-Line Law & Mandatory `whitespace-nowrap`**:
+   - Interactive controls (buttons, tabs, filter pills, dropdown triggers) MUST enforce `whitespace-nowrap` (or `white-space: nowrap`).
+   - **Never wrap button text into 2 or 3 lines** while adjacent buttons in the same row/toolbar remain single-line.
+   - If text length is substantial, expand the button width naturally (`w-auto min-w-fit`) or wrap the whole toolbar gracefully with `flex-wrap gap-2`.
+2. **Uniform Height in Action Groups & Toolbars**:
+   - All buttons sharing a row, toolbar, or modal footer MUST share an **explicit, identical height** (e.g. `h-9` [36px], `h-10` [40px], or `h-11` [44px]) and `inline-flex items-center justify-center`.
+   - Never allow one button to balloon vertically due to longer text, creating ragged, uneven heights.
+3. **No Parenthetical Bilingual Clutter in Button Labels**:
+   - When the interface language is Thai, **strictly ban appending English translations in parentheses inside button labels** (e.g. ban `เริ่มการเทรน (Train)` -> use clean `เริ่มการเทรน`; ban `จำลองจุดรบกวน (Inject Outliers)` -> use `จำลองจุดรบกวน`).
+   - Stuffing English in parentheses doubles text width, destroys responsive layouts, and causes catastrophic multi-line wrapping.
+   - For English translations, use clean HTML tooltips (`title="Inject Outliers"`) or use an authentic language toggle switch (`TH | EN`).
+4. **Thai Font Metric & Baseline Discipline (Zero Clipped Tone Marks)**:
+   - **Line-Height Guard**: Absolute ban on `leading-none` or `leading-tight` (line-height < 1.4) on Thai text. Thai vowels (สระบน/ล่าง: ิ, ี, ุ, ู) and tone marks (วรรณยุกต์: ่, ้, ๊, ๋) require vertical clearance. Always use `leading-normal` (1.5) or `leading-relaxed` (1.625) to prevent clipped marks.
+   - **Tracking Guard**: Absolute ban on negative letter-spacing (`tracking-tight`, `tracking-tighter`, `letter-spacing: -0.025em`) on Thai strings. Negative tracking causes Thai vowels and tone marks to collide and shift baselines awkwardly. Use `tracking-normal`.
+   - **Icon + Thai Text Alignment**: Always pair vector SVGs with Thai text using:
+     ```html
+     <button class="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-lg whitespace-nowrap text-sm leading-normal">
+       <svg class="size-4 shrink-0" ...></svg>
+       <span>ข้อความภาษาไทย</span>
+     </button>
+     ```
+     `shrink-0` on the SVG prevents icon distortion, and `items-center leading-normal` keeps the text and icon perfectly centered on the exact same baseline.
+5. **Modern Thai Font Stack**:
+   - Specify high-legibility Thai web fonts before generic fallbacks:
+     `font-family: 'Prompt', 'Sarabun', 'Noto Sans Thai', system-ui, -apple-system, sans-serif;`
+
+---
+
+## 7. Pre-Flight Visual Reasoning Checklist
 
 Before marking any UI task complete, verify:
+- [ ] 0 buttons wrapping text into multi-line while siblings are single-line (`whitespace-nowrap` enforced).
+- [ ] All buttons in the same toolbar/action group share identical explicit height (`h-9` or `h-10`) and baseline alignment.
+- [ ] 0 parenthetical English clutter in Thai button labels (e.g. `เริ่มการเทรน` over `เริ่มการเทรน (Train)`).
+- [ ] 0 `leading-none` / `leading-tight` or negative `tracking-tight` applied to Thai text (0 clipped tone marks, 0 baseline displacement).
 - [ ] 0 Unicode emojis used as icons or buttons.
 - [ ] 0 infrastructure status badges (e.g. "Prod / US-East", "Port 3000", "Active", pulsing dots) or developer commentary in UI.
 - [ ] 0 unstyled native `<select>` dropdowns (using custom styled popover select with tokens & chevrons).
