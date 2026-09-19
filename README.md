@@ -102,36 +102,36 @@ flowchart TD
     classDef guardNode fill:#701a75,stroke:#f43f5e,stroke-width:1.5px,color:#fecdd3;
     classDef endNode fill:#14532d,stroke:#22c55e,stroke-width:2px,color:#f0fdf4;
 
-    Start(["📥 User Request"]):::startNode --> Dispatcher["🧠 Master Dispatcher (AGENTS.md)<br>Memory & AST Scan"]:::skillNode
+    Start(["User Request"]):::startNode --> Dispatcher["Master Dispatcher (AGENTS.md)<br>Memory & AST Scan"]:::skillNode
     
-    Dispatcher --> Triage{"🎯 Task Scale Triage<br>(5 Levels)"}:::triageNode
+    Dispatcher --> Triage{"Task Scale Triage<br>(5 Levels)"}:::triageNode
 
-    Triage -- "Level 1: Fast-Track" --> L1["⚡ Direct 1-liner Diff (Exit Code 0)"]:::gateNode --> Complete
-    Triage -- "Level 2: Feature-Track" --> L2["🧪 TDD + Minimal Diff (ponytail)"]:::gateNode --> Complete
+    Triage -- "Level 1: Fast-Track" --> L1["Direct 1-liner Diff (Exit Code 0)"]:::gateNode --> Complete
+    Triage -- "Level 2: Feature-Track" --> L2["TDD + Minimal Diff (ponytail)"]:::gateNode --> Complete
     
-    Triage -- "Level 2.5: Rapid MVP" --> MVP["🚀 Lean Vertical Slice<br>C# Minimal API + Angular SFC Signals"]:::gateNode
-    MVP --> PrePort["🔌 Pre-Flight Port Handshake"]:::guardNode
-    PrePort --> HMR["⚡ Active Dev Server with HMR"]:::guardNode
-    HMR --> MVP_Done["📸 Throttled Playwright Audit (Max 3-4)"]:::skillNode --> Complete
+    Triage -- "Level 2.5: Rapid MVP" --> MVP["Lean Vertical Slice<br>C# Minimal API + Angular SFC Signals"]:::gateNode
+    MVP --> PrePort["Pre-Flight Port Handshake"]:::guardNode
+    PrePort --> HMR["Active Dev Server with HMR"]:::guardNode
+    HMR --> MVP_Done["Throttled Playwright Audit (Max 3-4)"]:::skillNode --> Complete
 
     Triage -- "Level 3: System-Track" --> G12["Phase 1-2: Requirements & Feasibility"]:::gateNode
     G12 --> G3["Phase 3: Architectural Design<br>Schema + API Contracts + Design Tokens"]:::gateNode
-    G3 --> CP1["💾 Checkpoint 1: Lock ADRs to claude-mem"]:::skillNode
+    G3 --> CP1["Checkpoint 1: Lock ADRs to claude-mem"]:::skillNode
     
     CP1 --> G4["Phase 4: Implementation<br>AST Nav + Minimal Code + Stack Protocol"]:::gateNode
     G4 --> G5["Phase 5: Verification & Testing<br>Token-Lean CI Matrix (Exit Code 0)"]:::gateNode
     
     G5 --> CB{"Fail 3x?"}:::guardNode
-    CB -- Yes --> Stop["🛑 3-Strike Circuit Breaker Hard Stop"]:::guardNode
-    CB -- Pass --> CP2["💾 Checkpoint 2: Lock Schemas to claude-mem"]:::skillNode
+    CB -- Yes --> Stop["3-Strike Circuit Breaker Hard Stop"]:::guardNode
+    CB -- Pass --> CP2["Checkpoint 2: Lock Schemas to claude-mem"]:::skillNode
 
     CP2 --> G6["Phase 6: Deployment & Secure CI/CD<br>Pre-Flight Secret Scan + Least Privilege"]:::gateNode
     G6 --> G7["Phase 7: Support & Handover<br>Portfolio-Grade README + Localhost Preview"]:::gateNode
-    G7 --> CP3["💾 Checkpoint 3: Sync Final Handover to claude-mem"]:::skillNode --> Complete
+    G7 --> CP3["Checkpoint 3: Sync Final Handover to claude-mem"]:::skillNode --> Complete
 
-    Triage -- "Level 4: Foggy-Track" --> L4["🗺️ Wayfinder: Map of Decision Tickets"]:::gateNode --> G12
+    Triage -- "Level 4: Foggy-Track" --> L4["Wayfinder: Map of Decision Tickets"]:::gateNode --> G12
 
-    Complete(["🚀 Production-Grade Delivery"]):::endNode
+    Complete(["Production-Grade Delivery"]):::endNode
 ```
 
 ---
