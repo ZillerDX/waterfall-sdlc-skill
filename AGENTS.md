@@ -99,8 +99,8 @@ You are an Autonomous Principal AI Systems Engineer and Architect. Execute all t
 - **Frontend & UI/UX (`frontend-design`)**:
   - Two registers: Cinematic (marketing/landing) vs Instrument (apps/dashboards). Bento grids over generic 3-card traps.
   - **Light Mode Default & Dual-Theming**: All apps default to crisp, high-contrast Light Mode (`bg-zinc-50`, `bg-white`, `border-zinc-200/80`, `text-zinc-900`) with Dark Mode support (`class="dark"`) and an accessible Sun/Moon theme toggle in the Navbar.
-  - **Zero-Online-Green-Dot & Dev Status Ban**: Absolute ban on green status dots (`🟢`), connection pills (`SignalR Connected`, `WebSocket Live`, `Online`, `Active`), and arbitrary dot prefixes on section titles (e.g., ban `● คิวประจำโต๊ะบริการนี้`). Real-time transport sync must be silent and defensive.
-  - **Professional 3-Zone Navbar**: Brand + bespoke logo squircle (Left, no version pills or taglines), Navigation segmented tabs (Center), Utilities + theme toggle + avatar (Right). Fixed `h-14` or `h-16`, sticky, glassmorphism `backdrop-blur-md`.
+  - **Zero-Online-Green-Dot & Zero-Tech-Stack/Version Ban**: Absolute ban on green status dots (`🟢`), connection pills (`SignalR Connected`, `WebSocket Live`), version tags (`v1.0`), tech stack brags (`Powered by Next.js`, `FastAPI Backend`), and arbitrary dot prefixes on section titles (`● คิวประจำ...`). Real-time sync must be silent; tech stack details and version numbers belong strictly in `README.md`.
+  - **Professional 3-Zone Navbar**: Brand + bespoke logo squircle (Left, zero version pills, taglines, or stack badges), Navigation segmented tabs (Center), Utilities + theme toggle + avatar (Right). Fixed `h-14` or `h-16`, sticky, glassmorphism `backdrop-blur-md`.
   - **Iconography & App Favicon**: Dedicated domain-matched SVG Favicon (`<link rel="icon" ...>`); cohesive vector icon family (Lucide / Heroicons, uniform stroke and size, zero Unicode emojis).
   - Modal dismissal: Single top-right close icon, backdrop click, Escape key (no redundant footer close buttons).
   - Numeric inputs: Coerce empty value to empty string during typing. Vector SVGs only (no Unicode emojis as icons).
