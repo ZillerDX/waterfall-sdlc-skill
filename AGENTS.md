@@ -90,11 +90,12 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 - **Exit Gate**: Spec unambiguous, `CONTEXT.md` updated, ADR recorded in memory.
 
 ### Phase 2: Core Architecture & Backend Implementation
-- **Goal**: Implement minimal, high-efficiency backend services/APIs and database schema.
+- **Goal**: Implement minimal, high-efficiency backend services/APIs and database schema adhering to pragmatic SOLID & OOP.
 - **Skills & MCPs**: `csharp-tooling` / `typescript-lsp` / `pyright-lsp`, `ponytail` (YAGNI, minimal code ladder), `supabase` (if DB).
 - **Execution Checklist**:
-  - [ ] 2.1 Scaffold minimal endpoints/models (Minimal APIs, C# 14 / Express / FastAPI).
-  - [ ] 2.2 Wire business logic using stdlib and native framework features (`ponytail` guards).
+  - [ ] 2.1 Architectural Appropriateness Triage: Evaluate OOP/SOLID necessity (keep flat/procedural for trivial CRUD; apply Encapsulation, SRP & ISP for rich domains; ban Interface Soup).
+  - [ ] 2.2 Scaffold minimal endpoints/models (Minimal APIs, C# 14 / Express / FastAPI).
+  - [ ] 2.3 Wire business logic using stdlib, native framework features, and composition over inheritance (`ponytail` guards).
 - **Exit Gate**: Headless build and unit tests pass (`dotnet build`, `dotnet test`, Exit Code 0).
 
 ### Phase 3: High-Fidelity Frontend & UI/UX Engineering
@@ -112,7 +113,7 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 - **Skills & MCPs**: `pr-review-toolkit`, CI test commands, `playwright` (milestone UI visual proof only).
 - **Execution Checklist**:
   - [ ] 4.1 Run Fail-Fast CI ladder: Lint -> Unit (>=80%) -> Build -> Integration -> Security scan.
-  - [ ] 4.2 Multi-lens code review pass (correctness, security, edge cases, ponytail bloat).
+  - [ ] 4.2 Multi-lens code review pass (correctness, security, edge cases, ponytail bloat, SOLID/OOP appropriateness).
   - [ ] 4.3 Headless Playwright audit (1280px desktop, verify 0 console errors, 1 proof screenshot).
 - **Exit Gate**: All automated tests pass (Exit Code 0), 0 console errors, review clean.
 
@@ -176,6 +177,22 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 - **Code Minimalism (`ponytail`)**:
   - **Core Guards**: `ponytail` (YAGNI, stdlib over external packages, native platform features `<dialog>/fetch`), `ponytail-review` (active over-engineering inspection).
   - **On-Demand Utilities**: `ponytail-audit` (repo-wide bloat hunt), `ponytail-debt` (debt ledger), `ponytail-gain` (scoreboard).
+- **Pragmatic SOLID & Object-Oriented Architecture (Anti-Bloat & High-Efficiency)**:
+  - **Contextual Appropriateness Triage (AI Pre-Flight Guard)**: Before scaffolding classes or abstractions, the AI must evaluate the task scope to eliminate "cargo-cult" architecture and garbage boilerplate:
+    - *Light/Micro Scope (Utilities, Simple DTOs, Flat CRUD)*: Ban speculative interfaces, abstract factories, and wrapper sprawl. Use flat functions, record types, and minimal endpoints directly.
+    - *Domain Core & Complex Workflows*: Enforce pragmatic OOP and SOLID principles.
+  - **The 5 SOLID Pillars (Applied Pragmatically)**:
+    1. **S - Single Responsibility Principle (SRP)**: Each class, service, or function has exactly one reason to change. Separate domain business rules from data access, serialization, and presentation.
+    2. **O - Open/Closed Principle (OCP)**: Code should be open for extension, closed for modification. Use strategy pattern, delegates, or polymorphic dispatch instead of massive `switch/case` statements when behaviors expand.
+    3. **L - Liskov Substitution Principle (LSP)**: Derived classes or implementations must be fully substitutable for their base types without breaking invariants or throwing `NotSupportedException`.
+    4. **I - Interface Segregation Principle (ISP)**: Favor small, cohesive, role-specific interfaces (1–3 focused methods) over monolithic "God" interfaces. Never force clients to depend on methods they never use.
+    5. **D - Dependency Inversion Principle (DIP)**: High-level policy must not depend on low-level volatile details; both depend on abstractions. Inject dependencies via constructors for testability; ban hardcoded `new` of external services.
+  - **The Core OOP System (High-Performance Discipline)**:
+    - **Encapsulation**: Guard domain state and invariants within entity boundaries. Expose intent-revealing methods and properties (e.g. C# 14 field-backed properties, private setters) instead of exposing public mutable state.
+    - **Abstraction**: Surface only necessary public APIs; conceal internal algorithmic mechanics to reduce caller cognitive load.
+    - **Inheritance vs. Composition**: Strictly favor **Composition over Inheritance** (`has-a` over `is-a`). Ban deep class inheritance trees (>2 levels) to prevent fragile base class bugs and memory bloat.
+    - **Polymorphism**: Leverage interface-based polymorphism and duck typing/protocols to achieve dynamic dispatch without rigid inheritance coupling.
+  - **Zero-Garbage Code Guard (Anti-Bloat Directive)**: Ban "Interface Soup" (e.g., `IFooService` with only 1 implementation and no test mock need). If an abstraction does not serve testing, polymorphism, or architectural boundaries, DELETE IT immediately.
 - **Frontend & UI/UX (`frontend-design`)**:
   - **The 5 Rules of Clean Design**: Strictly enforce on all layouts: (1) **Prioritize Hierarchy** (1 primary CTA per view, demoted secondary actions, distinct visual weight ladder), (2) **Limit Colors** (strict 3-tone rule: 1 primary accent + 1 secondary tint + neutral ground; ban rainbow clutter), (3) **Consistent Typography** (disciplined type scale: 12px, 14px, 18-20px, 28-36px; 1 font family; tabular numbers for data), (4) **Design for Easy Scanning** (3-second comprehension law, critical metrics pop out immediately), and (5) **Whitespace as Structure** (whitespace is not empty space; generous breathing room `gap-6`/`gap-8`, Gestalt proximity, ban cramped claustrophobic cards).
   - Two registers: Cinematic (marketing/landing) vs Instrument (apps/dashboards). Bento grids over generic 3-card traps.
