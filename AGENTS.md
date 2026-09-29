@@ -101,13 +101,15 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 - **Exit Gate**: Headless build and unit tests pass (`dotnet build`, `dotnet test`, Exit Code 0).
 
 ### Phase 3: High-Fidelity Frontend & UI/UX Engineering
-- **Goal**: Build crisp Light Mode UI adhering to the 5 Rules of Clean Design and defensive UX.
-- **Skills & MCPs**: `frontend-design`, `angular-modern` (or React/Next.js via `context7`).
+- **Goal**: Build crisp UI adhering to the 5 Rules of Clean Design, Crafted Elegance & Sensory Depth, and defensive UX.
+- **Skills & MCPs**: `frontend-design`, `mobbin` MCP, `angular-modern` (or React/Next.js via `context7`).
 - **Execution Checklist**:
-  - [ ] 3.1 Layout & Hierarchy: 1 dominant primary CTA, 3-zone navbar, bento grid layout.
-  - [ ] 3.2 3-Tone color limit & disciplined typography (12, 14, 18-20, 28-36px, `tabular-nums`).
-  - [ ] 3.3 Defensive UX: Skeletons, actionable empty states, generous whitespace (`gap-6`/`gap-8`).
-  - [ ] 3.4 Favicon + SVG iconography family (zero Unicode emojis).
+  - [ ] 3.1 Visual Intelligence: Ground layout and bento compositions in real-world benchmark references via `mobbin` MCP (`search_sections` / `search_screens`).
+  - [ ] 3.2 Layout & Hierarchy: 1 dominant primary CTA, 3-zone navbar, bento grid layout, Three.js 3D visual centerpiece.
+  - [ ] 3.3 3-Tone color limit & typography (`Plus Jakarta Sans` with `tracking-[-0.03em]`, `JetBrains Mono` for code/numbers).
+  - [ ] 3.4 Crafted Elegance: Top-edge specular highlights (`inset 0 1px 0 rgba(...)`), spotlight cursor tracking, multi-layered glass badges.
+  - [ ] 3.5 Defensive UX: Skeletons, actionable empty states, generous whitespace (`gap-6`/`gap-8`).
+  - [ ] 3.6 Favicon + SVG iconography family (Lucide & official developer brand vectors, zero Unicode emojis).
 - **Exit Gate**: Clean UI build, zero console errors, theme toggle functional.
 
 ### Phase 4: Headless Verification, CI & Multi-Lens Review
@@ -215,6 +217,15 @@ Execute all software development in compliance with the NIST SSDF (SP 800-218), 
   - **Zero-Garbage Code Guard (Anti-Bloat Directive)**: Ban "Interface Soup" (e.g., `IFooService` with only 1 implementation and no test mock need). If an abstraction does not serve testing, polymorphism, or architectural boundaries, DELETE IT immediately.
 - **Frontend & UI/UX (`frontend-design`)**:
   - **The 5 Rules of Clean Design**: Strictly enforce on all layouts: (1) **Prioritize Hierarchy** (1 primary CTA per view, demoted secondary actions, distinct visual weight ladder), (2) **Limit Colors** (strict 3-tone rule: 1 primary accent + 1 secondary tint + neutral ground; ban rainbow clutter), (3) **Consistent Typography** (disciplined type scale: 12px, 14px, 18-20px, 28-36px; 1 font family; tabular numbers for data), (4) **Design for Easy Scanning** (3-second comprehension law, critical metrics pop out immediately), and (5) **Whitespace as Structure** (whitespace is not empty space; generous breathing room `gap-6`/`gap-8`, Gestalt proximity, ban cramped claustrophobic cards).
+  - **Crafted Elegance & Sensory Depth (Artistic Rigor)**: Eliminate sterile, flat, and rigid UIs by fusing clean engineering with sensory depth:
+    1. **Mandatory Visual Centerpiece**: Hero sections must never be naked text and buttons. Incorporate a dynamic **Three.js** (`three.min.js`) ambient 3D canvas (interactive geometric mesh, rotating wireframe, or particle constellation responding to cursor movement) or an interactive IDE/Terminal sandbox.
+    2. **Bespoke Typographic Personality**: Standardize on **`Plus Jakarta Sans`** with negative tracking (`tracking-[-0.03em]`) on display headlines, subtle specular gradient text masks in dark mode, and **`JetBrains Mono`** for code, telemetry, and tabular figures.
+    3. **Atmospheric Lighting & Specular Sheen**: Ban flat black voids in dark mode. Infuse ambient radial glows and enforce **top-edge specular highlights** (`border border-white/[0.08] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]`) on elevated cards and modals.
+    4. **Spotlight Bento Glassmorphism**: Bento grid cards must feature mouse-tracking spotlight radial illumination (`--mouse-x`, `--mouse-y`) and **multi-layered glass badges** for icons (never flat monochrome boxes).
+    5. **Authentic Developer Brand Icons & Tactile Polish**: Use official developer SVG brand vectors (Google, Claude, Cursor, Windsurf, .NET 10, Angular, TypeScript, GitHub), Lucide icons, button shimmer sweeps, and spring hover lifts.
+  - **Mobbin Visual Intelligence Protocol (`mobbin` MCP + `frontend-design`)**:
+    - **Zero-Improvisation Grounding**: Strictly ban guessing or improvising UI layout compositions in a vacuum. Before writing markup for new views, landing pages, bento grids, or dashboards, call Mobbin MCP (`search_sections` / `search_screens` with `platform="web"`, `output_destination="code"`) to anchor design in battle-tested world-class SaaS benchmarks (Linear, Stripe, Raycast, Vercel).
+    - **Reference Synthesis Law**: Extract spatial proportions, bento asymmetry, and visual pacing from the benchmark; strictly map and recolor them into our project's 3-tone color tokens, `Plus Jakarta Sans` typography, and Crafted Elegance depth (Three.js 3D canvas, top-edge specular highlights, spotlight hover). Document the inspiration `mobbin_url` for QA traceability.
   - Two registers: Cinematic (marketing/landing) vs Instrument (apps/dashboards). Bento grids over generic 3-card traps.
   - **Light Mode Default & Dual-Theming**: All apps default to crisp, high-contrast Light Mode (`bg-zinc-50`, `bg-white`, `border-zinc-200/80`, `text-zinc-900`) with Dark Mode support (`class="dark"`) and an accessible Sun/Moon theme toggle in the Navbar.
   - **Zero-Online-Green-Dot & Zero-Tech-Stack/Version Ban**: Absolute ban on green status dots (`🟢`), connection pills (`SignalR Connected`, `WebSocket Live`), version tags (`v1.0`), tech stack brags (`Powered by Next.js`, `FastAPI Backend`), and arbitrary dot prefixes on section titles (`● คิวประจำ...`). Real-time sync must be silent; tech stack details and version numbers belong strictly in `README.md`.

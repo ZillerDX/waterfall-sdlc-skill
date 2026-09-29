@@ -65,7 +65,71 @@ Every layout, component, and screen MUST adhere strictly to the 5 Foundational R
 
 ---
 
-## 3. Design Tokens & Visual Hierarchy
+## 3. Crafted Elegance & Sensory Depth (Artistic Rigor)
+
+Functional minimalism without artistry results in sterile, rigid, and lifeless interfaces. Modern flagship interfaces (Linear, Vercel, Stripe, Raycast) achieve high appeal by infusing clean engineering with **sensory depth, atmospheric lighting, and bespoke typography**:
+
+### 1. Three.js & Interactive 3D Centerpieces ("Ban Naked Heroes")
+- **Mandatory Visual Centerpiece**: Flagship landing pages and developer showcases MUST NOT consist solely of naked text and buttons. Every premier showcase MUST feature a dynamic **Visual Centerpiece**:
+  - **Three.js Ambient 3D Canvas**: Integrate **Three.js** (`three.min.js`) to render silky, lightweight 3D elements behind or beside the Hero section:
+    - Interactive geometric wireframes (icosahedrons, floating architectural rings, or knot meshes).
+    - Constellation node graphs or dynamic wave particle fields that subtly rotate and gracefully respond to user cursor movement (`mousemove` parallax).
+    - Canvas must be lightweight, throttled to 60fps, GPU-friendly, and gracefully adapt its materials/wireframe colors to Light Mode (`#2563eb`, `#93c5fd`) vs Dark Mode (`#60a5fa`, `#3b82f6`).
+  - **Interactive Terminal / IDE Sandbox Mockup**: As an alternative or paired centerpiece, provide an authentic, interactive IDE mockup featuring line numbers, glowing status tabs, active prompt cursors, and syntax highlighting.
+
+### 2. Bespoke Typographic Personality (`Plus Jakarta Sans` & `JetBrains Mono`)
+- **Primary Display & Interface Typography**: Standardize on **`Plus Jakarta Sans`** (Google Fonts variable font) for all headlines, navigation, and interface controls.
+  - Apply negative letter-spacing on display headings: `tracking-[-0.025em]` to `tracking-[-0.035em]`. This provides the tight, confident, geometric editorial character seen in world-class design systems.
+  - Pair with high-legibility Thai web fonts (`Prompt` or `Sarabun`) when rendering multilingual content.
+- **Specular Gradient Text Masks**: Display titles in Dark Mode MUST NOT be stark, flat white text. Use subtle vertical specular gradient text masks:
+  `bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent`.
+- **Code, Data & Terminal Typography**: Standardize on **`JetBrains Mono`** (Google Fonts) or `Geist Mono` for all code blocks, terminal lines, telemetry, and data counters (`font-mono`, `font-variant-numeric: tabular-nums`).
+
+### 3. Atmospheric Lighting & Specular Sheen (Ban Flat Black Voids)
+- **Ambient Lighting**: Dark mode is NEVER a flat black hole (`#000000` or `#09090b`). Infuse background grounds with multi-stop radial glows, subtle aurora mesh blurs (`blur-3xl`, opacity 15–25%), or delicate geometric grids.
+- **Top-Edge Specular Highlights**: Every elevated card, modal, and bento panel in Dark Mode MUST feature top-edge specular illumination to simulate authentic physical materials:
+  `border border-white/[0.08] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]`.
+
+### 4. Spotlight Bento Glassmorphism & Cursor Glow
+- **Spotlight Hover Tracking**: Bento grid cards must implement mouse-tracking spotlight lighting. Utilizing CSS custom properties (`--mouse-x`, `--mouse-y`), cast a soft radial gradient sheen that illuminates the card's borders and surface only near the user's cursor.
+- **Multi-Layered Icon Badges**: Strictly ban placing icons into flat, solid, monochrome squares. Elevate all feature and section icons into **Multi-Layered Glass Badges**:
+  `w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500/15 to-indigo-500/5 border border-blue-500/25 flex items-center justify-center text-blue-400 shadow-[0_0_20px_rgba(37,99,235,0.15)]`.
+
+### 5. Authentic Developer Brand Icons & Tactile Micro-Interactions
+- **Official Developer Brand Vectors**: When highlighting tech stacks, runtimes, or tools, use authentic, pixel-perfect brand SVG vectors (Google, Claude, Cursor, Windsurf, .NET 10, Angular, TypeScript, Python, GitHub) instead of generic folder or wrench icons.
+- **Lucide Iconography**: Use **Lucide Icons** as the standard vector symbol family for all actions, navigation, and features (stroke width `1.75` or `2`, consistent 20px/24px geometry).
+- **Tactile Micro-Interactions**:
+  - Primary buttons must feature a subtle light shimmer sweep: an angled overlay that glides across the button on hover (`group-hover:translate-x-full transition-transform duration-1000`).
+  - Bento cards must feature smooth spring-like elevation lifts: `hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-2xl transition-all duration-300`.
+
+---
+
+## 4. Mobbin Visual Intelligence Protocol (Real-World Ground Truth)
+
+When designing new landing pages, dashboards, complex components, or user flows, the AI MUST NOT guess or improvise layout compositions in a vacuum. Utilize the Mobbin MCP server (`search_sections`, `search_screens`, `search_flows`) as the primary visual reference engine to anchor layouts in battle-tested world-class designs:
+
+### 1. Pre-Flight Visual Reference Search
+- **Component & Section Patterns**: Before building Hero sections, Bento Grids, Pricing Tables, Navbars, or Settings Panels, call `search_sections` with descriptive queries and `platform="web"` (e.g. `query: "developer tools landing page hero with dark bento grid"`, `output_destination: "code"`).
+- **Full-Screen Architecture & Density**: For dashboard layouts, workspace consoles, or analytics views, call `search_screens` (e.g. `query: "Linear app desktop dashboard instrument layout"`, `platform: "web"`).
+- **Multi-Step Interaction Flows**: For onboarding wizards, multi-stage forms, or checkout funnels, call `search_flows`.
+
+### 2. The Reference Synthesis Law (Extract Architecture, Enforce Our Tokens)
+- **Extract from Reference**:
+  - Spatial rhythm, column proportions, and padding scale (`gap-6`/`gap-8`, `p-6`/`p-8`).
+  - Asymmetric bento grid arrangements (e.g. 2-column or 3-column mixed spans: `col-span-2`, `row-span-2`).
+  - Icon badge placement, micro-copy hierarchy, and metric badge styling.
+- **Enforce Our Production Standards**:
+  - **Map to Our 3-Tone Palette**: Strictly recolor the external reference into our project's 3-tone color tokens (Primary brand accent + secondary tint + neutral grounds). Never copy external arbitrary colors.
+  - **Apply Standard Typography**: Standardize on `Plus Jakarta Sans` for display headlines (`tracking-[-0.03em]`) and `JetBrains Mono` for code/numbers.
+  - **Infuse Crafted Elegance**: Add Three.js 3D ambient canvas, top-edge specular highlights (`inset 0 1px 0 rgba(255,255,255,0.08)`), and spotlight cursor tracking.
+  - **Maintain Anti-Slop Discipline**: Enforce zero emojis, zero green online dots, and zero version tags regardless of whether the external reference has them.
+
+### 3. Citation & QA Traceability
+- When presenting UI plans, screenshots, or opening PRs, document the inspiration `mobbin_url` as a clickable markdown citation (e.g. `Inspiration Reference: [Mobbin Screen](https://mobbin.com/...)`) so reviewers and QA can verify design fidelity against the intended benchmark.
+
+---
+
+## 5. Design Tokens & Visual Hierarchy
 
 Lock design tokens in CSS variables or Tailwind config before writing markup. Ban raw arbitrary hex/px values.
 
@@ -97,7 +161,7 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 4. Strict Vector Iconography, App Favicon & Typography Discipline
+## 6. Strict Vector Iconography, App Favicon & Typography Discipline
 
 1. **Zero Unicode Emojis**: Absolute ban on emojis (🚀, 💡, 🔥, ⚙️) as interface icons, navigation items, or statuses. Always use clean inline SVGs or vector icon sets (Lucide, Radix, Heroicons) with explicit sizes (`width={20} height={20}`) and `flex-shrink: 0`.
 2. **Semantic Icon Discipline**: Ban decorative filler icons in card corners. Every icon must carry clear, functional semantic meaning.
@@ -118,7 +182,7 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 5. Defensive Engineering & State Architecture (Pocock Discipline)
+## 7. Defensive Engineering & State Architecture (Pocock Discipline)
 
 1. **Defensive Text Truncation**: All dynamic user-generated content (asset tags, usernames, emails, model names) must anticipate extreme lengths. Guard containers with `truncate`, `line-clamp-2`, or `break-words` with `title` tooltips. Dynamic content must never blow out card bounds.
 2. **Zero-Layout-Shift Loading (Skeleton Shimmer over Spinners)**:
@@ -135,7 +199,7 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 6. Anti-Slop Production Guards & Form Discipline
+## 8. Anti-Slop Production Guards & Form Discipline
 
 1. **Zero-Status-Badge, Zero-Tech-Stack & Zero-Version-Clutter Rule**:
    - **Absolute ban on green online status dots** (`🟢`, `bg-emerald-500 rounded-full`, pulsing dots), connection status pills (e.g. "SignalR Connected", "WebSocket Live", "Online", "Connected", "Memory Engine Active", "FastAPI Dev", "Port 3000", "Live"), and arbitrary dot prefixes on section titles (e.g., ban `● คิวประจำโต๊ะบริการนี้`).
@@ -164,7 +228,7 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 7. Thai & Multilingual Typography & Button Layout Discipline
+## 9. Thai & Multilingual Typography & Button Layout Discipline
 
 1. **Button Single-Line Law & Mandatory `whitespace-nowrap`**:
    - Interactive controls (buttons, tabs, filter pills, dropdown triggers) MUST enforce `whitespace-nowrap` (or `white-space: nowrap`).
@@ -194,14 +258,20 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 8. Pre-Flight Visual Reasoning Checklist
+## 10. Pre-Flight Visual Reasoning Checklist
 
 Before marking any UI task complete, verify:
+- [ ] **Mobbin Visual Intelligence**: Layout composition, bento arrangement, or visual hierarchy grounded in real-world benchmark references via Mobbin MCP (when available).
 - [ ] **Rule 01 (Hierarchy)**: Exactly 1 primary CTA per view; secondary/supporting actions clearly demoted.
 - [ ] **Rule 02 (Limit Colors)**: Palette restricted to 1 primary accent + 1 secondary tint + neutral grounds (0 rainbow clutter).
 - [ ] **Rule 03 (Consistent Typography)**: Strict disciplined type scale, 1 cohesive font family, tabular numbers for data.
 - [ ] **Rule 04 (Design for Scanning)**: 3-second comprehension law met; key metrics prominently pop out.
 - [ ] **Rule 05 (Whitespace as Structure)**: Generous padding and margins applied (`p-6` cards, `gap-6` to `gap-8` sections); 0 cramped layouts.
+- [ ] **Crafted Elegance (Centerpiece)**: Visual Centerpiece present in Hero (Three.js 3D ambient canvas, rotating geometric wireframe, or interactive IDE/Terminal sandbox).
+- [ ] **Crafted Elegance (Typography)**: Typography uses `Plus Jakarta Sans` with `tracking-[-0.03em]` on display headlines, gradient text masking in Dark Mode, and `JetBrains Mono` for code/numbers.
+- [ ] **Crafted Elegance (Atmosphere)**: Dark Mode incorporates ambient lighting, subtle aurora glow, and top-edge specular highlights (`border border-white/[0.08] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]`).
+- [ ] **Crafted Elegance (Glass & Spotlight)**: Bento grid cards implement spotlight cursor tracking (`--mouse-x`, `--mouse-y`) and multi-layered glass badges for icons.
+- [ ] **Crafted Elegance (Brand Icons)**: Official developer brand SVG vectors used for toolings and runtimes.
 - [ ] UI defaults to clean, high-contrast Light Mode (`bg-zinc-50`, `bg-white`) with Dark Mode support and an accessible Theme Toggle button.
 - [ ] 0 green online status dots, pulsing connection pills, or developer badges (e.g. "SignalR Connected", "WebSocket Live", "Online") in user-facing UI.
 - [ ] 0 arbitrary dot prefixes in section titles (e.g. ban `● คิวประจำโต๊ะบริการนี้`).
