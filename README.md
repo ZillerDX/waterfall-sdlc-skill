@@ -70,7 +70,7 @@ When unconstrained AI coding models are asked to *"build an application"*, execu
 * **Pragmatic SOLID & OOP Triage**: Context-aware architecture preventing garbage abstractions, interface soup, and class hierarchy bloat.
 * **DevSecOps NIST SSDF Framework**: Shift-Left threat modeling, automated SAST, secret leak prevention, and zero client-side credential exposure.
 * **12-Step QA-Centric CI/CD Pipeline**: Fail-fast CI ladder, unit test coverage gates (>=80%), atomic Conventional Commits, and standardized QA PR templates.
-* **The 5 Rules of Clean Design**: Crisp Light Mode default, accessible dark mode toggle, 3-zone sticky navbar, bento grid layout, and zero Unicode emojis on UI.
+* **Crafted Elegance & Sensory Depth (`frontend-design`)**: High-contrast Light Mode default with dual-theming, Three.js 3D ambient constellation, Google Fonts `Plus Jakarta Sans` & `JetBrains Mono`, specular top highlights, cursor-tracking spotlight bento cards, and defensive UX patterns.
 * **High-IQ Token Economy (Cuts 85–95% Token Burn)**: MSBuild error-only filtering (`-clp:ErrorsOnly`), AST structural scanning over file dumps, surgical diffing (`replace_file_content`), and sanitized non-interactive test runs.
 * **C# .NET 10 LTS & C# 14 Lean Tooling**: Minimal APIs in `Program.cs`, C# 14 field-backed properties, native OpenAPI 3.1, and automated Windows port hygiene.
 * **Angular Modern Standalone Standards**: Single-File Standalone Components (SFC), native Angular Signals state architecture, non-interactive CLI flags (`$env:NG_CLI_ANALYTICS="false"`), and strict HMR dev server retention.
@@ -92,7 +92,7 @@ When unconstrained AI coding models are asked to *"build an application"*, execu
 | **QA & CI/CD Pipeline** | 12-Step Fail-Fast Ladder & GitHub Actions | Structured quality verification, >=80% unit test coverage, and QA-ready PR templates. |
 | **Backend Standard** | C# .NET 10 LTS & C# 14 Minimal APIs | Native OpenAPI 3.1, field-backed properties (`field`), and token-lean vertical slices. |
 | **Frontend Standard** | Angular Standalone + Signals | Single-File Standalone Components (`inlineTemplate`) with sub-second HMR feedback. |
-| **Design System** | `frontend-design` (5 Rules of Clean Design) | High contrast, 3-tone color limit, disciplined typography, and defensive UX patterns. |
+| **Design System** | `frontend-design` (Crafted Elegance & Sensory Depth) | Three.js 3D ambient canvas, Plus Jakarta Sans, JetBrains Mono, 3-tone limit, spotlight bento cards, and defensive UX. |
 | **Code Minimalism** | `ponytail` (YAGNI & Stdlib) | Native platform capabilities and standard libraries over dependency bloat. |
 | **Live Docs Retrieval** | `context7` MCP | Real-time version-specific documentation eliminating API hallucinations. |
 | **Memory Daemon** | `claude-mem` (Persistent AST Store) | Cross-session memory persistence with event-driven checkpointing. |
