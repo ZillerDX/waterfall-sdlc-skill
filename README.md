@@ -2,6 +2,9 @@
 
 <div align="center">
 
+<img src="favicon.svg" width="72" height="72" alt="Waterfall SDLC Emblem" />
+<br><br>
+
 [![Live Interactive Showcase](https://img.shields.io/badge/Live%20Showcase-zillerdx.github.io%2Fwaterfall--sdlc--skill-2563eb?style=for-the-badge&logo=google-chrome&logoColor=white)](https://zillerdx.github.io/waterfall-sdlc-skill/)
 <br><br>
 
