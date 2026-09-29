@@ -1,15 +1,36 @@
 ---
 name: csharp-tooling
-description: High-efficiency C# .NET 9 engineering standards for agentic coding. Enforces token-saving Minimal APIs, zero-overhead MSBuild error filtering, clean Windows port hygiene, and compact Entity Framework Core SQLite/in-memory patterns.
+description: High-efficiency C# .NET 10 LTS & C# 14 engineering standards for agentic coding. Enforces token-saving Minimal APIs, C# 14 field-backed properties, native OpenAPI 3.1, zero-overhead MSBuild error filtering, clean Windows port hygiene, and compact Entity Framework Core SQLite/in-memory patterns.
 ---
 
-# C# .NET 9 Tooling & Lean Architecture
+# C# .NET 10 & C# 14 Tooling & Lean Architecture
 
-Standard Operating Procedure for developing C# .NET applications with autonomous AI agents. Designed for extreme token efficiency, zero build spam, clean process management, and rapid vertical slice delivery.
+Standard Operating Procedure for developing C# .NET applications with autonomous AI agents. Exclusively enforces **.NET 10 LTS (`net10.0`)** and **C# 14 (`LangVersion=14`)**. Designed for extreme token efficiency, zero build spam, clean process management, and rapid vertical slice delivery.
 
 ---
 
-## 1. Zero-Spam MSBuild Diagnostics (Save 95% Tokens)
+## 1. Project Scaffolding & TargetFramework (.NET 10 Mandate)
+
+All newly created C# .NET backend services and spikes must target `net10.0` with C# 14:
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.*" />
+  </ItemGroup>
+</Project>
+```
+
+---
+
+## 2. Zero-Spam MSBuild Diagnostics (Save 95% Tokens)
 
 Raw `dotnet build` dumps hundreds of lines of MSBuild banners, target evaluations, and project outputs into context.
 
@@ -31,11 +52,11 @@ Raw `dotnet build` dumps hundreds of lines of MSBuild banners, target evaluation
 
 ---
 
-## 2. Lean Architecture: Minimal APIs over Enterprise Sprawl
+## 3. Lean Architecture: Minimal APIs & C# 14 over Enterprise Sprawl
 
 When building Rapid MVPs, Hackathon spikes, or Level 2.5 vertical slices, **NEVER** scaffold 15 separate files with traditional Controllers, Interfaces, Repositories, DTOs, and Services.
 
-### The 1-to-2 File Vertical Slice Pattern
+### The 1-to-2 File Vertical Slice Pattern (with C# 14 Features)
 
 Place endpoints, entities, and database context directly in `Program.cs` (or a single `Models.cs` + `Program.cs`):
 
@@ -44,12 +65,18 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Configure Services & SQLite / In-Memory DB
+// 1. Configure Services, Native OpenAPI 3.1 & SQLite DB
+builder.Services.AddOpenApi();
 builder.Services.AddDbContext<AppDb>(opt => opt.UseSqlite("Data Source=app.db"));
 builder.Services.AddCors(opt => opt.AddDefaultPolicy(p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 
 var app = builder.Build();
 app.UseCors();
+
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi(); // Native OpenAPI 3.1 endpoint (no third-party Swashbuckle required)
+}
 
 // Ensure DB schema is ready instantly without waiting for migration files
 using (var scope = app.Services.CreateScope())
@@ -71,7 +98,7 @@ app.MapPost("/api/items", async (ItemDto dto, AppDb db) =>
 
 app.Run();
 
-// 3. Compact Models & DbContext in same or adjacent slice
+// 3. Compact Models with C# 14 Field-Backed Properties (Saves 15% boilerplate code)
 public class AppDb : DbContext
 {
     public AppDb(DbContextOptions<AppDb> options) : base(options) { }
@@ -81,7 +108,14 @@ public class AppDb : DbContext
 public class Item
 {
     public int Id { get; set; }
-    public required string Title { get; set; }
+    
+    // C# 14 field-backed property: validates/mutates without explicit private field declaration
+    public required string Title
+    {
+        get => field;
+        set => field = value.Trim();
+    }
+    
     public DateTime CreatedAt { get; set; }
 }
 
@@ -93,7 +127,7 @@ Only transition from Minimal APIs to separate Controller/Service class libraries
 
 ---
 
-## 3. Windows Port Hygiene & Process Lifecycle
+## 4. Windows Port Hygiene & Process Lifecycle
 
 Never launch `dotnet run` without sanitizing the target port first. Stale ASP.NET Core processes lock TCP sockets and cause `IOException: address already in use`.
 
@@ -110,22 +144,23 @@ dotnet run --project <PathToCsproj> --urls "http://localhost:5080"
 
 ---
 
-## 4. Entity Framework Core Quick-Start
+## 5. Entity Framework Core Quick-Start
 - Use `db.Database.EnsureCreated()` for rapid prototypes.
-- For SQLite, use `Microsoft.EntityFrameworkCore.Sqlite`.
+- For SQLite, use `Microsoft.EntityFrameworkCore.Sqlite` version 10.0.*.
 - When serializing entities with navigation properties, prevent cyclic references using `System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles`.
 
 ---
 
----
-
-## 5. Zero-Leak Secret Management
+## 6. Zero-Leak Secret Management
 - **Never Hardcode Secrets**: Never embed plaintext API keys into `Program.cs` or committed code.
 - **Storage Location**: Store keys in `appsettings.Local.json` (or `$env:API_KEY`), and inject via `builder.Configuration["AiService:ApiKey"]`.
 - **Pre-Flight GitIgnore Check**: Verify that `appsettings.Local.json` is listed in `.gitignore` before writing secrets to disk.
 
-## 6. Summary Checklist for AI Agents
-1. Did you run `dotnet build --nologo -clp:ErrorsOnly` instead of raw `dotnet build`?
-2. Did you use a clean Minimal API in `Program.cs` instead of creating 15 separate files?
-3. Did you kill existing port listeners before launching `dotnet run`?
-4. Is stdout kept to 0 lines when tests and builds succeed?
+---
+
+## 7. Summary Checklist for AI Agents
+1. Did you verify `<TargetFramework>net10.0</TargetFramework>` and C# 14 syntax?
+2. Did you run `dotnet build --nologo -clp:ErrorsOnly` instead of raw `dotnet build`?
+3. Did you use a clean Minimal API in `Program.cs` (with native OpenAPI 3.1 & `field` properties) instead of creating 15 separate files?
+4. Did you kill existing port listeners before launching `dotnet run`?
+5. Is stdout kept to 0 lines when tests and builds succeed?

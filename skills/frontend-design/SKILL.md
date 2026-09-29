@@ -26,9 +26,46 @@ Determine the project register before writing markup:
    - **Ground & Atmosphere**: Neutral tinted grays, structured 1px borders (`1px solid var(--border)`), high-contrast data rows.
    - **Layout**: Fixed toolbars, compact padding, pinned data tables, density-respecting mobile drawers.
 
+## 2. The 5 Rules of Clean Design (Core Aesthetic Laws)
+
+Every layout, component, and screen MUST adhere strictly to the 5 Foundational Rules of Clean Design:
+
+### Rule 01: Prioritize Hierarchy ("If everything is important, nothing is important")
+- **Single Dominant Action**: Exactly one **Primary CTA** per view/dialog (bold, high-contrast, visually grounded).
+- **Secondary & Tertiary Demotion**: Supporting actions must be subdued into Secondary (soft gray tint) or Ghost/Outline buttons. Never compete with the Primary action using two saturated colored buttons in the same container.
+- **Visual Weight Ladder**: Size, weight, and contrast must guide the eye naturally: `Primary Action > Key Value/Data Metric > Section Title > Body Text > Helper/Muted Caption`.
+
+### Rule 02: Limit Colors ("Too many colors create visual noise")
+- **The 3-Tone Rule (Primary + Secondary + Neutral)**:
+  - **1 Primary Accent**: The brand voice (e.g. Electric Cobalt, Signal Indigo, or Deep Navy). Used strictly for active states, primary buttons, and focal indicators.
+  - **1 Secondary Tint**: A soft, subdued tint or shade of the primary color (used for active pill backgrounds, badge surfaces, subtle highlights).
+  - **Neutral Grounds**: Tinted zinc/slate for background canvas (`zinc-50`), card surfaces (`white`), and subtle 1px borders (`zinc-200/80`).
+- **Absolute Ban on Rainbow Clutter**: Never decorate individual cards or dashboard metrics with arbitrary different colors (e.g. purple card next to pink card next to yellow card). Color must communicate state or focus, never pure decoration.
+
+### Rule 03: Keep Typography Consistent ("Too many sizes & different fonts create chaos")
+- **Single Cohesive Type Family**: Use at most 1 primary system sans font family (e.g. `Inter`, `Geist`, `SF Pro`, paired with high-legibility Thai font `Prompt`/`Sarabun`).
+- **Disciplined Type Scale**: Never use arbitrary font sizes. Restrict strictly to standard steps:
+  - Display / Hero: `28px` – `36px` (`font-bold`, `tracking-tight`)
+  - Section Headings: `18px` – `20px` (`font-semibold`)
+  - Body & Form Controls: `14px` (`font-normal` or `font-medium`, `leading-normal`)
+  - Captions, Meta, & Badges: `12px` (`font-medium`, `text-zinc-500`)
+- **Tabular Numerics for Data**: All monetary, timer, and counter numbers MUST use `font-variant-numeric: tabular-nums` or `font-mono` to prevent jitter during updates.
+
+### Rule 04: Design for Easy Scanning ("Make important information easy to find in seconds")
+- **The 3-Second Comprehension Law**: A user scanning a dashboard or report must grasp system status, current queue, or total revenue in under 3 seconds without hunting.
+- **The Pop-Out Effect**: Make critical figures prominent (large bold numerals, distinct badges, high-contrast status cards) while muting surrounding scaffolding.
+- **Scan-Friendly Layouts**: Use F-pattern and Z-pattern visual structures, clear row borders, and pinned header rows in data tables.
+
+### Rule 05: Whitespace is Not Empty Space ("It's what makes your design readable and structured")
+- **Whitespace is an Active Structural Tool**: Generous padding and margins are what create order, rhythm, and clarity.
+- **Gestalt Proximity**:
+  - Tightly group related items (e.g. label + input: `gap-1.5` to `gap-2`).
+  - Generously space distinct sections and unrelated cards (`gap-6` to `gap-8`, padding `p-6` to `p-8`).
+- **Ban Cramped & Claustrophobic Cards**: Never crowd text, inputs, and buttons against card borders. Maintain comfortable internal card padding (`p-6` on desktop, `p-4` on mobile).
+
 ---
 
-## 2. Design Tokens & Visual Hierarchy
+## 3. Design Tokens & Visual Hierarchy
 
 Lock design tokens in CSS variables or Tailwind config before writing markup. Ban raw arbitrary hex/px values.
 
@@ -37,6 +74,19 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 1. **Monochrome Precision (Default Instrument)**: Neutral zinc/slate grounds, crisp 1px borders (`hsl(220, 15%, 20%)`), single purposeful accent (Signal Orange `hsl(24, 95%, 53%)` or Electric Cobalt `hsl(221, 83%, 53%)`).
 2. **Warm Editorial (Default Marketing)**: Alabaster ground (`hsl(36, 33%, 97%)`), stone surface, espresso ink (`hsl(24, 10%, 12%)`), terracotta accent (`hsl(14, 75%, 50%)`).
 3. **Deep Bronze / Architectural Charcoal**: Warm charcoal ground (`hsl(30, 8%, 10%)`), bronze borders (`hsl(38, 30%, 25%)`), warm sand text.
+
+### Light-Mode-First Mandate & Dual-Theme Tokens
+- **Default Theme is Light Mode**: All newly generated interfaces and dashboards MUST default to clean, high-contrast, modern Light Mode. Support Dark Mode gracefully via class-based theming (`class="dark"`). Ban defaulting blindly to pitch-black/obsidian interfaces unless building terminal CLIs or media streaming players.
+- **Light Mode Default Tokens**:
+  - Canvas / Ground: Crisp neutral off-white (`bg-zinc-50` or `bg-slate-50`). Never pure hospital white across the whole viewport.
+  - Card & Container Surface: Pure crisp white (`bg-white`), bordered with subtle 1px gray (`border-zinc-200/80` or `border-slate-200/80`), elevated with soft shadow (`shadow-sm` or `shadow-[0_1px_3px_rgba(0,0,0,0.05)]`).
+  - Typography: Deep charcoal/zinc primary text (`text-zinc-900`), muted secondary labels (`text-zinc-500`).
+  - Interactive Accents: Rich cobalt blue (`bg-blue-600 hover:bg-blue-700 text-white`), electric indigo (`bg-indigo-600`), or violet.
+- **Dark Mode Support Tokens**:
+  - Ground: Deep charcoal (`dark:bg-zinc-950`).
+  - Surface: Elevated dark surface (`dark:bg-zinc-900`), subtle border (`dark:border-zinc-800`).
+  - Typography: Crisp white primary (`dark:text-zinc-100`), muted secondary (`dark:text-zinc-400`).
+- **Accessible Theme Toggle**: Every application MUST provide a clean, accessible Theme Toggle button (Sun / Moon vector SVG) in the Navbar utility area to seamlessly switch between Light and Dark modes.
 
 ### Tinted Ground & Radius Formula
 - **Ground is never white, ink is never black**:
@@ -47,22 +97,28 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 3. Strict Vector Iconography & Typography Discipline
+## 4. Strict Vector Iconography, App Favicon & Typography Discipline
 
 1. **Zero Unicode Emojis**: Absolute ban on emojis (🚀, 💡, 🔥, ⚙️) as interface icons, navigation items, or statuses. Always use clean inline SVGs or vector icon sets (Lucide, Radix, Heroicons) with explicit sizes (`width={20} height={20}`) and `flex-shrink: 0`.
 2. **Semantic Icon Discipline**: Ban decorative filler icons in card corners. Every icon must carry clear, functional semantic meaning.
-3. **Directional Delta Accuracy**: Decreases, savings, and latency drops MUST use downward indicators (`-` or `down-arrow SVG`). Never use upward arrows for reductions. Increases and earnings use upward indicators (`+` or `up-arrow SVG`).
-4. **Readable Line Length (Prose Clamping)**: Long-form text and subtitles MUST clamp to readable line lengths (`max-w-prose` / 65–75ch). Never allow paragraphs to stretch unconstrained across 1920px viewports.
-5. **Motion Physics & Spring Curves**:
+3. **Dedicated App Favicon Standard**:
+   - Every web application MUST define an authentic, system-matched vector Favicon in `<link rel="icon" type="image/svg+xml" href="...">` or `/favicon.svg`.
+   - The favicon must visually reflect the specific application domain (e.g. Queue -> ticket/flow icon; Finance -> ledger/vault icon; Logistics -> box/route icon; Analytics -> spark/chart icon) instead of generic defaults or missing favicon errors.
+4. **Cohesive System-Matched Iconography & Bespoke Brand Logo**:
+   - All icons in an app must share a uniform style and family (Lucide, Heroicons, or Radix vector SVGs) with matching stroke width (`stroke-[1.75]` or `stroke-2`) and consistent sizing (`size-4` for compact, `size-5` for nav/buttons, `size-6` for headers).
+   - **App Brand Logo**: Every app must feature a bespoke vector SVG icon matching the system identity, beautifully housed in a rounded squircle container (e.g. `rounded-xl bg-blue-600/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400 p-2.5 shadow-sm`).
+5. **Directional Delta Accuracy**: Decreases, savings, and latency drops MUST use downward indicators (`-` or `down-arrow SVG`). Never use upward arrows for reductions. Increases and earnings use upward indicators (`+` or `up-arrow SVG`).
+6. **Readable Line Length (Prose Clamping)**: Long-form text and subtitles MUST clamp to readable line lengths (`max-w-prose` / 65–75ch). Never allow paragraphs to stretch unconstrained across 1920px viewports.
+7. **Motion Physics & Spring Curves**:
    - Modal reveals & entrances: `transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 250ms ease-out;`
    - Micro-interactions (hover, press): `transition: all 150ms cubic-bezier(0.2, 0.8, 0.2, 1);`
    - Ban linear or uncurved transitions.
-6. **Complete 4-State Micro-Interactions**:
+8. **Complete 4-State Micro-Interactions**:
    Interactive controls MUST define: (1) **Idle**, (2) **Hover** (lift `-1px`, brightness +5%), (3) **Active** (depression `+0.5px`, scale `0.98`), and (4) **Focus-Visible** (`ring-2 ring-primary ring-offset-2`).
 
 ---
 
-## 4. Defensive Engineering & State Architecture (Pocock Discipline)
+## 5. Defensive Engineering & State Architecture (Pocock Discipline)
 
 1. **Defensive Text Truncation**: All dynamic user-generated content (asset tags, usernames, emails, model names) must anticipate extreme lengths. Guard containers with `truncate`, `line-clamp-2`, or `break-words` with `title` tooltips. Dynamic content must never blow out card bounds.
 2. **Zero-Layout-Shift Loading (Skeleton Shimmer over Spinners)**:
@@ -79,9 +135,13 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 5. Anti-Slop Production Guards & Form Discipline
+## 6. Anti-Slop Production Guards & Form Discipline
 
-1. **Zero-Status-Badge Rule**: Absolute ban on environment chips, server locations, port numbers, activity pills, and pulsing status dots in UI headers (e.g. "Prod / US-East", "Memory Engine Active", "Frontend: Online", "Port 3000", "Live", "v1.0.0"). Replace exclusively with authentic application navigation, user switchers, and command palettes (`Ctrl+K`).
+1. **Zero-Status-Badge, Zero-Tech-Stack & Zero-Version-Clutter Rule**:
+   - **Absolute ban on green online status dots** (`🟢`, `bg-emerald-500 rounded-full`, pulsing dots), connection status pills (e.g. "SignalR Connected", "WebSocket Live", "Online", "Connected", "Memory Engine Active", "FastAPI Dev", "Port 3000", "Live"), and arbitrary dot prefixes on section titles (e.g., ban `● คิวประจำโต๊ะบริการนี้`).
+   - **Absolute ban on App Version tags & Tech Stack disclosures on UI**: Never render app version pills (e.g., `v1.0`, `v0.9.4`, `v2.0-beta`), build numbers, or framework/tech stack badges (e.g. "Powered by Next.js", "Built with .NET 10 + Angular", "FastAPI Backend", "Tailwind CSS", "Supabase Cloud") anywhere in user-facing headers, navbars, cards, hero banners, or footers.
+   - **Rationale**: Real-time connectivity must work silently and defensively. Tech stack details, architecture specs, and release versions belong strictly in `README.md` and repository documentation. Exposing infrastructure telemetry or bragging about framework versions on UI degrades enterprise credibility and makes software look like an amateur tutorial project.
+   - Replace exclusively with authentic application navigation, clean user switchers, and command palettes (`Ctrl+K`).
 2. **Zero Meta-Commentary in UI Copy**: Never place developer implementation notes, bugfix explanations, or test self-praise in customer-facing UI (e.g. "will not get stuck on 0", "fixed modal bug"). All copy must read as authentic user guidance.
 3. **Dashed Border Discipline**: Dashed borders (`border-dashed`) are strictly reserved for file upload dropzones. Data cards, summary panels, and results use crisp 1px solid borders.
 4. **Modal Dismissal Hierarchy**: Exactly one top-right close icon (`X`), backdrop click dismissal, and Escape key listener. Do not place redundant "Cancel" buttons in modal footers alongside primary actions.
@@ -94,12 +154,17 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 7. **Ban on Unstyled Native Date Picker (`<input type="date">`)**: Default browser date pickers render stark white, sharp rectangular calendar widgets.
    - Baseline: Set `color-scheme: dark` (or light matching theme) in CSS.
    - Studio Standard: Replace with custom calendar popovers: input field displaying formatted date with vector calendar SVG icon, quick clear button, popover card matching tokens (`rounded-xl`, `border-zinc-700`, `bg-zinc-900`), month/year navigator chevrons, muted monospace weekday header (`Su Mo Tu We Th Fr Sa`), 7-column grid with rounded pill/circle date buttons, and "Today" / "Clear" action presets.
+8. **Professional 3-Zone Navbar Layout Architecture**:
+   - **Strict ban on messy, cluttered navbars**: Never cram version tags (`v1.0`), marketing taglines, or connection status dots into the navigation header.
+   - All Navbars must follow the **3-Zone Clean Architecture**:
+     - **Zone 1 (Brand - Left)**: App Logo Icon (bespoke vector SVG in a polished rounded squircle container) + App Name (`font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 text-base`). Keep it clean and unburdened.
+     - **Zone 2 (Navigation / Workspaces - Center)**: Clean segmented controls, tabs, or link items with subtle active pill highlight, uniform padding (`px-3 py-1.5`), explicit heights, and `whitespace-nowrap`.
+     - **Zone 3 (Utilities & Actions - Right)**: Theme toggle switch (Light/Dark Sun/Moon SVG), Search trigger (`Ctrl+K`), Notifications, User profile/avatar, or Primary Action CTA. Perfectly aligned vertically (`items-center gap-3`), zero clutter, zero connection status dots.
+   - **Navbar Dimensions & Glassmorphism**: Explicit height (`h-14` [56px] or `h-16` [64px]), sticky positioning (`sticky top-0 z-50`), subtle bottom border (`border-b border-zinc-200/80 dark:border-zinc-800/80`), and backdrop blur (`bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md`).
 
 ---
 
----
-
-## 6. Thai & Multilingual Typography & Button Layout Discipline
+## 7. Thai & Multilingual Typography & Button Layout Discipline
 
 1. **Button Single-Line Law & Mandatory `whitespace-nowrap`**:
    - Interactive controls (buttons, tabs, filter pills, dropdown triggers) MUST enforce `whitespace-nowrap` (or `white-space: nowrap`).
@@ -129,9 +194,21 @@ Do not default exclusively to "Obsidian Black + Neon Cyan Glow". Choose delibera
 
 ---
 
-## 7. Pre-Flight Visual Reasoning Checklist
+## 8. Pre-Flight Visual Reasoning Checklist
 
 Before marking any UI task complete, verify:
+- [ ] **Rule 01 (Hierarchy)**: Exactly 1 primary CTA per view; secondary/supporting actions clearly demoted.
+- [ ] **Rule 02 (Limit Colors)**: Palette restricted to 1 primary accent + 1 secondary tint + neutral grounds (0 rainbow clutter).
+- [ ] **Rule 03 (Consistent Typography)**: Strict disciplined type scale, 1 cohesive font family, tabular numbers for data.
+- [ ] **Rule 04 (Design for Scanning)**: 3-second comprehension law met; key metrics prominently pop out.
+- [ ] **Rule 05 (Whitespace as Structure)**: Generous padding and margins applied (`p-6` cards, `gap-6` to `gap-8` sections); 0 cramped layouts.
+- [ ] UI defaults to clean, high-contrast Light Mode (`bg-zinc-50`, `bg-white`) with Dark Mode support and an accessible Theme Toggle button.
+- [ ] 0 green online status dots, pulsing connection pills, or developer badges (e.g. "SignalR Connected", "WebSocket Live", "Online") in user-facing UI.
+- [ ] 0 arbitrary dot prefixes in section titles (e.g. ban `● คิวประจำโต๊ะบริการนี้`).
+- [ ] 0 app version badges (e.g. "v1.0", "v2.0-beta") and 0 tech stack disclosures (e.g. "Powered by Next.js", "FastAPI Backend", "Tailwind CSS") on user-facing UI.
+- [ ] Navbar adheres to the professional 3-Zone Architecture (Brand left, Navigation center, Utilities & Theme toggle right) with 0 marketing subtitle clutter.
+- [ ] Application features a bespoke vector SVG Logo and dedicated domain-matched Favicon (`<link rel="icon" ...>`).
+- [ ] All icons use a cohesive vector family (Lucide / Heroicons) with uniform stroke width and sizing.
 - [ ] 0 buttons wrapping text into multi-line while siblings are single-line (`whitespace-nowrap` enforced).
 - [ ] All buttons in the same toolbar/action group share identical explicit height (`h-9` or `h-10`) and baseline alignment.
 - [ ] 0 parenthetical English clutter in Thai button labels (e.g. `เริ่มการเทรน` over `เริ่มการเทรน (Train)`).
