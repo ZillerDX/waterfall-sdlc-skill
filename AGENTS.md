@@ -80,22 +80,24 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 
 ## Phase Decomposition Matrix
 
-### Phase 1: Specifications, Domain Architecture & Primary Docs
-- **Goal**: Clarify requirements, lock domain entities, query authoritative documentation.
+### Phase 1: Specifications, Domain Architecture & DevSecOps Threat Model
+- **Goal**: Clarify requirements, lock domain entities, query authoritative documentation, establish NIST SSDF threat boundaries.
 - **Skills & MCPs**: `claude-mem` (lookup patterns), `domain-modeling` (CONTEXT.md), `context7` (live library docs), `grilling` (if ambiguous).
 - **Execution Checklist**:
   - [ ] 1.1 Memory check via `claude-mem` for prior architecture/patterns.
   - [ ] 1.2 Lock canonical entity names in `CONTEXT.md` (zero naming drift).
   - [ ] 1.3 Query modern framework docs via `context7` to eliminate hallucinations.
-- **Exit Gate**: Spec unambiguous, `CONTEXT.md` updated, ADR recorded in memory.
+  - [ ] 1.4 Shift-Left Security: Define auth boundaries, input validation rules, and threat vectors (OWASP Top 10 / NIST SSDF).
+- **Exit Gate**: Spec unambiguous, `CONTEXT.md` updated, threat model recorded in memory.
 
 ### Phase 2: Core Architecture & Backend Implementation
-- **Goal**: Implement minimal, high-efficiency backend services/APIs and database schema adhering to pragmatic SOLID & OOP.
+- **Goal**: Implement minimal, high-efficiency backend services/APIs and database schema adhering to pragmatic SOLID, OOP, and Secure by Default principles.
 - **Skills & MCPs**: `csharp-tooling` / `typescript-lsp` / `pyright-lsp`, `ponytail` (YAGNI, minimal code ladder), `supabase` (if DB).
 - **Execution Checklist**:
   - [ ] 2.1 Architectural Appropriateness Triage: Evaluate OOP/SOLID necessity (keep flat/procedural for trivial CRUD; apply Encapsulation, SRP & ISP for rich domains; ban Interface Soup).
   - [ ] 2.2 Scaffold minimal endpoints/models (Minimal APIs, C# 14 / Express / FastAPI).
   - [ ] 2.3 Wire business logic using stdlib, native framework features, and composition over inheritance (`ponytail` guards).
+  - [ ] 2.4 Secure by Default: Parameterized queries, input sanitation, secret isolation, and CORS/CSRF guards.
 - **Exit Gate**: Headless build and unit tests pass (`dotnet build`, `dotnet test`, Exit Code 0).
 
 ### Phase 3: High-Fidelity Frontend & UI/UX Engineering
@@ -109,19 +111,19 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 - **Exit Gate**: Clean UI build, zero console errors, theme toggle functional.
 
 ### Phase 4: Headless Verification, CI & Multi-Lens Review
-- **Goal**: Comprehensive automated testing, lint checks, and multi-perspective code review.
+- **Goal**: Comprehensive automated testing, lint checks, DevSecOps scanning, and multi-perspective code review.
 - **Skills & MCPs**: `pr-review-toolkit`, CI test commands, `playwright` (milestone UI visual proof only).
 - **Execution Checklist**:
-  - [ ] 4.1 Run Fail-Fast CI ladder: Lint -> Unit (>=80%) -> Build -> Integration -> Security scan.
-  - [ ] 4.2 Multi-lens code review pass (correctness, security, edge cases, ponytail bloat, SOLID/OOP appropriateness).
+  - [ ] 4.1 Run Fail-Fast CI ladder: Lint -> Unit (>=80%) -> Build -> Integration -> DevSecOps scan (SAST, Snyk/Dependabot, secret scan).
+  - [ ] 4.2 Multi-lens code review pass (correctness, security vulnerabilities, edge cases, ponytail bloat, SOLID/OOP appropriateness).
   - [ ] 4.3 Headless Playwright audit (1280px desktop, verify 0 console errors, 1 proof screenshot).
-- **Exit Gate**: All automated tests pass (Exit Code 0), 0 console errors, review clean.
+- **Exit Gate**: All automated tests pass (Exit Code 0), 0 CVEs/leaks, 0 console errors, review clean.
 
 ### Phase 5: Git Packaging, PR Delivery & QA Handover
-- **Goal**: Create atomic commit, open QA-ready PR with mandatory template, deliver portfolio README.
+- **Goal**: Create atomic commit, open QA-ready PR with mandatory template, preserve code integrity, deliver portfolio README.
 - **Skills & MCPs**: `commit-commands`, `github-mcp-server`, `claude-mem`.
 - **Execution Checklist**:
-  - [ ] 5.1 Pre-flight self-check: verify diff, rebase on latest base branch.
+  - [ ] 5.1 Pre-flight self-check: verify diff, ensure branch protection compliance, rebase on latest base branch.
   - [ ] 5.2 Atomic Conventional Commit (`commit-commands`).
   - [ ] 5.3 Open PR via `github-mcp-server` with full QA PR Template (What/Why, How to test, AC, Risk).
   - [ ] 5.4 Portfolio-Grade `README.md` delivery (7 Product Pillars).
@@ -147,22 +149,40 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 
 ---
 
-## 5. Local-First, Windows PowerShell & Zero-Leak Safety
+## 5. DevSecOps, NIST SSDF & Zero-Leak Safety Protocol
 
-1. **Zero-Leak Secret Handling Protocol (API Key Ingestion & Protection)**:
+Execute all software development in compliance with the NIST SSDF (SP 800-218), OWASP Top 10, and SOC 2 / ISO 27001 secure engineering directives:
+
+1. **Shift-Left Security & Threat Modeling**:
+   - Security begins before creating a single line of code. Identify trust boundaries, auth requirements, and threat vectors during Phase 1.
+   - Automate vulnerability checks and static analysis from day one in the local development loop and CI pipeline.
+2. **Secure by Default Configuration**:
+   - Systems must be secure out of the box without manual customer hardening: enforce Least Privilege, strict CORS, Security Headers (CSP, HSTS, X-Frame-Options), and parameterize all SQL/ORM queries.
+   - Ban unauthenticated sensitive routes; disable debug, profiling, and open Swagger endpoints in production.
+3. **Zero-Leak Secret Handling Protocol (API Key Ingestion & Protection)**:
    - **Accept User API Keys**: When the user provides an API key, accept and utilize it immediately to configure the local system without artificial hesitation.
    - **Isolated Local Storage**: Store secrets exclusively in local-only private stores: `.env.local`, `appsettings.Local.json`, or process environment variables (`$env:API_KEY="..."`).
    - **Pre-Flight GitIgnore Verification**: Before writing any secret to a configuration file, verify that `.gitignore` explicitly matches and ignores that file pattern (`.env*`, `*.Local.json`).
    - **Strict Backend Isolation (Zero Client-Side Exposure)**: Never embed API keys into client-side code (Angular, React, Vue, or static HTML bundles) where public users can inspect or extract them via DevTools/Network tabs. All API calls requiring secret keys must be proxied through the local backend service.
    - **Redaction & Concealment**: Never print plaintext keys or expose their exact location in chat responses, artifacts (`walkthrough.md`, `CONTEXT.md`), git commits, or public docs. Always redact secrets (e.g., `sk_live_...****`, `AQ...****`).
-2. **Local Sandbox**: All execution, DB emulation, and UI testing occur locally. No remote cloud mutations during dev.
-3. **Windows PowerShell Execution**:
+4. **Code Integrity & Supply Chain Protection**:
+   - Maintain code in secure repositories with branch protection: forbid direct pushes to `main`/`develop`.
+   - Require signed commits and pull request approvals (1–2 reviewers including QA sign-off).
+   - Use immutable single-build artifacts across environments. Regularly scan dependencies for vulnerabilities (`npm audit`, Snyk, Dependabot).
+5. **Rapid Vulnerability Mitigation & Incident Response**:
+   - When a security flaw is detected, act immediately to shorten the window of exploitation: quarantine vulnerable code paths, revoke compromised credentials, or trigger instant automated rollbacks.
+   - For critical production vulnerabilities, execute the isolated `hotfix/*` flow branched from `main`, verified through CI, and merged back into both `main` and `develop`.
+6. **Continuous Threat Intelligence & Learning**:
+   - Perform root-cause analysis on all vulnerabilities and regressions.
+   - Persist security lessons, patched vectors, and threat patterns into `claude-mem` to prevent repeat occurrences across sessions.
+7. **Local Sandbox & Windows PowerShell Hygiene**:
+   - All execution, DB emulation, and UI testing occur locally. No remote cloud mutations during dev.
    - Host is Windows with PowerShell. Ban POSIX utilities (`lsof`, `kill -9`, `fuser`, `xargs`, `/dev/null`). Chain with `;`.
    - **Pre-Flight Port Handshake (Zero-Collision)**: Always kill stale listeners on target ports before starting dev servers:
      `Get-NetTCPConnection -LocalPort <port1>,<port2> -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }`.
    - Inspect port: `Get-NetTCPConnection -LocalPort <port> -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess` or `netstat -ano | findstr :<port>`.
    - Kill stale process by PID: `Get-Process -Id <PID> -ErrorAction SilentlyContinue | Stop-Process -Force`.
-4. **Clickable Preview**: Output `Live Local Preview: http://localhost:<port>` whenever dev server starts.
+   - Output `Live Local Preview: http://localhost:<port>` whenever dev server starts.
 
 ---
 
@@ -257,7 +277,7 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 
 ## 7. Verification & 3-Strike Circuit Breaker
 
-- **5 Quality Gates**: Typecheck clean, automated tests passing (Exit Code 0), production build passing, UI visual audit clean (0 console errors, UI-only final milestone), and security/secret-leak scan clear (0 exposed keys, least-privilege CI).
+- **5 Quality Gates**: Typecheck clean, automated tests passing (Exit Code 0), production build passing, UI visual audit clean (0 console errors, UI-only final milestone), and DevSecOps / NIST SSDF security scan clear (0 high/critical CVEs, 0 secret exposures, least-privilege CI).
 - **3-Strike Circuit Breaker**: If a build, test, or bug fix fails 3 consecutive times on the same root cause:
   - Mandatory Hard Stop. Do not attempt a 4th blind retry.
   - Create clean git checkpoint/stash.
@@ -271,11 +291,11 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 `To Do` -> `In Progress` -> `In Review` -> `QA Testing` -> `QA Passed` -> `Ready for Release` -> `Done`
 
 ### End-to-End 12-Step Engineering & QA Flow
-1. **Intake & Memory Check (`To Do` -> `In Progress`)**: Query `claude-mem` and `smart_outline`. Classify task scale (Level 1–4). For Levels 2+, initialize or update stateful `PLAN.md`. Lock domain entities in `CONTEXT.md` (`domain-modeling`) and persist ADRs to `claude-mem`.
+1. **Intake & Memory Check (`To Do` -> `In Progress`)**: Query `claude-mem` and `smart_outline`. Classify task scale (Level 1–4). For Levels 2+, initialize or update stateful `PLAN.md`. Establish NIST SSDF threat boundary, lock domain entities in `CONTEXT.md` (`domain-modeling`), and persist ADRs to `claude-mem`.
 2. **AST & Minimal Dev**: Navigate via `smart_outline`/`ast-grep`/LSP, write minimal code via `ponytail`, maintain clean local execution.
 3. **Step 1: Developer Self-Check**: Run lint, typecheck, and unit tests locally. Verify happy path and edge cases manually. Rebase against latest `main`/`develop` to prevent merge conflicts.
 4. **Step 2: Open Pull Request (`In Review`)**: Populate the full QA PR Template (`What/Why`, `How to test`, `Acceptance Criteria`, `Impact/Risk`, `Evidence`, `Checklist`). Link ticket and invite QA / CODEOWNERS early.
-5. **Step 3: Automated Fail-Fast CI**: Pipeline triggers in order (Lint -> Unit [>=80%] -> Build -> Integration -> Security -> E2E Smoke). Failures block PR immediately; resolve all red checks.
+5. **Step 3: Automated Fail-Fast CI**: Pipeline triggers in order (Lint -> Unit [>=80%] -> Build -> Integration -> DevSecOps / SAST Security -> E2E Smoke). Failures block PR immediately; resolve all red checks.
 6. **Step 4: Multi-Lens Code Review**: Reviewers inspect logic, architecture, and tests via `pr-review-toolkit`. Iterate code until approvals are met.
 7. **Step 5: QA Testing on PR Preview (`QA Testing` -> `QA Passed`)**: QA tests acceptance criteria and verification steps on the isolated PR Preview URL + exploratory regression testing. Bugs returned to Step 3; approval earns QA sign-off.
 8. **Step 6: Clean Squash Merge**: Squash merge to `develop` or `main` to preserve a clean, linear git history; automatically delete feature branch.
@@ -283,5 +303,5 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 10. **Step 8: Staging Regression & UAT**: QA executes full regression suite across integrated features; Product Owner or client validates via UAT.
 11. **Step 9: Release Tagging & Changelog (`Ready for Release`)**: Cut semantic version tag (`vX.Y.Z`) and generate automated release notes from Conventional Commits. Code freeze on `release/*` branch if using GitFlow.
 12. **Step 10: Production Promotion Gate**: Promote validated immutable artifact to Production behind manual approval gate, using Canary release or Feature Flags for risk mitigation.
-13. **Step 11: Post-Deploy Smoke & Telemetry**: Execute production smoke test immediately. Actively monitor error rates, latency, and logs for 30–60 minutes. Anomaly triggers instant rollback. Severe production issues branch into `hotfix/*` flow.
+13. **Step 11: Post-Deploy Smoke & Telemetry**: Execute production smoke test immediately. Actively monitor error rates, latency, and security logs for 30–60 minutes. Anomaly triggers instant rollback. Severe production issues branch into `hotfix/*` flow.
 14. **Step 12: Ticket Closure & Retrospective (`Done`)**: Move ticket to `Done`, notify stakeholders of release, deliver portfolio-grade documentation (`README.md`), record retrospective lessons, and persist live URLs and backlog to `claude-mem`.
