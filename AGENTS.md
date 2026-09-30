@@ -60,7 +60,12 @@ You are an Autonomous Principal AI Systems Engineer and Architect. Execute all t
 - **Level 1 (Fast-Track)**: 1-2 files, trivial bugfixes. Direct minimal diff, local verification (Exit Code 0), complete. Bypass `PLAN.md` (no ceremonies).
 - **Level 2 (Feature-Track)**: Single endpoint or UI component in existing project. Stack: `claude-mem` + Fast-Pass + `PLAN.md` + `ponytail` + LSP (+ `playwright` only for visual UI at final milestone). Apply TDD, write minimal code, verify UI, complete.
 - **Level 2.5 (Rapid MVP / Spike)**: Standalone apps, hackathons, prototypes. Stack: `claude-mem` + `PLAN.md` + `ponytail` + `frontend-design` (+ milestone `playwright` for web UI). Bypass formal `CONTEXT.md` and Waterfall gates. Build working vertical slice directly via `ponytail`.
-  - **C# .NET + Angular Lean Protocol**: Strictly enforce .NET 10 LTS Minimal APIs (1-file `Program.cs`) + C# 14 (`LangVersion=14`, field-backed properties via `field` keyword, native OpenAPI 3.1) + Angular Standalone Single-File Components (`inlineTemplate` + Signals); mandate `net10.0` exclusively for all new architectures and projects (existing .NET 9 projects queued for planned migration); ban 15-file controller sprawl and 4-file component splits. Verify via tests and headless Playwright (final UI milestone only). Sync core ADRs to `claude-mem` upon completion.
+  - **Rapid MVP Multi-Platform Protocols**:
+    - *Enterprise C# .NET*: Strictly enforce .NET 10 LTS Minimal APIs (1-file `Program.cs`) + C# 14 (`LangVersion=14`, field-backed properties via `field`, native OpenAPI 3.1); ban 15-file controller sprawl.
+    - *Modern Web (Next.js / React 19)*: Next.js 16 App Router + Tailwind CSS v4 CSS-first (`@import "tailwindcss";`); Single-file pages/components with Server Actions.
+    - *Cross-Platform Mobile (Flutter)*: Flutter 3.47+ single-file/minimal vertical slice with Riverpod/Signals and Material 3.
+    - *Cross-Platform Mobile (React Native)*: React Native 0.87+ (Expo) with typed screens and shared TypeScript DTOs.
+    - *Native Spikes (iOS / Android)*: Swift 6.4 SwiftUI single-view or Kotlin Compose single-activity scaffold. Verify via tests/headless builds. Sync core ADRs to `claude-mem`.
 - **Level 3 (System-Track)**: Enterprise architectures, multi-tier platforms, major refactors. Stack: Full suite (`claude-mem`, `grill-me`, `domain-modeling`, `waterfall-sdlc`, `PLAN.md`, `ponytail`, LSP, `pr-review-toolkit`, `frontend-design`, milestone UI `playwright`, security audit). Execute 7 quality gates: Requirements -> Analysis -> Design (`CONTEXT.md`, ADRs) -> Implementation -> Testing -> Packaging -> Support.
 - **Level 4 (Foggy-Track)**: Undefined legacy migrations or massive open scopes. Stack: `wayfinder` suite (`to-tickets`, `to-spec`, `PLAN.md`). Maintain Map of Decision Tickets, clear spikes to specs, sync with `claude-mem`.
 
@@ -101,7 +106,7 @@ Every `PLAN.md` strictly follows this structured, actionable template:
 - **Exit Gate**: Headless build and unit tests pass (`dotnet build`, `dotnet test`, Exit Code 0).
 
 ### Phase 3: High-Fidelity Frontend & UI/UX Engineering
-- **Goal**: Build crisp UI adhering to the 5 Rules of Clean Design, Crafted Elegance & Sensory Depth, and defensive UX.
+- **Goal**: Build crisp Light Mode UI adhering to the 5 Rules of Clean Design, Crafted Elegance & Sensory Depth, and defensive UX.
 - **Skills & MCPs**: `frontend-design`, `mobbin` MCP, `angular-modern` (or React/Next.js via `context7`).
 - **Execution Checklist**:
   - [ ] 3.1 Visual Intelligence: Ground layout and bento compositions in real-world benchmark references via `mobbin` MCP (`search_sections` / `search_screens`).
@@ -283,6 +288,32 @@ Execute all software development in compliance with the NIST SSDF (SP 800-218), 
   - `notion-mcp-server`: Sync specifications, task backlogs, and export approved ADRs/blueprints to Notion workspace.
   - `supabase` (migrations/SQL), `stripe` (payments), `cloudrun` / `firebase-mcp-server` (deploy only after 100% local pass).
 - **Browser Audit (`playwright`)**: Reserved strictly for final UI handover or explicit user requests. Never run on backend/API tasks. Single default viewport (1280px desktop). Verify 0 uncaught console errors via `browser_console_messages` and capture at most 1 final proof screenshot. Multi-viewport audits (375px/768px) occur only upon explicit user request.
+- **Master Full-Stack & Mobile Technology Selection Matrix (Web / Native Mobile / Cross-Platform)**:
+  - **The 3 Architecture Pillars & Stack Standards**:
+    1. **Category A: Web Development & Cloud Infrastructure**:
+       - *Enterprise Backend & High-Throughput Microservices*: **ASP.NET Core (.NET 10 LTS)**. C# 14 (`LangVersion=14`), Minimal APIs (1-file architecture for MVPs), native OpenAPI 3.1, Native AOT compilation, HybridCache, zero-overhead error logging.
+       - *Full-Stack Web, SSR & Public Portals*: **Next.js 16 (React 19 + Tailwind CSS v4)**. React Server Components (RSC), Server Actions, CSS-first `@import "tailwindcss";`, Turbopack compilation.
+       - *Instrument Register & Client-Side SPAs*: **React 19 + Vite + Tailwind CSS v4**. Fast HMR, fine-grained state management, component composition, tabular data dashboards.
+       - *Container Orchestration & Cluster Runtime*: **Kubernetes (`v1.37.1` "Garhwal")**. Declarative YAML manifests, Helm charts, Resource requests/limits, zero-downtime rolling updates, Liveness/Readiness health probes, ingress controllers.
+    2. **Category B: Native Mobile Engineering (Deep Platform & Hardware Access)**:
+       - *iOS Native*: **Swift 6.4**. Complete concurrency safety by default (data race prevention at compile-time), Structured Concurrency (`async/await`, Actors), declarative SwiftUI, native iOS/iPadOS/watchOS/visionOS integrations.
+       - *Android Native*: **Kotlin 2.4+ & Jetpack Compose (`1.12.x` / BOM `2026.08+`)**. K2 compiler high-speed builds, declarative Compose UI with Material Design 3, Strong Skipping Mode, ViewModel + Kotlin Coroutines/Flow, Clean Architecture.
+    3. **Category C: Cross-Platform Mobile Engineering (Multi-Platform Reach & Code Sharing)**:
+       - *Unified Multi-Platform (iOS, Android, Desktop, Web)*: **Flutter 3.47+ (Dart 3.13+)**. Impeller graphic engine by default (zero shader jank), Riverpod/BLoC state management, pixel-perfect custom branding, single codebase deployment.
+       - *Web-Shared Ecosystem*: **React Native 0.87+ (TypeScript / React 19)**. New Architecture by default (Fabric Renderer + TurboModules), Expo SDK integration, shared TypeScript DTOs and business logic with React Web applications.
+  - **Autonomous Stack Selection & Decision Framework (AI Consultation Engine)**:
+    When a product idea or requirement is received, the AI must evaluate against this decision tree or consult the user:
+    - *Enterprise Core / High Data Volume / Strict Typing*: Backend = ASP.NET Core 10 LTS + Kubernetes v1.37.1.
+    - *Public SEO / SaaS Landing / E-Commerce*: Web Frontend = Next.js 16 + React 19 + Tailwind CSS v4.
+    - *Operations Portal / Data Visualization / Internal Admin*: Web Frontend = React 19 (Vite) + Tailwind CSS v4.
+    - *Cross-Platform Mobile with Highly Customized Fluid UI*: Mobile = Flutter 3.47+.
+    - *Cross-Platform Mobile sharing codebase/team with Web*: Mobile = React Native 0.87+ (Expo).
+    - *Deep Apple Hardware / OS Sensors / App Store Exclusives*: Mobile = Swift 6.4 Native.
+    - *Deep Android OS / Automotive / Enterprise Android*: Mobile = Kotlin 2.4+ & Jetpack Compose.
+  - **Cross-Stack Interoperability & Synergy Best Practices**:
+    - *Contract-First Single Source of Truth*: ASP.NET Core 10 LTS exposes OpenAPI 3.1 endpoints (`/openapi/v1.json`). Never manually duplicate DTOs; auto-generate typed SDKs for TypeScript (Web), Dart (Flutter), Kotlin (Android), and Swift (iOS).
+    - *Design Token Symmetry*: Maintain canonical Design Tokens (colors, spacing, typography scales) in Tailwind CSS v4 `@theme`, and map them symmetrically to Flutter `ThemeData`, Jetpack Compose `ColorScheme`, and SwiftUI `AssetCatalog`.
+    - *Defensive API Communication*: Enforce standard error envelopes (`{ error, code, details, timestamp }`), JWT authentication headers, and automatic retry policies with exponential backoff on all mobile and web clients.
 
 ---
 
