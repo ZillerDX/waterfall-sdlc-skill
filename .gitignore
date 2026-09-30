@@ -1,0 +1,8 @@
+# Review reports at root (ephemeral)
+/REVIEW.md
+
+# OS and Temp files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
