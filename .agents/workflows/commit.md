@@ -13,4 +13,4 @@ description: Create safe, atomic Conventional Commits from the current changes (
 8. For each planned commit: stage by explicit path (or `git apply --cached` for hunk splits), verify with `git diff --cached --stat`, then `git commit -m "<subject>" -m "<body>"`.
 // turbo
 9. Run `git log --oneline -n <number of new commits>` and `git status --short` to confirm a clean result.
-10. Report the new commits one line each. Do not push. Ask whether to push.
+10. Report the new commits one line each. Do not push. Before offering to push, check that every REQ in PLAN.md is user-accepted and REVIEW.md verdict is not "Request changes"; if not, state what's missing instead of offering to push. If all checks pass, ask whether to push.

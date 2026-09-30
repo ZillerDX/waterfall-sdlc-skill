@@ -43,17 +43,16 @@ When rules, skill guidelines, or user instructions conflict, resolve in this ord
 | Level | Scope | PLAN.md Engine | Verification & Gates | Skills / Workflows |
 | :--- | :--- | :--- | :--- | :--- |
 | **1 — Fast-Track** | 1–2 files, trivial bugfix, typos | Bypass (no PLAN.md) | Syntax / existing tests pass (Exit Code 0) | Direct edit; `/commit` if asked |
-| **2 — Feature-Track** | Single endpoint or UI component in an existing codebase | Lean PLAN.md (Phases 2–5) | Unit tests on new logic, build passes, 0 console errors (UI only) | `ponytail`, `ui-craft` (UI only), `/review`, `/commit` |
-| **2.5 — Rapid MVP / Spike** | Standalone prototype, hackathon, greenfield vertical slice | Lean PLAN.md (Phases 2–5; Phase 1 as 1-line inline assumptions; no CONTEXT.md) | Working vertical slice, build & smoke check pass | `ponytail`, `ui-craft` + `/design`, `/commit` |
-| **3 — Enterprise System** | Multi-tier platform, core refactor, production service | Full PLAN.md (Phases 1–5; update CONTEXT.md & ADRs) | Test suite ≥80%, type-check & lint clean, secret & dependency scan | `domain-modeling`, `ponytail`, `ui-craft`, `/review`, `/commit` (`waterfall-sdlc` only if formal gates requested) |
-| **4 — Foggy / Migration** | Undefined legacy migration, massive open scope | Roadmap PLAN.md (ticket-driven) | Map of Decision Tickets; spike-to-spec before code | `wayfinder`, `to-tickets`, `to-spec` |
+| **2 — Feature-Track** | Single endpoint or UI component in an existing codebase | Lean PLAN.md (Phases 2–5) | Unit tests on new logic, build passes, 0 console errors (UI only) | `ponytail`, `ui-craft` (UI only), `/plan`, `/build`, `/preview`, `/review`, `/commit` |
+| **2.5 — Rapid MVP / Spike** | Standalone prototype, hackathon, greenfield vertical slice | Lean PLAN.md (Phases 2–5; Phase 1 as 1-line inline assumptions; no CONTEXT.md) | Working vertical slice, build & smoke check pass | `ponytail`, `ui-craft` + `/design`, `/plan`, `/build`, `/preview`, `/commit` |
+| **3 — Enterprise System** | Multi-tier platform, core refactor, production service | Full PLAN.md (Phases 1–5; update CONTEXT.md & ADRs) | Test suite ≥80%, type-check & lint clean, secret & dependency scan | `domain-modeling`, `ponytail`, `ui-craft`, `/plan`, `/build`, `/preview`, `/review`, `/commit` |
+| **4 — Foggy / Migration** | Undefined legacy migration, massive open scope | PLAN.md links the wayfinder map | Map of Decision Tickets; spike-to-spec before code | `wayfinder` via `/wayfinder` → `/to-spec` → `/to-tickets` |
 
 `context7` is an MCP documentation tool, available at every Level when configured: query it before using any library API you haven't verified in this project.
 
 ### Intent of Level 3/4 skills (used by Missing Skill Fallback):
-- **`domain-modeling`**: name business entities in the domain's language, record terms in CONTEXT.md, keep invariants inside entities, record significant decisions as ADRs in `docs/adr/`.
-- **`waterfall-sdlc`**: produce formal gate documents only when the user requests them.
-- **`wayfinder` / `to-tickets` / `to-spec`**: map unknowns as Decision Tickets in PLAN.md; run a time-boxed spike per risky ticket; convert findings to a written spec before production code.
+- **`domain-modeling`**: sharpen the shared language in CONTEXT.md (glossary only), keep code names aligned with it, enforce each invariant in one place, and record hard-to-reverse trade-offs as ADRs in docs/adr/ indexed in docs/DECISIONS.md.
+- **`wayfinder`**: chart unknowns as decision tickets in docs/wayfinder/<map>/, resolve one per session (HITL tickets need the user), then /to-spec and /to-tickets slice the result into Level 1–3 tasks in PLAN.md.
 
 ---
 
@@ -61,17 +60,46 @@ When rules, skill guidelines, or user instructions conflict, resolve in this ord
 
 For Levels 2, 2.5, 3, and 4, maintain a stateful PLAN.md in the project root to drive execution and guarantee context recovery across new sessions, restarts, or context compaction.
 
-### 5-Phase Unified Lifecycle
-- **Phase 1 — Specifications & Threat Boundary**: Clarify scope, identify trust boundaries, check PLAN.md / DECISIONS.md / CONTEXT.md, verify library APIs via `context7`. Formal CONTEXT.md only for Level 3/4; 1-line assumptions for Level 2.5.
-- **Phase 2 — Core Architecture & Backend**: Apply `ponytail`. Minimal domain models, parameterized data access, CORS/CSRF guards.
-- **Phase 3 — Frontend & UI/UX (UI tasks only)**: Apply `ui-craft`. New pages/screens go through `/design` (direction plan → generic check → build → screenshot critique). Thai text follows `ui-craft` `resources/thai.md`.
-- **Phase 4 — Verification**: Run tests (Exit Code 0), type checks, lint; run `/review` for Level 2+; milestone-only visual proof (0 console errors).
-- **Phase 5 — Delivery & Decision Log**: Atomic conventional commits via `/commit`, concise README update when behavior changed, key decisions appended to `docs/DECISIONS.md`.
+### 6-Phase Slice Loop
+- **Phase 1 — Spec & Plan (`/plan`):** requirement → REQ list with acceptance criteria → vertical slices in PLAN.md. For Level 2.5+ the spec also lives in `docs/specs/<feature>.md`. STOP for user approval of the plan (Level 2: proceed only if the user said to).
+- **Phase 2 — Core & Backend (`/build`):** ponytail.
+- **Phase 3 — Frontend & UI (`/build`, UI slices only):** ui-craft; new screens via `/design`.
+- **Phase 4 — Automated Verification:** tests, type-check, lint, build per slice; mark "AI verified" with evidence in the Acceptance table.
+- **Phase 5 — User Acceptance (`/preview`):** after each user-visible slice, run locally and hand over for testing; classify feedback as bug or change; loop back to Phase 2/3.
+- **Phase 6 — Delivery:** when every REQ is user-accepted → `/review` (mandatory) → `/commit` → push only on user approval. Update `docs/specs/` so the spec matches the delivered system; append decisions to `docs/DECISIONS.md`.
+
+Phases 2–5 repeat per slice.
 
 ### State Engine Rules
 1. **Real-Time Progress**: Flip `- [ ]` to `- [x]` immediately upon completing each task. Update the `> **Live State**:` line at every phase transition.
 2. **Context Recovery**: On session start or resume, read PLAN.md first and continue from the first unchecked task without repeating completed work.
 3. **Zero-Echo**: Announce transitions in one line with a relative link: `[./PLAN.md](./PLAN.md) updated: Phase X completed → Entering Phase Y`.
+4. **Slice Commits**: Local commits per slice are allowed; nothing is pushed before Phase 6.
+
+### PLAN.md Skeleton
+```markdown
+# <Feature>
+> **Live State**: Phase <n> — Slice <n> — <next task>
+Level: <n> · Spec: [./docs/specs/<feature>.md](./docs/specs/<feature>.md) (Level 2.5+) · Approved: <date | pending>
+
+## Requirements
+| REQ | Requirement | Acceptance criteria |
+|---|---|---|
+| REQ-001 | … | Given … when … then … |
+
+## Slices
+### Slice 1 — <end-to-end behavior> (REQ-001, REQ-002)
+- [ ] task
+- [ ] Preview checkpoint
+
+## Acceptance
+| REQ | AI verified (evidence) | User accepted |
+|---|---|---|
+| REQ-001 | ⬜ | ⬜ |
+
+## Change log
+- <date> — REQ-00n added/changed — <reason from user feedback>
+```
 
 ---
 
@@ -111,6 +139,26 @@ Do not hardcode patch versions; align with current major LTS baselines and let `
 
 | Command | Purpose |
 | :--- | :--- |
+| **`/plan`** | Turn a requirement into an approved PLAN.md with REQ acceptance criteria and vertical slices |
+| **`/build`** | Execute the approved PLAN.md from the first unchecked task, slice by slice, up to the next preview checkpoint |
+| **`/preview`** | Run the app locally, hand it over for user testing, and turn feedback into fixes or REQ changes |
 | **`/design`** | New page/screen: plan → generic check → build → screenshot critique |
 | **`/review`** | Read-only multi-lens review; writes REVIEW.md; waits for your choice of fixes |
 | **`/commit`** | Secret scan → gates → atomic Conventional Commits; never pushes without approval |
+| **`/wayfinder`** | Chart unknowns as a shared map of decision tickets |
+| **`/to-spec`** | Convert resolved wayfinder findings into a written specification |
+| **`/to-tickets`** | Slice specification into executable Level 1–3 tasks in PLAN.md |
+
+---
+
+## 9. Design Discipline (all Levels)
+
+- **Language:** Code names follow `CONTEXT.md` (glossary only — no implementation details). Enforce each business invariant in exactly one place.
+- **Decisions:** Log every notable decision as one line in `docs/DECISIONS.md`. Write an ADR in `docs/adr/` only when a decision is hard to reverse, surprising without context, and the result of a real trade-off.
+- **Never answer for the user:** Questions that require the user's judgment (scope, trade-offs, approval) wait for the user. Never supply their answer yourself.
+- **Test at the highest seam:** Prefer existing seams (public API, route, command, UI flow); test external behavior, not implementation details.
+- **Vertical slices:** Split work into end-to-end slices that are verifiable on their own, not horizontal layers.
+- **Wide refactors use expand–contract:** add the new form beside the old, migrate callers in batches that stay green, then delete the old form.
+- **Approved design change control:** Small internal deviations — implement and note the reason in PLAN.md. Contract or scope changes (API shape, schema, requirements) — stop and get approval first.
+- **Fix loop:** Once implementation starts, bugs and refactors are fixed and re-verified immediately; never reopen planning for code-level fixes.
+- **CI:** If the repo has a remote and no CI running tests on push, propose a minimal CI workflow during Phase 1 (don't add it unasked).
