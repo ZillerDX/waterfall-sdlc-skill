@@ -73,7 +73,7 @@ When unconstrained AI coding models are asked to *"build an application"*, execu
 * **Pragmatic SOLID & OOP Triage**: Context-aware architecture preventing garbage abstractions, interface soup, and class hierarchy bloat.
 * **DevSecOps NIST SSDF Framework**: Shift-Left threat modeling, automated SAST, secret leak prevention, and zero client-side credential exposure.
 * **12-Step QA-Centric CI/CD Pipeline**: Fail-fast CI ladder, unit test coverage gates (>=80%), atomic Conventional Commits, and standardized QA PR templates.
-* **Crafted Elegance & Sensory Depth (`frontend-design`)**: High-contrast Light Mode default with dual-theming, Three.js 3D ambient constellation, Google Fonts `Plus Jakarta Sans` & `JetBrains Mono`, specular top highlights, cursor-tracking spotlight bento cards, and defensive UX patterns.
+* **Crafted Elegance & Sensory Depth (`ui-craft`)**: High-contrast Light Mode default with dual-theming, Three.js 3D ambient constellation, Google Fonts `Plus Jakarta Sans` & `JetBrains Mono`, specular top highlights, cursor-tracking spotlight bento cards, and defensive UX patterns.
 * **High-IQ Token Economy (Cuts 85–95% Token Burn)**: MSBuild error-only filtering (`-clp:ErrorsOnly`), AST structural scanning over file dumps, surgical diffing (`replace_file_content`), and sanitized non-interactive test runs.
 * **C# .NET 10 LTS & C# 14 Lean Tooling**: Minimal APIs in `Program.cs`, C# 14 field-backed properties, native OpenAPI 3.1, and automated Windows port hygiene.
 * **Angular Modern Standalone Standards**: Single-File Standalone Components (SFC), native Angular Signals state architecture, non-interactive CLI flags (`$env:NG_CLI_ANALYTICS="false"`), and strict HMR dev server retention.
@@ -298,7 +298,7 @@ waterfall-sdlc-skill/
 ├── skills/
 │   ├── waterfall-sdlc/
 │   │   └── SKILL.md                   # 7-Phase SDLC Quality Gate Engine
-│   ├── frontend-design/
+│   ├── ui-craft/
 │   │   └── SKILL.md                   # 5 Rules of Clean Design + Defensive UX Engine
 │   ├── csharp-tooling/
 │   │   └── SKILL.md                   # .NET 10 LTS & C# 14 Minimal APIs & Filtered MSBuild

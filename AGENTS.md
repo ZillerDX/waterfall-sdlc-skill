@@ -32,7 +32,7 @@ When rules, skill guidelines, or user instructions appear to conflict, resolve t
 
 ### Domain Scope Separation
 - **Backend & Plumbing**: `ponytail` (YAGNI, stdlib, pragmatic SOLID, ban Interface Soup) governs domain logic and data access.
-- **UI & Presentation**: `frontend-design` governs layout, tokens, and typography. Use *Cinematic Register* (marketing, landing) for aesthetic polish, or *Instrument Register* (dashboards, tools) for dense tabular figures, unless overridden.
+- **UI & Presentation**: `ui-craft` governs layout, tokens, and typography. Use *Cinematic Register* (marketing, landing) for aesthetic polish, or *Instrument Register* (dashboards, tools) for dense tabular figures, unless overridden.
 - **Universal Fallback**: If a named skill, tool, or plugin is unavailable in the environment, apply its architectural intent directly and continue; never stall on a missing tool.
 
 ---
@@ -43,7 +43,7 @@ When rules, skill guidelines, or user instructions appear to conflict, resolve t
 | :--- | :--- | :--- | :--- | :--- |
 | **Level 1 (Fast-Track)** | 1–2 files, trivial bugfix, typos | Bypass (No PLAN.md) | Syntax / unit check passes (Exit Code 0) | Direct edit |
 | **Level 2 (Feature-Track)** | Single endpoint or UI component in existing codebase | Lean PLAN.md (Phases 2–4) | Unit tests on new logic pass, build passes, 0 console errors (UI only) | `context7`, `ponytail`, `commit-commands` |
-| **Level 2.5 (Rapid MVP / Spike)** | Standalone prototype, hackathon, greenfield vertical slice | Lean PLAN.md (Phases 2–5; Phase 1 as 1-line inline assumptions; skip CONTEXT.md) | Working vertical slice, automated build & test pass, local smoke check | `ponytail`, `frontend-design`, `context7` |
+| **Level 2.5 (Rapid MVP / Spike)** | Standalone prototype, hackathon, greenfield vertical slice | Lean PLAN.md (Phases 2–5; Phase 1 as 1-line inline assumptions; skip CONTEXT.md) | Working vertical slice, automated build & test pass, local smoke check | `ponytail`, `ui-craft`, `context7` |
 | **Level 3 (Enterprise System)** | Multi-tier platform, core refactor, production service | Full PLAN.md (Phases 1–5; update CONTEXT.md & ADRs) | Automated test suite >=80%, static type-check & lint clean, DevSecOps scan | `domain-modeling`, `pr-review-toolkit`, stack skills (`waterfall-sdlc` if formal gates requested) |
 | **Level 4 (Foggy / Migration)** | Undefined legacy migration, massive open scope | Roadmap PLAN.md (Ticket-driven) | Map of Decision Tickets, spike-to-spec before code | `wayfinder`, `to-tickets`, `to-spec` |
 
@@ -56,7 +56,7 @@ For Levels 2, 2.5, 3, and 4, maintain a stateful `PLAN.md` in the project root t
 ### 5-Phase Unified Lifecycle
 - **Phase 1: Specifications & Threat Boundary**: Clarify scope, verify trust boundaries, check memory, query live docs via `context7` (formal `CONTEXT.md` required only for Level 3/4; 1-line assumptions for Level 2.5).
 - **Phase 2: Core Architecture & Backend**: Minimal domain models, pragmatic SOLID (SRP, ISP, composition over inheritance, ban Interface Soup), parameterized data access, CORS/CSRF guards.
-- **Phase 3: High-Fidelity Frontend & UI/UX**: Activate `frontend-design`. Choose Cinematic vs Instrument register, enforce 1 primary CTA, 3-tone color limit, and Thai typography hygiene (`whitespace-nowrap`, prevent clipped tone marks).
+- **Phase 3: High-Fidelity Frontend & UI/UX**: Activate `ui-craft`. Choose Cinematic vs Instrument register, enforce 1 primary CTA, 3-tone color limit, and Thai typography hygiene (`whitespace-nowrap`, prevent clipped tone marks).
 - **Phase 4: Headless Verification**: Run automated unit/integration tests (Exit Code 0), type checks, and milestone-only visual proof (0 console errors).
 - **Phase 5: Packaging, Delivery & Memory Sync**: Atomic conventional commit, deliver concise README, and persist core decisions to cross-session memory.
 
@@ -98,5 +98,5 @@ Delegate specialized execution to dedicated skills on demand. Do not hardcode br
 - **Web & Cloud Services**: Target .NET 10 LTS (C# 14 Minimal APIs) or Node/TypeScript (Next.js 16+, React 19, Tailwind CSS v4). Query modern documentation via `context7`. Apply `csharp-tooling` or `angular-modern` when applicable.
 - **Mobile Platforms**: Cross-Platform via Flutter 3.x (Dart 3.x) or React Native 0.87+ (Expo); Native via Swift 6.x (SwiftUI) or Kotlin 2.x (Jetpack Compose).
 - **Architecture & Domain**: Activate `ponytail` for minimal code and YAGNI; activate `domain-modeling` for rich business entities.
-- **UI/UX Design**: Apply `frontend-design` standards (tokens, dual registers, Thai typography hygiene).
+- **UI/UX Design**: Apply `ui-craft` standards (tokens, dual registers, Thai typography hygiene).
 - **Review & Git**: Activate `pr-review-toolkit` for multi-lens code audits and `commit-commands` for conventional commits.

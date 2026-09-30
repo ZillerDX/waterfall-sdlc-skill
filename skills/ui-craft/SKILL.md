@@ -1,5 +1,5 @@
 ---
-name: frontend-design
+name: ui-craft
 description: Master studio design system and UI engineering standards. Fuses aesthetic rigor (tokens, 2 registers, 4-state motion) with defensive software engineering (skeletons, empty states, truncation, destructive safety) and ruthless anti-slop production guards.
 license: MIT
 ---

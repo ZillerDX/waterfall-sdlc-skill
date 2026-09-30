@@ -57,7 +57,7 @@ graph TD
 - **Activities**:
   1. **Data Model / Schema**: Entities, relationships (ERD), database migrations, and field constraints.
   2. **API & Interface Contracts**: Endpoint definitions, request/response payloads, error codes, and state shapes.
-  3. **UI/UX Architecture**: Component hierarchy, layout tokens, and page flows (strictly apply `frontend-design` standards — vector icons only, no emojis, professional typography).
+  3. **UI/UX Architecture**: Component hierarchy, layout tokens, and page flows (strictly apply `ui-craft` standards — vector icons only, no emojis, professional typography).
   4. **System Architecture**: High-level module diagram, service boundaries, and data flow.
 - **Gate 3 Deliverable**:
   - Comprehensive Architecture Blueprint (Schema + API Specs + Component Tree).
@@ -139,5 +139,5 @@ graph TD
 3. **Mandatory Pre-Launch Port Purge (Check & Kill First)**: Never launch a dev server or re-run a service on port 3000 without executing the Port Purge one-liner first. If a previous background task is running, terminate it via `manage_task(Action='kill')`. Never allow multiple server tasks to collide or crash with `EADDRINUSE`.
 4. **Mandatory Clickable Localhost Preview Link**: Never finish a task or leave background dev servers running without outputting a clickable markdown link `[http://localhost:<port>](http://localhost:<port>)` directly in the chat response for the user to open with one click.
 5. **Synergy with Other Skills**:
-   - In Phase 3 & 4 (UI Design): Seamlessly invoke `frontend-design` for clean vector iconography and polished design systems.
+   - In Phase 3 & 4 (UI Design): Seamlessly invoke `ui-craft` for clean vector iconography and polished design systems.
    - In Phase 4 & 5 (Testing): Seamlessly invoke `test-driven-development` and `systematic-debugging` for test execution and bug isolation.
