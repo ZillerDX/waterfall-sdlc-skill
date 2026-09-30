@@ -84,21 +84,47 @@ When unconstrained AI coding models are asked to *"build an application"*, execu
 
 ---
 
-## 5. Tech Stack & Architectural Rationale
+## 5. Tech Stack & Master Technology Selection Matrix
 
-| Component | Technology | Architectural Rationale |
+### The 3 Architecture Pillars & 2026 Core Tech Standards
+
+| Pillar | Technology | Verified Stable Version | Architectural Rationale & Capabilities |
+| :--- | :--- | :--- | :--- |
+| **Pillar A: Web & Cloud** | **ASP.NET Core (.NET 10 LTS)** | `10.0.12` | C# 14 Minimal APIs (`field` keyword), Native OpenAPI 3.1, Native AOT compilation, HybridCache. |
+| **Pillar A: Web & Cloud** | **Next.js 16** | `16.3.7` | React 19.3.0 RSC, Server Actions, Turbopack, and Tailwind CSS 4.3.3 CSS-first architecture. |
+| **Pillar A: Web & Cloud** | **React 19 + Vite** | `19.3.0` | Client-side SPAs, high-density telemetry dashboards, fast HMR, fine-grained state management. |
+| **Pillar A: Web & Cloud** | **Tailwind CSS v4** | `4.3.3` | Rust-based Lightning CSS engine, `@import "tailwindcss";`, and canonical design tokens (`@theme`). |
+| **Pillar A: Web & Cloud** | **Kubernetes** | `v1.37.1` "Garhwal" | Declarative Helm manifests, zero-downtime rolling deploys, and automated health probes. |
+| **Pillar B: Native Mobile** | **Swift 6.4 (SwiftUI)** | `Swift 6.4` | Compile-time data-race safety by default, Structured Concurrency, deep iOS/visionOS SDK access. |
+| **Pillar B: Native Mobile** | **Kotlin & Compose** | `2.4.20` / `1.12.1` | K2 high-speed compiler, Compose BOM `2026.08.00`, Material 3, Strong Skipping Mode. |
+| **Pillar C: Cross-Platform** | **Flutter (Dart 3.13)** | `3.47.5` | Impeller graphic engine by default (zero shader jank), Riverpod state management, single codebase. |
+| **Pillar C: Cross-Platform** | **React Native (Expo)** | `0.87.1` | New Architecture by default (Fabric + TurboModules), shared TypeScript DTOs with Next.js web portals. |
+
+---
+
+### Autonomous Stack Selection Engine (AI Decision Ladder)
+
+When a project idea or requirement is submitted, the AI evaluates against this decision ladder:
+* **Mode 1 (User-Directed)**: User-specified stack takes 100% precedence and is locked immediately without friction.
+* **Mode 2 (AI Autonomous Recommendation)**: Unspecified requirements map deterministically to the optimal architectural fit:
+
+| Business Goal / Requirement | Primary Recommendation | Technical Rationale & Best Practice |
 | :--- | :--- | :--- |
-| **Autonomous Dispatcher** | `AGENTS.md` (Markdown System Matrix) | High-density operational decision matrix providing cross-model execution guardrails. |
-| **State Engine** | `PLAN.md` (Stateful Task Decomposer) | Eliminates context drift, tracks live progress atomically, and prevents tool duplication. |
-| **Architectural Model** | Pragmatic SOLID & Clean OOP | Contextual appropriateness triage eliminating boilerplate while ensuring domain encapsulation. |
-| **Security Framework** | NIST SSDF (SP 800-218) & OWASP Top 10 | Shift-Left security, zero-leak secret handling, and isolated backend proxies. |
-| **QA & CI/CD Pipeline** | 12-Step Fail-Fast Ladder & GitHub Actions | Structured quality verification, >=80% unit test coverage, and QA-ready PR templates. |
-| **Backend Standard** | C# .NET 10 LTS & C# 14 Minimal APIs | Native OpenAPI 3.1, field-backed properties (`field`), and token-lean vertical slices. |
-| **Frontend Standard** | Angular Standalone + Signals | Single-File Standalone Components (`inlineTemplate`) with sub-second HMR feedback. |
-| **Design System** | `frontend-design` (Crafted Elegance & Sensory Depth) | Three.js 3D ambient canvas, Plus Jakarta Sans, JetBrains Mono, 3-tone limit, spotlight bento cards, and defensive UX. |
-| **Code Minimalism** | `ponytail` (YAGNI & Stdlib) | Native platform capabilities and standard libraries over dependency bloat. |
-| **Live Docs Retrieval** | `context7` MCP | Real-time version-specific documentation eliminating API hallucinations. |
-| **Memory Daemon** | `claude-mem` (Persistent AST Store) | Cross-session memory persistence with event-driven checkpointing. |
+| **Enterprise Core / Financial / Heavy Computing** | **ASP.NET Core 10 LTS + Kubernetes** | Minimal APIs, C# 14, Native AOT speed, auto-scaling K8s clusters |
+| **Public SEO / SaaS Landing / E-Commerce** | **Next.js 16 (React 19 + Tailwind v4)** | React 19 Server Components, zero client JS bundle, edge caching |
+| **Operations Portal / Admin Data Grid** | **React 19 (Vite) + ASP.NET Core** | Sub-second HMR, fine-grained state, tabular data figures |
+| **Fluid Mobile with Custom Animations** | **Flutter 3.47+ (Dart 3.13)** | Impeller 60/120fps engine (zero shader jank), Riverpod state |
+| **Mobile sharing code & team with Web** | **React Native 0.87+ (Expo)** | New Architecture (Fabric), shared TypeScript DTOs with Next.js |
+| **Deep Apple Ecosystem & Hardware Sensors** | **Swift 6.4 Native (SwiftUI)** | Data-race safety, Widgets, watchOS, and visionOS integration |
+| **Deep Android OS / Automotive / Enterprise MDM** | **Kotlin 2.4+ & Jetpack Compose** | K2 compiler, Material 3, deep background services & hardware APIs |
+
+---
+
+### Cross-Stack Interoperability & Best Practice Standards
+
+1. **Contract-First Single Source of Truth**: ASP.NET Core 10 LTS exposes OpenAPI 3.1 endpoints (`/openapi/v1.json`). DTOs are never handwritten across clients; typed SDKs are auto-generated for TypeScript (`openapi-ts`), Flutter (`dio`), Kotlin, and Swift.
+2. **Design Token Symmetry**: Canonical tokens (colors, typography scales, spacing) originate in Tailwind CSS v4 `@theme` and map symmetrically to Flutter `ThemeData`, Compose `ColorScheme`, and SwiftUI `AssetCatalog`.
+3. **Defensive API Communication**: Standardized API response envelopes (`{ data, error, code, details, timestamp, traceId }`), JWT authentication headers, and automatic retry policies with exponential backoff & jitter across all mobile and web clients.
 
 ---
 

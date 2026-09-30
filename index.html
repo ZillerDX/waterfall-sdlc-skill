@@ -129,6 +129,7 @@
         <a href="#overview" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Overview</a>
         <a href="#plan-engine" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">PLAN.md Engine</a>
         <a href="#benchmarks" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors font-semibold text-brand-600 dark:text-brand-400">Benchmarks</a>
+        <a href="#tech-matrix" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Tech Matrix</a>
         <a href="#pillars" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Core Pillars</a>
         <a href="#installation" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Installation</a>
         <a href="#skills" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Skills Suite</a>
@@ -225,10 +226,12 @@
               <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 ml-2 font-medium">waterfall-dispatcher.engine</span>
             </div>
             <!-- IDE Tabs -->
-            <div class="flex items-center gap-1 font-mono text-xs">
-              <button onclick="switchIdeTab('plan')" id="ide-tab-plan" class="px-2.5 py-1 rounded-md text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/80 font-semibold border border-brand-200/60 dark:border-brand-800/60 transition-all">PLAN.md</button>
-              <button onclick="switchIdeTab('csharp')" id="ide-tab-csharp" class="px-2.5 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all">Program.cs</button>
-              <button onclick="switchIdeTab('angular')" id="ide-tab-angular" class="px-2.5 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all">app.component.ts</button>
+            <div class="flex items-center gap-1 font-mono text-xs overflow-x-auto">
+              <button onclick="switchIdeTab('plan')" id="ide-tab-plan" class="px-2 py-1 rounded-md text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/80 font-semibold border border-brand-200/60 dark:border-brand-800/60 transition-all flex-shrink-0">PLAN.md</button>
+              <button onclick="switchIdeTab('csharp')" id="ide-tab-csharp" class="px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0">Program.cs</button>
+              <button onclick="switchIdeTab('nextjs')" id="ide-tab-nextjs" class="px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0">page.tsx</button>
+              <button onclick="switchIdeTab('angular')" id="ide-tab-angular" class="px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0">app.component.ts</button>
+              <button onclick="switchIdeTab('flutter')" id="ide-tab-flutter" class="px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0">main.dart</button>
             </div>
           </div>
           
@@ -582,8 +585,236 @@
       </div>
     </section>
 
-    <!-- THE 6 ARCHITECTURAL PILLARS (ASYMMETRIC BENTO GRID WITH MULTI-LAYERED BADGES) -->
-    <section id="pillars" class="py-24 border-t border-zinc-200/80 dark:border-zinc-800/80 relative">
+    <!-- MASTER FULL-STACK & MOBILE TECHNOLOGY MATRIX (2026 ACTIVE STANDARDS) -->
+    <section id="tech-matrix" class="py-24 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/60 relative scroll-mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">Autonomous Stack System</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white mt-2">
+            The 3-Pillar Full-Stack &amp; Mobile Matrix
+          </h2>
+          <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-3">
+            Grounded in audited 2026 production releases. Empowers the AI agent with a deterministic consultation ladder: user-directed lock or automated technical decision mapping with zero stack hallucination.
+          </p>
+        </div>
+
+        <!-- 3 Architecture Pillars Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          
+          <!-- Pillar A: Web & Cloud Infrastructure (Wide 2-col card) -->
+          <div class="md:col-span-2 spotlight-card specular-card p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono">Pillar A • Web &amp; Cloud</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/60">Verified Stable 2026</span>
+              </div>
+              <h3 class="text-2xl font-bold text-zinc-900 dark:text-white">Web Development &amp; Cloud Infrastructure</h3>
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed max-w-2xl">
+                High-throughput enterprise backends paired with high-performance SSR and sub-second instrument dashboards, deployed onto production container runtimes.
+              </p>
+
+              <!-- Tech Items Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                <div class="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <div class="flex items-center gap-2.5 mb-1.5">
+                    <span class="font-bold text-sm text-zinc-900 dark:text-white">ASP.NET Core (.NET 10 LTS)</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-semibold">10.0.12</span>
+                  </div>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
+                    C# 14 Minimal APIs (<code class="font-mono text-zinc-700 dark:text-zinc-300">field</code> keyword), Native OpenAPI 3.1, Native AOT compilation, and HybridCache.
+                  </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <div class="flex items-center gap-2.5 mb-1.5">
+                    <span class="font-bold text-sm text-zinc-900 dark:text-white">Next.js 16 (React 19 + Tailwind v4)</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200 font-semibold">16.3.7</span>
+                  </div>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
+                    React 19.3.0 RSC, Server Actions, Turbopack, and Tailwind CSS 4.3.3 CSS-first architecture.
+                  </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <div class="flex items-center gap-2.5 mb-1.5">
+                    <span class="font-bold text-sm text-zinc-900 dark:text-white">React 19 + Vite (Instrument SPA)</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold">19.3.0</span>
+                  </div>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
+                    Instant HMR, fine-grained state management, and high-density tabular data dashboards.
+                  </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <div class="flex items-center gap-2.5 mb-1.5">
+                    <span class="font-bold text-sm text-zinc-900 dark:text-white">Kubernetes ("Garhwal")</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 font-semibold">v1.37.1</span>
+                  </div>
+                  <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
+                    Declarative Helm manifests, zero-downtime rolling deploys, and automated health probes.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-zinc-200/60 dark:border-zinc-800/80 flex flex-wrap items-center gap-6 text-xs text-zinc-500 dark:text-zinc-400">
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span>Contract-First OpenAPI 3.1</span>
+              </span>
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span>Native AOT Ready</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Pillar B: Native Mobile Engineering (1-col card) -->
+          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 font-mono">Pillar B • Native Mobile</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-purple-50 dark:bg-purple-950/70 text-purple-600 dark:text-purple-400 border border-purple-200/60 dark:border-purple-800/60">Hardware Level</span>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Native Mobile Engineering</h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                Direct platform integration, compile-time data race safety, and specialized hardware sensor access.
+              </p>
+
+              <div class="space-y-3.5 mt-5">
+                <div class="p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-xs text-zinc-900 dark:text-white">Swift 6.4 (SwiftUI)</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300 font-semibold">Swift 6.4</span>
+                  </div>
+                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
+                    Complete Concurrency Safety by default (compile-time data race prevention), Structured Concurrency, and iOS/watchOS/visionOS SDKs.
+                  </p>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-xs text-zinc-900 dark:text-white">Kotlin 2.4+ &amp; Compose</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold">BOM 2026.08</span>
+                  </div>
+                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
+                    Kotlin v2.4.20 with K2 high-speed compiler, Compose 1.12.1 with Material 3, and Strong Skipping Mode.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
+              <span>Deep OS Sensors</span>
+              <span class="text-purple-600 dark:text-purple-400 font-semibold">Zero-Jank Native</span>
+            </div>
+          </div>
+
+          <!-- Pillar C: Cross-Platform Mobile Engineering (1-col card) -->
+          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 font-mono">Pillar C • Cross-Platform</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-cyan-50 dark:bg-cyan-950/70 text-cyan-600 dark:text-cyan-400 border border-cyan-200/60 dark:border-cyan-800/60">Single Codebase</span>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Cross-Platform Engineering</h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                Maximum code sharing and rapid multi-platform reach across iOS, Android, Desktop, and Web.
+              </p>
+
+              <div class="space-y-3.5 mt-5">
+                <div class="p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-xs text-zinc-900 dark:text-white">Flutter 3.47+ (Dart 3.13)</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-semibold">3.47.5</span>
+                  </div>
+                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
+                    Impeller graphic engine by default (100% elimination of shader compilation jank), Riverpod state management, and pixel-perfect branding.
+                  </p>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-xs text-zinc-900 dark:text-white">React Native 0.87+ (Expo)</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold">0.87.1</span>
+                  </div>
+                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
+                    New Architecture enabled by default (Fabric Renderer + TurboModules) sharing TypeScript DTOs directly with Next.js web portals.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
+              <span>Impeller &amp; Fabric</span>
+              <span class="text-cyan-600 dark:text-cyan-400 font-semibold">Shared DTOs</span>
+            </div>
+          </div>
+
+          <!-- AI Autonomous Stack Decision Ladder (Wide 2-col card) -->
+          <div class="md:col-span-2 spotlight-card specular-card p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono">Decision Ladder • AI Consultation</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-brand-50 dark:bg-brand-950/70 text-brand-600 dark:text-brand-400 border border-brand-200/60 dark:border-brand-800/60">Zero Hallucination</span>
+              </div>
+              <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Deterministic Stack Selection Engine</h3>
+              <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                When requirements or product ideas are submitted, the AI evaluates against this decision matrix to lock the optimal architectural fit:
+              </p>
+
+              <!-- Decision Table -->
+              <div class="mt-5 overflow-x-auto rounded-xl border border-zinc-200/80 dark:border-zinc-800">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-zinc-100/70 dark:bg-zinc-800/60 text-zinc-700 dark:text-zinc-300 font-semibold font-mono border-b border-zinc-200/80 dark:border-zinc-800">
+                    <tr>
+                      <th class="py-2.5 px-3.5">Business Goal / Requirement</th>
+                      <th class="py-2.5 px-3.5 text-brand-600 dark:text-brand-400">Primary Recommendation</th>
+                      <th class="py-2.5 px-3.5 hidden sm:table-cell">Technical Rationale</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-zinc-200/60 dark:divide-zinc-800/60 text-zinc-600 dark:text-zinc-300">
+                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
+                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Enterprise Core / Financial / Heavy Computing</td>
+                      <td class="py-2.5 px-3.5 font-mono text-purple-600 dark:text-purple-400 font-semibold">.NET 10 LTS + Kubernetes</td>
+                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">Minimal APIs, C# 14, Native AOT speed, auto-scaling K8s</td>
+                    </tr>
+                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
+                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Public SEO / SaaS Landing / E-Commerce</td>
+                      <td class="py-2.5 px-3.5 font-mono text-zinc-900 dark:text-white font-semibold">Next.js 16 + Tailwind v4</td>
+                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">React 19 Server Components, zero client JS bundle, edge caching</td>
+                    </tr>
+                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
+                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Operations Portal / Admin Data Grid</td>
+                      <td class="py-2.5 px-3.5 font-mono text-blue-600 dark:text-blue-400 font-semibold">React 19 (Vite) + .NET 10</td>
+                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">Sub-second HMR, fine-grained state, tabular figures</td>
+                    </tr>
+                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
+                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Fluid Mobile with Custom Animations</td>
+                      <td class="py-2.5 px-3.5 font-mono text-sky-600 dark:text-sky-400 font-semibold">Flutter 3.47+ (Dart 3.13)</td>
+                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">Impeller 60/120fps engine (zero shader jank), Riverpod</td>
+                    </tr>
+                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
+                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Mobile sharing code &amp; team with Web</td>
+                      <td class="py-2.5 px-3.5 font-mono text-cyan-600 dark:text-cyan-400 font-semibold">React Native 0.87+ (Expo)</td>
+                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">New Architecture (Fabric), shared TypeScript DTOs with Next.js</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 text-[11px] text-zinc-500 dark:text-zinc-400 flex items-center justify-between">
+              <span>Dual-Mode Resolution: User-Directed Lock takes 100% precedence over automated recommendations</span>
+              <span class="font-mono text-brand-600 dark:text-brand-400 font-semibold">Strict Rule</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
@@ -1068,13 +1299,25 @@
 <span class="text-zinc-400">02:</span> builder.Services.AddOpenApi();
 <span class="text-zinc-400">03:</span> <span class="text-purple-600 dark:text-purple-400">var</span> app = builder.Build();
 <span class="text-zinc-400">04:</span> 
-<span class="text-zinc-400">05:</span> <span class="text-zinc-500">// C# 14 Minimal API with field-backed property model</span>
+<span class="text-zinc-400">05:</span> <span class="text-zinc-500">// .NET 10 LTS (10.0.12) Minimal API + C# 14 field property</span>
 <span class="text-zinc-400">06:</span> app.MapGet(<span class="text-emerald-600 dark:text-emerald-400">"/api/health"</span>, () =&gt; Results.Ok(<span class="text-blue-600 dark:text-blue-400">new</span> SystemStatus {
 <span class="text-zinc-400">07:</span>     Discipline = <span class="text-emerald-600 dark:text-emerald-400">"Waterfall-SDLC"</span>,
 <span class="text-zinc-400">08:</span>     NistSsdfCompliant = <span class="text-amber-500">true</span>,
-<span class="text-zinc-400">09:</span>     TokenEfficiency = <span class="text-emerald-600 dark:text-emerald-400">"85% Saved"</span>
+<span class="text-zinc-400">09:</span>     TokenEfficiency = <span class="text-emerald-600 dark:text-emerald-400">"85.2% Saved"</span>
 <span class="text-zinc-400">10:</span> }));
 <span class="text-zinc-400">11:</span> app.Run();`,
+      nextjs: `<span class="text-zinc-400">01:</span> <span class="text-zinc-500">// Next.js 16 (16.3.7) + React 19 RSC + Tailwind v4</span>
+<span class="text-zinc-400">02:</span> <span class="text-purple-600 dark:text-purple-400">export default async function</span> <span class="text-blue-600 dark:text-blue-400">TelemetryPage</span>() {
+<span class="text-zinc-400">03:</span>   <span class="text-purple-600 dark:text-purple-400">const</span> metrics = <span class="text-purple-600 dark:text-purple-400">await</span> fetchMetrics(); <span class="text-zinc-500">// Server Action</span>
+<span class="text-zinc-400">04:</span>   <span class="text-purple-600 dark:text-purple-400">return</span> (
+<span class="text-zinc-400">05:</span>     &lt;<span class="text-blue-600 dark:text-blue-400">main</span> className=<span class="text-emerald-600 dark:text-emerald-400">"grid gap-6 p-8 font-sans"</span>&gt;
+<span class="text-zinc-400">06:</span>       &lt;<span class="text-blue-600 dark:text-blue-400">div</span> className=<span class="text-emerald-600 dark:text-emerald-400">"spotlight-card rounded-2xl p-6"</span>&gt;
+<span class="text-zinc-400">07:</span>         &lt;<span class="text-blue-600 dark:text-blue-400">h1</span> className=<span class="text-emerald-600 dark:text-emerald-400">"text-2xl font-bold tracking-tight"</span>&gt;Live System&lt;/<span class="text-blue-600 dark:text-blue-400">h1</span>&gt;
+<span class="text-zinc-400">08:</span>         &lt;<span class="text-blue-600 dark:text-blue-400">p</span> className=<span class="text-emerald-600 dark:text-emerald-400">"text-sm font-mono tabular-nums"</span>&gt;{metrics.latency}ms&lt;/<span class="text-blue-600 dark:text-blue-400">p</span>&gt;
+<span class="text-zinc-400">09:</span>       &lt;/<span class="text-blue-600 dark:text-blue-400">div</span>&gt;
+<span class="text-zinc-400">10:</span>     &lt;/<span class="text-blue-600 dark:text-blue-400">main</span>&gt;
+<span class="text-zinc-400">11:</span>   );
+<span class="text-zinc-400">12:</span> }`,
       angular: `<span class="text-zinc-400">01:</span> <span class="text-purple-600 dark:text-purple-400">@Component</span>({
 <span class="text-zinc-400">02:</span>   selector: <span class="text-emerald-600 dark:text-emerald-400">'app-dispatcher'</span>,
 <span class="text-zinc-400">03:</span>   standalone: <span class="text-amber-500">true</span>,
@@ -1083,7 +1326,18 @@
 <span class="text-zinc-400">06:</span> <span class="text-purple-600 dark:text-purple-400">export class</span> <span class="text-blue-600 dark:text-blue-400">DispatcherComponent</span> {
 <span class="text-zinc-400">07:</span>   <span class="text-zinc-500">// Single-File Standalone Component + Angular Signals</span>
 <span class="text-zinc-400">08:</span>   status = signal(<span class="text-emerald-600 dark:text-emerald-400">'Phase 4: Headless Verification [PASS]'</span>);
-<span class="text-zinc-400">09:</span> }`
+<span class="text-zinc-400">09:</span> }`,
+      flutter: `<span class="text-zinc-400">01:</span> <span class="text-zinc-500">// Flutter 3.47+ (Dart 3.13) Impeller Graphic Engine</span>
+<span class="text-zinc-400">02:</span> <span class="text-purple-600 dark:text-purple-400">class</span> <span class="text-blue-600 dark:text-blue-400">MetricCard</span> <span class="text-purple-600 dark:text-purple-400">extends</span> ConsumerWidget {
+<span class="text-zinc-400">03:</span>   <span class="text-purple-600 dark:text-purple-400">@override</span>
+<span class="text-zinc-400">04:</span>   Widget build(BuildContext context, WidgetRef ref) {
+<span class="text-zinc-400">05:</span>     <span class="text-purple-600 dark:text-purple-400">final</span> state = ref.watch(telemetryProvider);
+<span class="text-zinc-400">06:</span>     <span class="text-purple-600 dark:text-purple-400">return</span> Container(
+<span class="text-zinc-400">07:</span>       decoration: AppTheme.spotlightDecoration,
+<span class="text-zinc-400">08:</span>       child: Text(<span class="text-emerald-600 dark:text-emerald-400">'\${state.rate} req/s'</span>, style: AppTheme.monoStyle),
+<span class="text-zinc-400">09:</span>     );
+<span class="text-zinc-400">10:</span>   }
+<span class="text-zinc-400">11:</span> }`
     };
 
     function switchIdeTab(tab) {
@@ -1092,13 +1346,13 @@
         codeContainer.innerHTML = '<code>' + ideSnippets[tab] + '</code>';
       }
 
-      ['plan', 'csharp', 'angular'].forEach(t => {
+      ['plan', 'csharp', 'nextjs', 'angular', 'flutter'].forEach(t => {
         const btn = document.getElementById('ide-tab-' + t);
         if (btn) {
           if (t === tab) {
-            btn.className = 'px-2.5 py-1 rounded-md text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/80 font-semibold border border-brand-200/60 dark:border-brand-800/60 transition-all';
+            btn.className = 'px-2 py-1 rounded-md text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/80 font-semibold border border-brand-200/60 dark:border-brand-800/60 transition-all flex-shrink-0';
           } else {
-            btn.className = 'px-2.5 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all';
+            btn.className = 'px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0';
           }
         }
       });
