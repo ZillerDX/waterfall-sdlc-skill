@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZillerDX SDLC & Autonomous Engineering Suite 2026 | Master AI Pair Programming Dispatcher</title>
-  <meta name="description" content="Master Autonomous AI Engineering Dispatcher featuring 6-Phase Vertical Slice Loop, PLAN.md State Engine, DevSecOps NIST SSDF, and 6 Production Skills: ponytail, ui-craft, pr-review-toolkit, commit-commands, domain-modeling, and wayfinder.">
+  <meta name="description" content="Master Autonomous AI Engineering Dispatcher featuring 6-Phase Vertical Slice Loop, PLAN.md State Engine, Zero-Leak DevSecOps, and 6 Production Skills: ponytail, ui-craft, pr-review-toolkit, commit-commands, domain-modeling, and wayfinder.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -76,11 +76,10 @@
     }
     .dark .spotlight-card:hover::before { opacity: 1; }
 
-    @keyframes shimmer-sweep {
-      0% { transform: translateX(-150%) skewX(-15deg); }
-      100% { transform: translateX(250%) skewX(-15deg); }
+    /* Presentation Deck Modal Animation */
+    .deck-active {
+      overflow: hidden !important;
     }
-    .animate-shimmer { animation: shimmer-sweep 2.5s infinite; }
   </style>
   <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -93,7 +92,7 @@
 <body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased min-h-screen transition-colors duration-200 flex flex-col selection:bg-brand-500 selection:text-white">
 
   <!-- 3-ZONE PROFESSIONAL NAVBAR -->
-  <header class="sticky top-0 z-50 h-16 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md">
+  <header class="sticky top-0 z-40 h-16 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
       
       <!-- Zone 1 (Left): Brand Logo & Identifier -->
@@ -118,8 +117,15 @@
         <a href="#installation" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Installation</a>
       </nav>
 
-      <!-- Zone 3 (Right): Utilities & Primary CTA -->
-      <div class="flex items-center gap-3">
+      <!-- Zone 3 (Right): Utilities, Presentation Gimmick & Primary CTA -->
+      <div class="flex items-center gap-2.5">
+        
+        <!-- Presentation Mode Gimmick Button -->
+        <button onclick="openDeck()" type="button" aria-label="Open Keynote Deck" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-50 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 hover:bg-indigo-100 dark:hover:bg-indigo-900 transition-colors shadow-sm">
+          <i data-lucide="presentation" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Pitch Deck</span>
+        </button>
+
         <!-- Theme Toggle Button -->
         <button id="theme-toggle" type="button" aria-label="Toggle Color Theme" class="w-9 h-9 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 text-zinc-600 dark:text-zinc-300 flex items-center justify-center hover:bg-zinc-200/70 dark:hover:bg-zinc-800 transition-colors">
           <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -131,7 +137,7 @@
         </button>
 
         <!-- GitHub Repo Link -->
-        <a href="https://github.com/ZillerDX/zillerdx-sdlc-skill" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
+        <a href="https://github.com/ZillerDX/zillerdx-sdlc-skill" target="_blank" rel="noopener noreferrer" class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
           </svg>
@@ -140,22 +146,22 @@
 
         <!-- Dominant CTA Anchor -->
         <a href="#installation" class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 active:scale-95 rounded-lg shadow-sm shadow-brand-500/20 transition-all">
-          Install System
+          Install
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION: CINEMATIC 3D WITH INTERACTIVE CENTERPIECE -->
+  <!-- HERO SECTION: CINEMATIC 3D WITH DYNAMIC SKILL CONSTELLATION -->
   <main class="flex-1 bg-grid-pattern relative overflow-hidden">
     
     <!-- Ambient Aurora Glow Behind Hero -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-tr from-brand-600/15 via-indigo-500/10 to-cyan-400/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[850px] h-[480px] bg-gradient-to-tr from-brand-600/20 via-indigo-500/15 to-cyan-400/15 blur-[130px] rounded-full pointer-events-none -z-10"></div>
 
     <section id="overview" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-20">
       
-      <!-- Three.js Ambient 3D Interactive Canvas -->
-      <canvas id="hero-three-canvas" class="absolute inset-0 w-full h-[650px] pointer-events-none opacity-40 dark:opacity-65 -z-10"></canvas>
+      <!-- Three.js Ambient 3D Interactive Skill Constellation Canvas -->
+      <canvas id="hero-three-canvas" class="absolute inset-0 w-full h-[700px] pointer-events-none opacity-60 dark:opacity-80 -z-10"></canvas>
 
       <!-- Announcement Chip -->
       <div class="flex justify-center mb-6 relative z-10">
@@ -177,8 +183,11 @@
 
         <!-- CTA Action Cluster -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <a href="#installation" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 active:scale-95 rounded-xl shadow-lg shadow-brand-500/25 transition-all relative overflow-hidden group">
-            <span class="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></span>
+          <button onclick="openDeck()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 active:scale-95 rounded-xl shadow-lg shadow-indigo-500/25 transition-all">
+            <i data-lucide="play-circle" class="w-4 h-4"></i>
+            <span>Launch Presentation Deck</span>
+          </button>
+          <a href="#installation" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 active:scale-95 rounded-xl shadow-lg shadow-brand-500/25 transition-all">
             <i data-lucide="terminal" class="w-4 h-4"></i>
             <span>1-Click Terminal Install</span>
           </a>
@@ -526,7 +535,7 @@
           <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
             <div class="text-xs font-mono text-zinc-500 mb-2">Chat Link Hygiene</div>
             <div class="text-3xl font-extrabold text-purple-600 dark:text-purple-400 tabular-nums">Zero-Echo</div>
-            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-2">Clean relative links (PLAN.md) without ./ prefix that prevents IDE 404 bugs.</div>
+            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-2">Actionable file URIs and direct GitHub URLs that guarantee 0 404 bugs.</div>
           </div>
         </div>
 
@@ -658,6 +667,51 @@
 
   </main>
 
+  <!-- PRESENTATION DECK MODAL GIMMICK -->
+  <div id="deck-modal" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl hidden flex-col justify-between p-6 sm:p-12 text-white">
+    <!-- Top Bar -->
+    <div class="flex items-center justify-between border-b border-zinc-800/80 pb-4">
+      <div class="flex items-center gap-3">
+        <img src="favicon.svg" alt="Logo" class="w-8 h-8 rounded-lg">
+        <div>
+          <span class="font-bold text-sm tracking-tight block">ZillerDX SDLC 2026 Keynote Deck</span>
+          <span id="deck-counter" class="text-xs font-mono text-indigo-400">Slide 1 of 6</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-mono text-zinc-500 hidden sm:inline">Use [←] and [→] keys to navigate</span>
+        <button onclick="closeDeck()" class="w-9 h-9 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 flex items-center justify-center transition-colors">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Center Slide Area -->
+    <div class="flex-1 flex items-center justify-center py-8">
+      <div id="deck-slide-content" class="max-w-4xl w-full">
+        <!-- Dynamically injected slide content -->
+      </div>
+    </div>
+
+    <!-- Bottom Controls & Progress Dots -->
+    <div class="flex items-center justify-between border-t border-zinc-800/80 pt-4">
+      <button onclick="prevSlide()" class="px-4 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-xs font-semibold flex items-center gap-2 transition-all">
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        <span>Previous</span>
+      </button>
+
+      <!-- Step Indicator Dots -->
+      <div class="flex items-center gap-2" id="deck-dots">
+        <!-- Dots injected by JS -->
+      </div>
+
+      <button onclick="nextSlide()" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-xs font-semibold flex items-center gap-2 transition-all">
+        <span>Next</span>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
   <!-- PROFESSIONAL MINIMAL FOOTER -->
   <footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 py-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
@@ -666,6 +720,10 @@
         <span>© 2026 ZillerDX SDLC & Autonomous Engineering Suite. MIT Licensed.</span>
       </div>
       <div class="flex items-center gap-6">
+        <button onclick="openDeck()" class="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold flex items-center gap-1">
+          <i data-lucide="presentation" class="w-3.5 h-3.5"></i>
+          <span>Open Pitch Deck</span>
+        </button>
         <a href="https://github.com/ZillerDX/zillerdx-sdlc-skill" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-white transition-colors">GitHub Repository</a>
         <a href="#overview" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Back to Top</a>
       </div>
@@ -839,15 +897,201 @@
       });
     });
 
-    // Three.js Ambient 3D Visualization
+    // PRESENTATION PITCH DECK GIMMICK
+    const deckSlides = [
+      {
+        tag: "PROBLEM STATEMENT",
+        title: "The 5 Failure Modes of Autonomous AI Coding",
+        content: `
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 text-left">
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <div class="text-rose-400 font-bold mb-1">1. Context Drift & State Loss</div>
+              <div class="text-xs text-zinc-400">After 5–10 steps, agents lose track, repeat completed work, or diverge from core architectural constraints.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <div class="text-rose-400 font-bold mb-1">2. Premature Whole-File Rewriting</div>
+              <div class="text-xs text-zinc-400">Replacing 500-line files for a 3-line bugfix burns millions of tokens and introduces regression bugs.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <div class="text-rose-400 font-bold mb-1">3. Runaway Token Burn</div>
+              <div class="text-xs text-zinc-400">Dumping verbose terminal stdout and package binaries into LLM context degrades reasoning IQ.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <div class="text-rose-400 font-bold mb-1">4. Port Collisions & Zombie Servers</div>
+              <div class="text-xs text-zinc-400">Dev server crashes trigger 300-step death spirals where agents blindly grep the root disk.</div>
+            </div>
+          </div>
+        `
+      },
+      {
+        tag: "THE PARADIGM SHIFT",
+        title: "The 6-Phase Vertical Slice Loop",
+        content: `
+          <p class="text-sm text-zinc-400 mt-2 max-w-2xl mx-auto">Replaces monolithic waterfall with rapid, verifiable vertical slices across the whole stack.</p>
+          <div class="grid grid-cols-3 gap-3 mt-8 text-left">
+            <div class="p-3.5 rounded-lg bg-zinc-900 border border-brand-500/40">
+              <div class="text-xs font-mono text-brand-400">Phase 1: Spec & Plan</div>
+              <div class="text-xs text-zinc-300 mt-1">Given/When/Then REQ matrix</div>
+            </div>
+            <div class="p-3.5 rounded-lg bg-zinc-900 border border-indigo-500/40">
+              <div class="text-xs font-mono text-indigo-400">Phase 2: Core & Backend</div>
+              <div class="text-xs text-zinc-300 mt-1">ponytail: stdlib first, YAGNI</div>
+            </div>
+            <div class="p-3.5 rounded-lg bg-zinc-900 border border-purple-500/40">
+              <div class="text-xs font-mono text-purple-400">Phase 3: Frontend & UI</div>
+              <div class="text-xs text-zinc-300 mt-1">ui-craft: dual registers, tokens</div>
+            </div>
+            <div class="p-3.5 rounded-lg bg-zinc-900 border border-emerald-500/40">
+              <div class="text-xs font-mono text-emerald-400">Phase 4: Auto Verification</div>
+              <div class="text-xs text-zinc-300 mt-1">Exit Code 0 machine gates</div>
+            </div>
+            <div class="p-3.5 rounded-lg bg-zinc-900 border border-amber-500/40">
+              <div class="text-xs font-mono text-amber-400">Phase 5: User Acceptance</div>
+              <div class="text-xs text-zinc-300 mt-1">/preview local dev handover</div>
+            </div>
+            <div class="p-3.5 rounded-lg bg-zinc-900 border border-cyan-500/40">
+              <div class="text-xs font-mono text-cyan-400">Phase 6: Safe Delivery</div>
+              <div class="text-xs text-zinc-300 mt-1">/review pass + atomic /commit</div>
+            </div>
+          </div>
+        `
+      },
+      {
+        tag: "ENGINEERING DISCIPLINE",
+        title: "Ponytail: The Lazy Senior Developer",
+        content: `
+          <div class="text-left max-w-xl mx-auto space-y-4 mt-6">
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <span class="text-brand-400 font-bold block mb-1">Standard Library First</span>
+              <span class="text-xs text-zinc-400">The best code is code never written; second best is standard library. Banning bloated third-party dependencies.</span>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <span class="text-brand-400 font-bold block mb-1">3–15 Line Surgical Diffs</span>
+              <span class="text-xs text-zinc-400">Never dump full files into prompt context. Edits target tight anchor points, cutting generation token burn by 95%.</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        tag: "DESIGN SYSTEM",
+        title: "UI-Craft: Senior Designer Standards",
+        content: `
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 text-left">
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <div class="text-purple-400 font-bold mb-1">Dual Visual Registers</div>
+              <div class="text-xs text-zinc-400">Cinematic (landing/marketing) vs. Instrument (dense dashboard/admin tools). Built for the subject's world.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+              <div class="text-purple-400 font-bold mb-1">Anti-Slop Guarantees</div>
+              <div class="text-xs text-zinc-400">Zero solitary spinners, zero Unicode emojis on UI, verified Thai font pairing (Prompt + Sarabun), and defensive UX.</div>
+            </div>
+          </div>
+        `
+      },
+      {
+        tag: "DEVSECOPS & SAFETY",
+        title: "Zero-Leak Protocol & Port Hygiene",
+        content: `
+          <div class="text-left max-w-xl mx-auto space-y-4 mt-6">
+            <div class="p-4 rounded-xl bg-zinc-900 border border-emerald-900/60">
+              <span class="text-emerald-400 font-bold block mb-1">Pre-Commit Secret Scanning</span>
+              <span class="text-xs text-zinc-400">Automated regex scans detect and redact leaked API keys, tokens, and credentials before staging.</span>
+            </div>
+            <div class="p-4 rounded-xl bg-zinc-900 border border-emerald-900/60">
+              <span class="text-emerald-400 font-bold block mb-1">Platform-Aware Port Hygiene</span>
+              <span class="text-xs text-zinc-400">PowerShell/POSIX port lookup inspects listeners, displays PID, and prompts before killing anything.</span>
+            </div>
+          </div>
+        `
+      },
+      {
+        tag: "FINAL DELIVERY GATE",
+        title: "100% User Acceptance Before Remote Push",
+        content: `
+          <div class="text-center max-w-lg mx-auto mt-6">
+            <div class="p-6 rounded-2xl bg-zinc-900 border border-brand-500 shadow-2xl">
+              <i data-lucide="check-circle-2" class="w-12 h-12 text-emerald-400 mx-auto mb-3"></i>
+              <h3 class="text-lg font-bold text-white mb-2">No Surprises in Production</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed">
+                The agent will never push unverified code to shared remotes. Local slice commits are allowed; remote pushes require explicit user acceptance.
+              </p>
+            </div>
+          </div>
+        `
+      }
+    ];
+
+    let currentSlide = 0;
+
+    function openDeck() {
+      document.getElementById('deck-modal').classList.remove('hidden');
+      document.getElementById('deck-modal').classList.add('flex');
+      document.body.classList.add('deck-active');
+      renderSlide();
+    }
+
+    function closeDeck() {
+      document.getElementById('deck-modal').classList.add('hidden');
+      document.getElementById('deck-modal').classList.remove('flex');
+      document.body.classList.remove('deck-active');
+    }
+
+    function renderSlide() {
+      const slide = deckSlides[currentSlide];
+      document.getElementById('deck-counter').textContent = `Slide ${currentSlide + 1} of ${deckSlides.length}`;
+      document.getElementById('deck-slide-content').innerHTML = `
+        <div class="text-center animate-fadeIn">
+          <span class="text-xs font-mono font-bold tracking-widest text-indigo-400 uppercase bg-indigo-950/80 px-3 py-1 rounded-full border border-indigo-800">${slide.tag}</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-4 tracking-tight">${slide.title}</h2>
+          ${slide.content}
+        </div>
+      `;
+
+      // Render dots
+      const dotsContainer = document.getElementById('deck-dots');
+      dotsContainer.innerHTML = '';
+      deckSlides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `w-2.5 h-2.5 rounded-full transition-all ${idx === currentSlide ? 'bg-brand-500 w-6' : 'bg-zinc-700 hover:bg-zinc-500'}`;
+        dot.onclick = () => { currentSlide = idx; renderSlide(); };
+        dotsContainer.appendChild(dot);
+      });
+      lucide.createIcons();
+    }
+
+    function nextSlide() {
+      if (currentSlide < deckSlides.length - 1) {
+        currentSlide++;
+        renderSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        renderSlide();
+      }
+    }
+
+    // Keyboard Arrow Controls
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('deck-modal');
+      if (!modal.classList.contains('hidden')) {
+        if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'Escape') closeDeck();
+      }
+    });
+
+    // THREE.JS HIGH-IMPACT INTERACTIVE SKILL CONSTELLATION
     (function initThree() {
       const canvas = document.getElementById('hero-three-canvas');
       if (!canvas) return;
 
       try {
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(55, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-        camera.position.z = 7;
+        const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+        camera.position.z = 10;
 
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -856,78 +1100,162 @@
         function onWindowResize() {
           if (!canvas) return;
           const width = canvas.parentElement.clientWidth;
-          const height = canvas.clientHeight || 650;
+          const height = canvas.clientHeight || 700;
           camera.aspect = width / height;
           camera.updateProjectionMatrix();
           renderer.setSize(width, height, false);
         }
         window.addEventListener('resize', onWindowResize);
 
-        const networkGroup = new THREE.Group();
-        scene.add(networkGroup);
+        const constellationGroup = new THREE.Group();
+        scene.add(constellationGroup);
 
-        const geoMesh = new THREE.IcosahedronGeometry(2.3, 1);
         const isDark = document.documentElement.classList.contains('dark');
-        const wireMaterial = new THREE.MeshBasicMaterial({
+
+        // Central Dispatcher Core (Icosahedron Wireframe)
+        const coreGeo = new THREE.IcosahedronGeometry(1.6, 1);
+        const coreMat = new THREE.MeshBasicMaterial({
           color: isDark ? 0x3b82f6 : 0x2563eb,
           wireframe: true,
           transparent: true,
-          opacity: isDark ? 0.35 : 0.18
+          opacity: isDark ? 0.45 : 0.25
         });
-        const icosahedron = new THREE.Mesh(geoMesh, wireMaterial);
-        networkGroup.add(icosahedron);
+        const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+        constellationGroup.add(coreMesh);
 
-        const particleCount = 90;
-        const particleGeo = new THREE.BufferGeometry();
-        const positions = new Float32Array(particleCount * 3);
-
-        for (let i = 0; i < particleCount * 3; i += 3) {
-          positions[i] = (Math.random() - 0.5) * 14;
-          positions[i + 1] = (Math.random() - 0.5) * 8;
-          positions[i + 2] = (Math.random() - 0.5) * 10;
-        }
-        particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-        const particleMat = new THREE.PointsMaterial({
-          color: isDark ? 0x38bdf8 : 0x2563eb,
-          size: 0.055,
+        // Inner Glowing Nucleus
+        const nucleusGeo = new THREE.SphereGeometry(0.6, 16, 16);
+        const nucleusMat = new THREE.MeshBasicMaterial({
+          color: isDark ? 0x60a5fa : 0x3b82f6,
+          wireframe: false,
           transparent: true,
-          opacity: isDark ? 0.7 : 0.4
+          opacity: isDark ? 0.6 : 0.35
         });
-        const particleSystem = new THREE.Points(particleGeo, particleMat);
-        networkGroup.add(particleSystem);
+        const nucleus = new THREE.Mesh(nucleusGeo, nucleusMat);
+        constellationGroup.add(nucleus);
 
+        // 6 Orbiting Satellite Nodes (representing 6 Core Skills)
+        const satelliteNodes = [];
+        const satelliteCount = 6;
+        const orbitRadius = 4.2;
+
+        const satGeo = new THREE.SphereGeometry(0.25, 12, 12);
+        const satMat = new THREE.MeshBasicMaterial({
+          color: isDark ? 0x38bdf8 : 0x1d4ed8,
+          wireframe: false
+        });
+
+        // Connection Lines Material
+        const lineMat = new THREE.LineBasicMaterial({
+          color: isDark ? 0x6366f1 : 0x4f46e5,
+          transparent: true,
+          opacity: isDark ? 0.35 : 0.2
+        });
+
+        const linesGroup = new THREE.Group();
+        constellationGroup.add(linesGroup);
+
+        for (let i = 0; i < satelliteCount; i++) {
+          const angle = (i / satelliteCount) * Math.PI * 2;
+          const x = Math.cos(angle) * orbitRadius;
+          const y = Math.sin(angle) * (orbitRadius * 0.65);
+          const z = (Math.sin(angle * 2) * 1.5);
+
+          const satMesh = new THREE.Mesh(satGeo, satMat);
+          satMesh.position.set(x, y, z);
+          satMesh.userData = { angle: angle, speed: 0.003 + (i * 0.0005) };
+          constellationGroup.add(satMesh);
+          satelliteNodes.push(satMesh);
+
+          // Build connection line to core
+          const lineGeo = new THREE.BufferGeometry().setFromPoints([
+            new THREE.Vector3(0, 0, 0),
+            new THREE.Vector3(x, y, z)
+          ]);
+          const line = new THREE.Line(lineGeo, lineMat);
+          linesGroup.add(line);
+        }
+
+        // Ambient Particle Dust
+        const dustCount = 80;
+        const dustGeo = new THREE.BufferGeometry();
+        const dustPos = new Float32Array(dustCount * 3);
+
+        for (let i = 0; i < dustCount * 3; i += 3) {
+          dustPos[i] = (Math.random() - 0.5) * 16;
+          dustPos[i + 1] = (Math.random() - 0.5) * 10;
+          dustPos[i + 2] = (Math.random() - 0.5) * 10;
+        }
+        dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+
+        const dustMat = new THREE.PointsMaterial({
+          color: isDark ? 0x818cf8 : 0x3b82f6,
+          size: 0.045,
+          transparent: true,
+          opacity: isDark ? 0.5 : 0.3
+        });
+        const dustSystem = new THREE.Points(dustGeo, dustMat);
+        constellationGroup.add(dustSystem);
+
+        // Smooth Mouse Parallax Target
         let targetRotX = 0;
         let targetRotY = 0;
 
         window.addEventListener('mousemove', (e) => {
           const normX = (e.clientX / window.innerWidth) * 2 - 1;
           const normY = -(e.clientY / window.innerHeight) * 2 + 1;
-          targetRotY = normX * 0.35;
-          targetRotX = normY * 0.25;
+          targetRotY = normX * 0.4;
+          targetRotX = normY * 0.3;
         });
 
         window.updateThreeTheme = function(dark) {
-          wireMaterial.color.setHex(dark ? 0x3b82f6 : 0x2563eb);
-          wireMaterial.opacity = dark ? 0.35 : 0.18;
-          particleMat.color.setHex(dark ? 0x38bdf8 : 0x2563eb);
-          particleMat.opacity = dark ? 0.7 : 0.4;
+          coreMat.color.setHex(dark ? 0x3b82f6 : 0x2563eb);
+          coreMat.opacity = dark ? 0.45 : 0.25;
+          nucleusMat.color.setHex(dark ? 0x60a5fa : 0x3b82f6);
+          nucleusMat.opacity = dark ? 0.6 : 0.35;
+          satMat.color.setHex(dark ? 0x38bdf8 : 0x1d4ed8);
+          lineMat.color.setHex(dark ? 0x6366f1 : 0x4f46e5);
+          lineMat.opacity = dark ? 0.35 : 0.2;
+          dustMat.color.setHex(dark ? 0x818cf8 : 0x3b82f6);
         };
 
+        // Smooth Animation Loop
         function animate() {
           requestAnimationFrame(animate);
-          icosahedron.rotation.x += 0.0018;
-          icosahedron.rotation.y += 0.0024;
-          particleSystem.rotation.y -= 0.0008;
 
-          networkGroup.rotation.y += (targetRotY - networkGroup.rotation.y) * 0.04;
-          networkGroup.rotation.x += (targetRotX - networkGroup.rotation.x) * 0.04;
+          // Rotate central core
+          coreMesh.rotation.x += 0.002;
+          coreMesh.rotation.y += 0.003;
+          nucleus.rotation.y -= 0.004;
+
+          // Orbit satellite nodes & update connection lines
+          satelliteNodes.forEach((sat, idx) => {
+            sat.userData.angle += sat.userData.speed;
+            const a = sat.userData.angle;
+            sat.position.x = Math.cos(a) * orbitRadius;
+            sat.position.y = Math.sin(a) * (orbitRadius * 0.65);
+            sat.position.z = Math.sin(a * 2) * 1.5;
+
+            // Update line positions
+            const line = linesGroup.children[idx];
+            if (line) {
+              const positions = line.geometry.attributes.position.array;
+              positions[3] = sat.position.x;
+              positions[4] = sat.position.y;
+              positions[5] = sat.position.z;
+              line.geometry.attributes.position.needsUpdate = true;
+            }
+          });
+
+          // Parallax interpolation
+          constellationGroup.rotation.y += (targetRotY - constellationGroup.rotation.y) * 0.04;
+          constellationGroup.rotation.x += (targetRotX - constellationGroup.rotation.x) * 0.04;
 
           renderer.render(scene, camera);
         }
         animate();
       } catch (err) {
-        console.warn('Three.js ambient visualization disabled or unavailable:', err);
+        console.warn('Three.js constellation disabled or unavailable:', err);
       }
     })();
   </script>
