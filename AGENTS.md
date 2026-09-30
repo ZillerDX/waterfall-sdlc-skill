@@ -95,7 +95,7 @@ For Levels 2, 2.5, 3, and 4, maintain a stateful `PLAN.md` in the project root t
 
 Delegate specialized execution to dedicated skills on demand. Do not hardcode brittle patch versions; align with major active LTS baselines and let `context7` and package lockfiles govern exact releases:
 
-- **Web & Cloud Services**: Target .NET 10 LTS (C# 14 Minimal APIs) or Node/TypeScript (Next.js 16+, React 19, Tailwind CSS v4). Query modern documentation via `context7`. Apply `csharp-tooling` or `angular-modern` when applicable.
+- **Web & Cloud Services**: Target .NET 10 LTS (C# 14 Minimal APIs) or Node/TypeScript (Next.js 16+, React 19, Tailwind CSS v4). Query modern documentation via `context7` directly.
 - **Mobile Platforms**: Cross-Platform via Flutter 3.x (Dart 3.x) or React Native 0.87+ (Expo); Native via Swift 6.x (SwiftUI) or Kotlin 2.x (Jetpack Compose).
 - **Architecture & Domain**: Activate `ponytail` for minimal code and YAGNI; activate `domain-modeling` for rich business entities.
 - **UI/UX Design**: Apply `ui-craft` standards (tokens, dual registers, Thai typography hygiene).

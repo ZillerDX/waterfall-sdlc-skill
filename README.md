@@ -298,12 +298,8 @@ waterfall-sdlc-skill/
 ├── skills/
 │   ├── waterfall-sdlc/
 │   │   └── SKILL.md                   # 7-Phase SDLC Quality Gate Engine
-│   ├── ui-craft/
-│   │   └── SKILL.md                   # 5 Rules of Clean Design + Defensive UX Engine
-│   ├── csharp-tooling/
-│   │   └── SKILL.md                   # .NET 10 LTS & C# 14 Minimal APIs & Filtered MSBuild
-│   └── angular-modern/
-│       └── SKILL.md                   # Angular Standalone SFC & Signals Engine
+│   └── ui-craft/
+│       └── SKILL.md                   # 5 Rules of Clean Design + Defensive UX Engine
 ├── .github/
 │   └── workflows/
 │       ├── validate-skills.yml        # Pre-Flight Secret Scan & CI Lint Pipeline
