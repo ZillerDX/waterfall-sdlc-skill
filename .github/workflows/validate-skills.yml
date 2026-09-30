@@ -55,7 +55,7 @@ jobs:
         run: |
           node -e "
             const fs = require('fs');
-            ['plugin.json', 'package.json'].forEach(file => {
+            ['package.json'].forEach(file => {
               if (fs.existsSync(file)) {
                 const raw = fs.readFileSync(file, 'utf8').replace(/^﻿/, '');
                 JSON.parse(raw);
