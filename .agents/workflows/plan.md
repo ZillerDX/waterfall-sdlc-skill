@@ -8,4 +8,4 @@ description: Turn a requirement into an approved PLAN.md with REQ acceptance cri
 5. Write REQs (`REQ-001`…) each with Given/When/Then acceptance criteria. Level 2.5+: also write `docs/specs/<feature>.md` (Problem, Solution, REQ table, Implementation decisions, Testing seams, Out of scope, Open questions).
 6. Split into vertical slices ordered by dependency then risk (riskiest first). Each slice lists its REQs; user-visible slices end with a "Preview checkpoint" task.
 7. Fill PLAN.md using the skeleton in AGENTS.md §4, Approved: pending.
-8. Report: PLAN.md link, REQ count, slice count, open questions. STOP for approval. On approval set `Approved: <date>`.
+8. Report: [PLAN.md](PLAN.md) link (clean relative link without leading ./), REQ count, slice count, open questions. STOP for approval. On approval set `Approved: <date>`.

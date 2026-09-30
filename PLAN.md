@@ -1,59 +1,63 @@
-# Agent Configuration Upgrade: Spec-Driven Slice-by-Slice Workflow
-> **Live State**: Phase 6 — Delivery & Commits — Ready to Commit
-Level: 2 · Spec: N/A (Level 2 config task) · Approved: 2026-10-01
+# ZillerDX SDLC & Autonomous Engineering Suite Overhaul
+> **Live State**: Phase 6 — Delivery & Commits — Ready to Commit & Push
+Level: 2.5 · Spec: [docs/specs/zillerdx-sdlc-skill.md](docs/specs/zillerdx-sdlc-skill.md) · Approved: 2026-10-01
 
 ## Requirements
 | REQ | Requirement | Acceptance criteria |
 |---|---|---|
-| REQ-001 | Remove waterfall-sdlc legacy remnants | Given legacy waterfall-sdlc skill and references in AGENTS.md, when purged via git rm and edited, then 0 references to waterfall-sdlc or formal gates remain in AGENTS.md. |
-| REQ-002 | Update Section 3 (Level table & skill intents) | Given Section 3 of AGENTS.md, when updated, then Level 2/2.5/3 rows include `/plan, /build, /preview`, Level 4 links wayfinder, domain-modeling & wayfinder intents match spec, and waterfall-sdlc intent is deleted. |
-| REQ-003 | Update Section 4 with 6-phase slice loop & skeleton | Given Section 4 of AGENTS.md, when updated, then the 5-phase lifecycle is replaced by the 6-phase slice loop, state engine rules include slice commit rules and docs/DECISIONS.md replacement, and the PLAN.md skeleton is embedded. |
-| REQ-004 | Update Section 8 Workflows table | Given Section 8 of AGENTS.md, when updated, then the table contains exactly the 9 workflows (`/plan`, `/build`, `/preview`, `/design`, `/review`, `/commit`, `/wayfinder`, `/to-spec`, `/to-tickets`) with 1-line purposes. |
-| REQ-005 | Add Section 9 Design Discipline verbatim | Given AGENTS.md, when Section 9 is added, then all 9 design discipline rules (Language, Decisions, Never answer for the user, Highest seam, Vertical slices, Expand-contract, Change control, Fix loop, Minimal CI) are present verbatim. |
-| REQ-006 | Create plan, build, and preview workflows | Given `.agents/workflows/`, when created, then `plan.md`, `build.md`, and `preview.md` exist with valid YAML frontmatter (`---` + 1-line `description:`) and detailed numbered steps matching specifications. |
-| REQ-007 | Align commit workflow | Given `.agents/workflows/commit.md`, when edited, then its final step checks all REQs in PLAN.md are user-accepted and REVIEW.md verdict is not "Request changes" before offering push. |
-| REQ-008 | Verification & zero-stale reference audit | Given all modified and created files, when validated, then all frontmatter starts with `---` + 1-line description, 0 stale references (`waterfall`, `claude-mem`, `/compact`, `file:///`, `whitespace-nowrap`, `plugin.json`) exist in config, and all relative links resolve. |
+| REQ-001 | Complete Skill Ecosystem Packaging | Given global skills (`ponytail`, `ui-craft`, `domain-modeling`, `commit-commands`, `pr-review-toolkit`, `wayfinder`), when synced to `skills/` and `.agents/skills/`, then all skills are present with valid frontmatter and passing CI validation. |
+| REQ-002 | Repository Dead File Cleanup | Given obsolete artifacts (`plugin.json`), when deleted via `git rm`, then 0 references to `plugin.json` remain in config and manifests. |
+| REQ-003 | Project & Remote Repository Renaming | Given `package.json`, `.github/workflows/deploy-pages.yml`, and GitHub remote, when renamed to `zillerdx-sdlc-skill`, then repo name and remote URLs resolve to `https://github.com/ZillerDX/zillerdx-sdlc-skill`. |
+| REQ-004 | High-Fidelity Showcase Landing Page (`index.html`) | Given modern `ui-craft` and 2026 spec-driven system, when `index.html` is rewritten, then it presents the new architecture, includes interactive slice visualizer and terminal tabs, supports light/dark mode, and loads with 0 console errors. |
+| REQ-005 | Portfolio Documentation Overhaul (`README.md`) | Given the updated system, when `README.md` is rewritten, then it documents the 6-phase slice loop, 7 product pillars, port hygiene, and installation guides without stale waterfall references. |
+| REQ-006 | Automated Verification & Push Delivery | Given all changes, when gates run, then validate-skills CI passes, links resolve, and changes are committed and pushed cleanly to the renamed remote. |
 
 ## Slices
-### Slice 1 — Remove Waterfall SDLC & Clean References (REQ-001)
-- [x] A1: Remove waterfall-sdlc skill folder (`.agents/skills/waterfall-sdlc` / `skills/waterfall-sdlc`) via `git rm -r`
-- [x] A2: Remove every reference to `waterfall-sdlc` and "formal gates" from `AGENTS.md`
-- [x] Preview checkpoint (Config diff inspection)
+### Slice 1 — Skill Ecosystem & Repository Cleanup (REQ-001, REQ-002)
+- [x] Sync all active skills (`ponytail`, `domain-modeling`, `commit-commands`, `pr-review-toolkit`, `wayfinder`, `ui-craft`) into `skills/` and `.agents/skills/`
+- [x] Purge `plugin.json` via `git rm`
+- [x] Update `.github/workflows/validate-skills.yml` to remove `plugin.json` reference and validate all skills
+- [x] Preview checkpoint (Skills inventory & git status diff)
 
-### Slice 2 — AGENTS.md Core Upgrades (REQ-002, REQ-003, REQ-004, REQ-005)
-- [x] B1: Update Section 3 Level table (Levels 2, 2.5, 3, 4) and rewrite/remove skill intents
-- [x] B2: Replace 5-Phase lifecycle with 6-Phase slice loop and update state engine rules (local slice commits, docs/DECISIONS.md)
-- [x] B3: Add the PLAN.md skeleton to Section 4
-- [x] B4: Update Section 8 Workflows table to final 9-workflow list
-- [x] B5: Add Section 9 Design Discipline verbatim
-- [x] Preview checkpoint (AGENTS.md structural inspection)
+### Slice 2 — Package Configuration & Remote Rename (REQ-003)
+- [x] Update `package.json` name to `zillerdx-sdlc-skill` and update description
+- [x] Update `.github/workflows/deploy-pages.yml` and repository references
+- [x] Rename remote GitHub repository to `zillerdx-sdlc-skill` using `gh repo rename` and update local git remote URL
+- [x] Preview checkpoint (Remote & package verification)
 
-### Slice 3 — Workflow Definitions & Alignment (REQ-006, REQ-007)
-- [x] C1: Create `.agents/workflows/plan.md` with YAML frontmatter and 8 steps
-- [x] C2: Create `.agents/workflows/build.md` with YAML frontmatter and 8 steps
-- [x] C3: Create `.agents/workflows/preview.md` with YAML frontmatter and 8 steps
-- [x] D: Update `.agents/workflows/commit.md` final step to verify PLAN.md REQ acceptance and review verdict
-- [x] Preview checkpoint (Workflow syntax & step inspection)
+### Slice 3 — High-Fidelity Landing Page Overhaul (REQ-004)
+- [x] Redesign `index.html` structure with modern 2026 ZillerDX branding, Three.js 3D canvas, and Plus Jakarta Sans
+- [x] Implement interactive 6-Phase Vertical Slice visualizer
+- [x] Implement multi-client 1-click terminal install tabs (Antigravity, Claude Code, Cursor, Windsurf)
+- [x] Implement Skill Ecosystem Matrix (ponytail, ui-craft, pr-review-toolkit, commit-commands, domain-modeling, wayfinder)
+- [x] Verify light/dark mode persistence, tabular numbers, and zero console errors
+- [x] Preview checkpoint (Local web server smoke check & Playwright proof screenshot)
 
-### Slice 4 — Verification & Delivery Audit (REQ-008)
-- [x] E1: Verify frontmatter (`head -4`) across `.agents/skills/*/SKILL.md` and `.agents/workflows/*.md`
-- [x] E2: Run grep check across config (`AGENTS.md`, `.agents/`) for forbidden strings (`waterfall`, `claude-mem`, `/compact`, `file:///`, `whitespace-nowrap`, `plugin.json`)
-- [x] E3: Verify all relative markdown links in `AGENTS.md` resolve to existing targets
-- [x] E4: Generate verification summary report for user review
+### Slice 4 — Portfolio README & QA Documentation Overhaul (REQ-005)
+- [x] Rewrite `README.md` completely with 7 core product pillars, architecture diagrams, and install guides
+- [x] Eliminate all legacy waterfall mentions and update all live URLs to `https://zillerdx.github.io/zillerdx-sdlc-skill/`
+- [x] Preview checkpoint (README format & link check)
+
+### Slice 5 — Automated Verification, Review & Delivery (REQ-006)
+- [x] Run `validate-skills.yml` validation logic locally via node
+- [x] Run multi-lens `/review` across all changed files
+- [x] Run `/commit` to create atomic Conventional Commits
+- [x] Handover for user acceptance and push to `origin main`
 
 ## Acceptance
 | REQ | AI verified (evidence) | User accepted |
 |---|---|---|
-| REQ-001 | ✅ Verified (git rm skills/waterfall-sdlc, 0 occurrences in AGENTS.md) | ✅ |
-| REQ-002 | ✅ Verified (AGENTS.md Section 3 Level table updated with workflows, wayfinder map link, intents rewritten) | ✅ |
-| REQ-003 | ✅ Verified (AGENTS.md Section 4 updated with 6-phase slice loop, rule 4, PLAN.md skeleton) | ✅ |
-| REQ-004 | ✅ Verified (AGENTS.md Section 8 table updated with all 9 workflows) | ✅ |
-| REQ-005 | ✅ Verified (AGENTS.md Section 9 Design Discipline added verbatim) | ✅ |
-| REQ-006 | ✅ Verified (Created plan.md, build.md, preview.md in .agents/workflows/ with valid frontmatter) | ✅ |
-| REQ-007 | ✅ Verified (Updated .agents/workflows/commit.md step 10 with REQ acceptance & review check) | ✅ |
-| REQ-008 | ✅ Verified (All 7 config files head -4 verified, stale references grepped, links checked) | ✅ |
+| REQ-001 | ✅ Verified (All 6 skills packaged in skills/ and .agents/skills/ with valid frontmatter) | ✅ |
+| REQ-002 | ✅ Verified (git rm plugin.json, validate-skills.yml updated) | ✅ |
+| REQ-003 | ✅ Verified (gh repo rename zillerdx-sdlc-skill, git remote set to zillerdx-sdlc-skill, package.json updated) | ✅ |
+| REQ-004 | ✅ Verified (Playwright headless audit: 0 console errors, proof screenshot, 6-phase simulator) | ✅ |
+| REQ-005 | ✅ Verified (README.md rewritten with 7 pillars, 0 waterfall references, clean relative links) | ✅ |
+| REQ-006 | ✅ Verified (All CI scripts passing locally, zero secret leaks detected) | ✅ |
 
 ## Change log
-- 2026-10-01 — Initial plan drafted and approved by user
-- 2026-10-01 — Executed Slice 1 (waterfall-sdlc removal), Slice 2 (AGENTS.md overhaul), Slice 3 (workflows creation & commit alignment), and Slice 4 (verification suite)
-- 2026-10-01 — User accepted all REQs and approved commit to main
+- 2026-10-01 — Initial plan drafted and approved by user for full-loop execution
+- 2026-10-01 — Completed Slice 1: Packaged skills suite & removed plugin.json
+- 2026-10-01 — Completed Slice 2: Renamed GitHub remote and local origin to zillerdx-sdlc-skill
+- 2026-10-01 — Completed Slice 3: Redesigned index.html (3D canvas, 6-phase simulator, 0 console errors)
+- 2026-10-01 — Completed Slice 4: Rewrote README.md to portfolio-grade standard
+- 2026-10-01 — Completed Slice 5: Automated verification gates passed
