@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waterfall SDLC & Autonomous Systems Dispatcher 2.0 | Enterprise AI Engineering</title>
-  <meta name="description" content="Master Autonomous AI Engineering Dispatcher featuring PLAN.md State Engine, Pragmatic SOLID/OOP, DevSecOps NIST SSDF, 5 Rules of Clean Design, Three.js 3D Visuals, and 12-Step QA-Centric CI/CD.">
+  <title>ZillerDX SDLC & Autonomous Engineering Suite 2026 | Master AI Pair Programming Dispatcher</title>
+  <meta name="description" content="Master Autonomous AI Engineering Dispatcher featuring 6-Phase Vertical Slice Loop, PLAN.md State Engine, DevSecOps NIST SSDF, and 6 Production Skills: ponytail, ui-craft, pr-review-toolkit, commit-commands, domain-modeling, and wayfinder.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -48,12 +48,8 @@
     };
   </script>
   <style>
-    /* Tabular numbers for clean numeric data alignment */
-    .tabular-nums {
-      font-variant-numeric: tabular-nums;
-    }
+    .tabular-nums { font-variant-numeric: tabular-nums; }
     
-    /* Subtle dot grid ground */
     .bg-grid-pattern {
       background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
       background-size: 28px 28px;
@@ -63,19 +59,10 @@
       background-size: 28px 28px;
     }
 
-    /* Top-edge specular highlight for Dark Mode */
-    .specular-card {
-      position: relative;
-    }
-    .dark .specular-card {
-      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
-    }
+    .specular-card { position: relative; }
+    .dark .specular-card { box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08); }
 
-    /* Spotlight cursor tracking effect */
-    .spotlight-card {
-      position: relative;
-      overflow: hidden;
-    }
+    .spotlight-card { position: relative; overflow: hidden; }
     .dark .spotlight-card::before {
       content: '';
       position: absolute;
@@ -87,21 +74,15 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    .dark .spotlight-card:hover::before {
-      opacity: 1;
-    }
+    .dark .spotlight-card:hover::before { opacity: 1; }
 
-    /* Shimmer button light sweep */
     @keyframes shimmer-sweep {
       0% { transform: translateX(-150%) skewX(-15deg); }
       100% { transform: translateX(250%) skewX(-15deg); }
     }
-    .animate-shimmer {
-      animation: shimmer-sweep 2.5s infinite;
-    }
+    .animate-shimmer { animation: shimmer-sweep 2.5s infinite; }
   </style>
   <script>
-    // Theme initialization before render to avoid flash
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
@@ -115,49 +96,49 @@
   <header class="sticky top-0 z-50 h-16 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
       
-      <!-- Zone 1 (Left): Brand Logo & Identifier (Matches Favicon) -->
+      <!-- Zone 1 (Left): Brand Logo & Identifier -->
       <a href="#" class="flex items-center gap-3 group focus:outline-none">
-        <img src="favicon.svg" alt="Waterfall SDLC Logo" class="w-9 h-9 rounded-xl shadow-md shadow-brand-500/25 group-hover:scale-105 transition-transform flex-shrink-0">
+        <img src="favicon.svg" alt="ZillerDX SDLC Logo" class="w-9 h-9 rounded-xl shadow-md shadow-brand-500/25 group-hover:scale-105 transition-transform flex-shrink-0">
         <div>
-          <span class="font-bold text-base tracking-tight text-zinc-900 dark:text-white block leading-tight">Waterfall SDLC</span>
-          <span class="text-[11px] font-medium text-zinc-500 dark:text-zinc-400 block font-mono">Autonomous Engine</span>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base tracking-tight text-zinc-900 dark:text-white block leading-tight">ZillerDX SDLC</span>
+            <span class="px-1.5 py-0.5 text-[10px] font-semibold bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 rounded border border-brand-200 dark:border-brand-800/60 font-mono">v2.1</span>
+          </div>
+          <span class="text-[11px] font-medium text-zinc-500 dark:text-zinc-400 block font-mono">Autonomous AI Dispatcher</span>
         </div>
       </a>
 
       <!-- Zone 2 (Center): Segmented Navigation Tabs -->
       <nav class="hidden md:flex items-center gap-1 bg-zinc-100/80 dark:bg-zinc-900/80 p-1 rounded-lg border border-zinc-200/60 dark:border-zinc-800/60 text-xs font-medium text-zinc-600 dark:text-zinc-300">
         <a href="#overview" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Overview</a>
-        <a href="#plan-engine" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">PLAN.md Engine</a>
-        <a href="#benchmarks" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors font-semibold text-brand-600 dark:text-brand-400">Benchmarks</a>
-        <a href="#tech-matrix" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Tech Matrix</a>
-        <a href="#pillars" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Core Pillars</a>
+        <a href="#slice-loop" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors font-semibold text-brand-600 dark:text-brand-400">6-Phase Loop</a>
+        <a href="#skills" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Skill Suite</a>
+        <a href="#benchmarks" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Token Scoreboard</a>
+        <a href="#triage" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Triage Levels</a>
         <a href="#installation" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Installation</a>
-        <a href="#skills" class="px-3 py-1.5 rounded-md hover:text-zinc-900 dark:hover:text-white transition-colors">Skills Suite</a>
       </nav>
 
       <!-- Zone 3 (Right): Utilities & Primary CTA -->
       <div class="flex items-center gap-3">
         <!-- Theme Toggle Button -->
         <button id="theme-toggle" type="button" aria-label="Toggle Color Theme" class="w-9 h-9 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 text-zinc-600 dark:text-zinc-300 flex items-center justify-center hover:bg-zinc-200/70 dark:hover:bg-zinc-800 transition-colors">
-          <!-- Sun Icon (shown in dark mode) -->
           <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
-          <!-- Moon Icon (shown in light mode) -->
           <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </button>
 
         <!-- GitHub Repo Link -->
-        <a href="https://github.com/ZillerDX/waterfall-sdlc-skill" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
+        <a href="https://github.com/ZillerDX/zillerdx-sdlc-skill" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
           </svg>
           <span>GitHub</span>
         </a>
 
-        <!-- Dominant CTA Anchor (1 Dominant Action Rule) -->
+        <!-- Dominant CTA Anchor -->
         <a href="#installation" class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-semibold text-white bg-brand-600 hover:bg-brand-700 active:scale-95 rounded-lg shadow-sm shadow-brand-500/20 transition-all">
           Install System
         </a>
@@ -165,7 +146,7 @@
     </div>
   </header>
 
-  <!-- HERO SECTION: CINEMATIC / HIGH-IMPACT WITH 3D CANVAS & CENTERPIECE -->
+  <!-- HERO SECTION: CINEMATIC 3D WITH INTERACTIVE CENTERPIECE -->
   <main class="flex-1 bg-grid-pattern relative overflow-hidden">
     
     <!-- Ambient Aurora Glow Behind Hero -->
@@ -178,906 +159,188 @@
 
       <!-- Announcement Chip -->
       <div class="flex justify-center mb-6 relative z-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-brand-50 dark:bg-brand-950/70 border border-brand-200/80 dark:border-brand-800/80 text-brand-700 dark:text-brand-300 shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse"></span>
-          <span>Version 2.0 Autonomous Release</span>
-          <span class="text-zinc-400 dark:text-zinc-600">•</span>
-          <span>NIST SSDF &amp; PLAN.md Engine</span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-200 dark:border-brand-800/60 bg-brand-50/80 dark:bg-brand-950/60 backdrop-blur-sm text-xs font-medium text-brand-700 dark:text-brand-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Spec-Driven Slice-by-Slice Architecture · Zero Instruction Dilution</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </div>
       </div>
 
-      <!-- Hero Heading & Tagline -->
+      <!-- Main Headline & Subhead -->
       <div class="text-center max-w-4xl mx-auto relative z-10">
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-[-0.035em] text-zinc-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-white dark:via-zinc-100 dark:to-zinc-400 leading-[1.1] mb-6">
-          Architectural Discipline for<br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-500 dark:from-brand-400 dark:via-indigo-300 dark:to-cyan-400">
-            Autonomous AI Agents
-          </span>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.1] mb-6">
+          Autonomous AI Systems Dispatcher & <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-indigo-500 to-cyan-500">Vertical Slice Suite</span>
         </h1>
-        <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8 max-w-2xl mx-auto">
-          The unified autonomous dispatcher turning AI coding models into Principal Systems Engineers. Eliminates context drift via the <strong class="text-zinc-900 dark:text-white font-semibold">PLAN.md State Engine</strong>, enforces <strong class="text-zinc-900 dark:text-white font-semibold">DevSecOps NIST SSDF</strong>, and executes rigorous <strong class="text-zinc-900 dark:text-white font-semibold">12-Step QA-Centric CI/CD</strong>.
+        <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-10">
+          Transform autonomous AI coding agents into Principal Systems Engineers. Driven by stateful <code class="px-1.5 py-0.5 rounded bg-zinc-200/70 dark:bg-zinc-800 text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-200">PLAN.md</code>, lazy senior dev minimalism (<code class="px-1.5 py-0.5 rounded bg-zinc-200/70 dark:bg-zinc-800 text-xs font-mono text-zinc-900 dark:text-zinc-200">ponytail</code>), modular UI craft, multi-lens review, and mandatory user acceptance before remote push.
         </p>
 
-        <!-- CTA Action Cluster with Shimmer Sweep -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-16">
-          <a href="#installation" class="relative group overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 rounded-xl shadow-lg shadow-brand-500/25 transition-all">
-            <span class="absolute inset-0 w-1/2 h-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out"></span>
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-            <span>Install in Workspace</span>
+        <!-- CTA Action Cluster -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <a href="#installation" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 active:scale-95 rounded-xl shadow-lg shadow-brand-500/25 transition-all relative overflow-hidden group">
+            <span class="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></span>
+            <i data-lucide="terminal" class="w-4 h-4"></i>
+            <span>1-Click Terminal Install</span>
           </a>
-          <a href="https://github.com/ZillerDX/waterfall-sdlc-skill" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold text-zinc-800 dark:text-zinc-200 bg-white/80 dark:bg-zinc-900/80 hover:bg-zinc-100 dark:hover:bg-zinc-800/90 rounded-xl border border-zinc-200 dark:border-white/10 shadow-sm backdrop-blur-md transition-colors">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-            </svg>
-            <span>Read AGENTS.md Spec</span>
+          <a href="#slice-loop" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-zinc-700 dark:text-zinc-200 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 active:scale-95 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm transition-all">
+            <i data-lucide="git-branch" class="w-4 h-4 text-brand-600 dark:text-brand-400"></i>
+            <span>Explore 6-Phase Loop</span>
           </a>
         </div>
 
-        <!-- HERO CENTERPIECE: INTERACTIVE IDE & STATE ENGINE SANDBOX MOCKUP -->
-        <div class="relative max-w-4xl mx-auto rounded-2xl border border-zinc-200/80 dark:border-white/10 bg-white/95 dark:bg-zinc-950/90 shadow-2xl backdrop-blur-xl overflow-hidden text-left specular-card">
-          <!-- Window Title Bar -->
-          <div class="flex items-center justify-between px-4 py-3 border-b border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100/70 dark:bg-zinc-900/80">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-              <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 ml-2 font-medium">waterfall-dispatcher.engine</span>
+        <!-- 3 Primary Key Value Metric Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
+          <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-sm specular-card">
+            <div class="text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-1 flex items-center gap-1.5">
+              <i data-lucide="repeat" class="w-3.5 h-3.5 text-brand-600"></i>
+              <span>Execution Model</span>
             </div>
-            <!-- IDE Tabs -->
-            <div class="flex items-center gap-1 font-mono text-xs overflow-x-auto">
-              <button onclick="switchIdeTab('plan')" id="ide-tab-plan" class="px-2 py-1 rounded-md text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/80 font-semibold border border-brand-200/60 dark:border-brand-800/60 transition-all flex-shrink-0">PLAN.md</button>
-              <button onclick="switchIdeTab('csharp')" id="ide-tab-csharp" class="px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0">Program.cs</button>
-              <button onclick="switchIdeTab('nextjs')" id="ide-tab-nextjs" class="px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0">page.tsx</button>
-              <button onclick="switchIdeTab('angular')" id="ide-tab-angular" class="px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0">app.component.ts</button>
-              <button onclick="switchIdeTab('flutter')" id="ide-tab-flutter" class="px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0">main.dart</button>
-            </div>
-          </div>
-          
-          <!-- Code Canvas with JetBrains Mono -->
-          <div class="p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-zinc-800 dark:text-zinc-300">
-            <pre id="ide-code-content"><code><span class="text-zinc-400">01:</span> <span class="text-purple-600 dark:text-purple-400 font-bold"># PLAN:</span> High-Discipline Autonomous Execution
-<span class="text-zinc-400">02:</span> <span class="text-blue-600 dark:text-blue-400">&gt; **Live State**:</span> Phase 4/5 — Headless Verification | <span class="text-emerald-600 dark:text-emerald-400 font-bold">Status: VERIFYING</span>
-<span class="text-zinc-400">03:</span> 
-<span class="text-zinc-400">04:</span> <span class="text-zinc-500">// Zero Context Drift • NIST SSDF Threat Boundary Sealed</span>
-<span class="text-zinc-400">05:</span> <span class="text-emerald-600 dark:text-emerald-400">[x]</span> 1.0 Memory-First Triage via claude-mem
-<span class="text-zinc-400">06:</span> <span class="text-emerald-600 dark:text-emerald-400">[x]</span> 2.0 Pragmatic SOLID/OOP &amp; Minimal C# 14 Minimal APIs
-<span class="text-zinc-400">07:</span> <span class="text-emerald-600 dark:text-emerald-400">[x]</span> 3.0 Crafted Elegance: Three.js 3D + Plus Jakarta Sans
-<span class="text-zinc-400">08:</span> <span class="text-amber-500 dark:text-amber-400 animate-pulse">[&gt;]</span> 4.0 Milestone Playwright Audit: 1280px Desktop (0 errors)
-<span class="text-zinc-400">09:</span> <span class="text-zinc-400">[ ]</span> 5.0 Atomic Conventional Commit &amp; QA PR Handover</code></pre>
+            <div class="text-xl font-bold text-zinc-900 dark:text-white tabular-nums tracking-tight">Vertical Slice Loop</div>
+            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Replaces rigid monolithic phases with 6 continuous feedback slices.</div>
           </div>
 
-          <!-- Sandbox Status Bar -->
-          <div class="px-5 py-2.5 bg-zinc-100/50 dark:bg-zinc-900/60 border-t border-zinc-200/80 dark:border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500 font-mono">
-            <div class="flex items-center gap-3">
-              <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Verified Exit Code 0</span>
-              <span class="hidden sm:inline text-zinc-400">|</span>
-              <span class="hidden sm:inline">0 Secret Leaks</span>
+          <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-sm specular-card">
+            <div class="text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-1 flex items-center gap-1.5">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-500"></i>
+              <span>Zero-Leak DevSecOps</span>
             </div>
-            <span class="text-brand-600 dark:text-brand-400 font-semibold">Live State Engine Active</span>
+            <div class="text-xl font-bold text-zinc-900 dark:text-white tabular-nums tracking-tight">NIST SSDF Audited</div>
+            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Pre-commit secret scans, zero client-side keys, port hygiene.</div>
+          </div>
+
+          <div class="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-sm specular-card">
+            <div class="text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-1 flex items-center gap-1.5">
+              <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i>
+              <span>Token Economy</span>
+            </div>
+            <div class="text-xl font-bold text-zinc-900 dark:text-white tabular-nums tracking-tight">72% Token Savings</div>
+            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Surgical 3–15 line diffs, symbol outlines, standard library first.</div>
           </div>
         </div>
 
-      </div>
-
-      <!-- KEY IMPACT METRICS (Grounded Empirical Verification & Spotlight Cards) -->
-      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto relative z-10">
-        <a href="#benchmarks" class="spotlight-card specular-card p-6 rounded-2xl bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm text-center backdrop-blur-md hover:-translate-y-1 hover:border-brand-500/50 transition-all block group">
-          <div class="text-3xl sm:text-4xl font-extrabold text-brand-600 dark:text-brand-400 tabular-nums">85.2%</div>
-          <div class="text-xs font-semibold text-zinc-900 dark:text-white mt-1">Measured Token Waste Cut</div>
-          <div class="text-[11px] font-mono text-brand-600 dark:text-brand-400 mt-1 flex items-center justify-center gap-1">
-            <span>See the math &amp; audit</span>
-            <span class="group-hover:translate-x-0.5 transition-transform">→</span>
-          </div>
-        </a>
-        <div class="spotlight-card specular-card p-6 rounded-2xl bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm text-center backdrop-blur-md hover:-translate-y-1 transition-all">
-          <div class="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tabular-nums">100%</div>
-          <div class="text-xs font-semibold text-zinc-900 dark:text-white mt-1">NIST SSDF Sealed</div>
-          <div class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-1">SP 800-218 Threat Boundary</div>
-        </div>
-        <div class="spotlight-card specular-card p-6 rounded-2xl bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm text-center backdrop-blur-md hover:-translate-y-1 transition-all">
-          <div class="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tabular-nums">5 Gates</div>
-          <div class="text-xs font-semibold text-zinc-900 dark:text-white mt-1">PLAN.md State Engine</div>
-          <div class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-1">Atomic [x] task gating</div>
-        </div>
-        <div class="spotlight-card specular-card p-6 rounded-2xl bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm text-center backdrop-blur-md hover:-translate-y-1 transition-all">
-          <div class="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tabular-nums">12 Steps</div>
-          <div class="text-xs font-semibold text-zinc-900 dark:text-white mt-1">QA-Centric CI/CD</div>
-          <div class="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-1">Fail-fast automated pass</div>
-        </div>
       </div>
     </section>
 
-    <!-- PLAN.MD ENGINE SECTION (BENTO GRID HIGHLIGHT) -->
-    <section id="plan-engine" class="py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/50">
+    <!-- SECTION: THE 6-PHASE VERTICAL SLICE LOOP (INTERACTIVE SIMULATOR) -->
+    <section id="slice-loop" class="py-16 sm:py-24 border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="max-w-3xl mb-12">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-500">Autonomous State Engine</span>
-          <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white mt-2">
-            Requirement Decomposition via PLAN.md
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 text-xs font-medium mb-3">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>Continuous Delivery Engine</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            The 6-Phase Vertical Slice Loop
           </h2>
-          <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-3">
-            Every feature is automatically decomposed into a stateful, checkboxed execution contract before code is written. Tools and skills are strictly scoped to prevent drift, bloat, and redundant executions.
+          <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2">
+            No more massive unverified code dumps. Work is sliced end-to-end into verifiable increments with mandatory local preview and user sign-off before remote push.
           </p>
         </div>
 
-        <!-- 5-Phase Interactive Visual Card with Spotlight & Specular Depth -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          <!-- Phase 1 -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 flex flex-col justify-between hover:border-brand-500/50 hover:-translate-y-1 transition-all backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30 flex items-center justify-center shadow-sm">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">PHASE 01</span>
-              </div>
-              <h3 class="text-sm font-bold text-zinc-900 dark:text-white">Specs &amp; Threat Model</h3>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">
-                Query persistent memory, lock domain entities in CONTEXT.md, map NIST SSDF trust boundaries.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-200/60 dark:border-zinc-800/60 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Exit Gate</span>
-              <span class="text-blue-600 dark:text-blue-400 font-semibold">Spec Locked</span>
-            </div>
-          </div>
-
-          <!-- Phase 2 -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 flex flex-col justify-between hover:border-brand-500/50 hover:-translate-y-1 transition-all backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-purple-500/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 border border-purple-500/30 flex items-center justify-center shadow-sm">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                </div>
-                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-purple-50 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">PHASE 02</span>
-              </div>
-              <h3 class="text-sm font-bold text-zinc-900 dark:text-white">Core &amp; SOLID/OOP</h3>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">
-                Evaluate appropriateness. Flat CRUD vs Rich Domain. Ban Interface Soup; composition over inheritance.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-200/60 dark:border-zinc-800/60 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Exit Gate</span>
-              <span class="text-purple-600 dark:text-purple-400 font-semibold">Build Pass</span>
-            </div>
-          </div>
-
-          <!-- Phase 3 -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 flex flex-col justify-between hover:border-brand-500/50 hover:-translate-y-1 transition-all backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 border border-indigo-500/30 flex items-center justify-center shadow-sm">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                  </svg>
-                </div>
-                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">PHASE 03</span>
-              </div>
-              <h3 class="text-sm font-bold text-zinc-900 dark:text-white">Crafted Frontend</h3>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">
-                5 Rules of Clean Design, Three.js 3D visuals, Plus Jakarta Sans, and Mobbin benchmark synthesis.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-200/60 dark:border-zinc-800/60 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Exit Gate</span>
-              <span class="text-indigo-600 dark:text-indigo-400 font-semibold">0 Errors</span>
-            </div>
-          </div>
-
-          <!-- Phase 4 -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 flex flex-col justify-between hover:border-brand-500/50 hover:-translate-y-1 transition-all backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 flex items-center justify-center shadow-sm">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                  </svg>
-                </div>
-                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">PHASE 04</span>
-              </div>
-              <h3 class="text-sm font-bold text-zinc-900 dark:text-white">CI &amp; DevSecOps</h3>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">
-                Fail-Fast CI ladder: Lint -&gt; Unit (80%+) -&gt; Build -&gt; SAST scan -&gt; Milestone Playwright audit.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-200/60 dark:border-zinc-800/60 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Exit Gate</span>
-              <span class="text-emerald-600 dark:text-emerald-400 font-semibold">100% Pass</span>
-            </div>
-          </div>
-
-          <!-- Phase 5 -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 flex flex-col justify-between hover:border-brand-500/50 hover:-translate-y-1 transition-all backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 flex items-center justify-center shadow-sm">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7a2 2 0 100-4 2 2 0 000 4zm0 8a2 2 0 100 4 2 2 0 000-4zm8 2a2 2 0 100-4 2 2 0 000 4z" />
-                  </svg>
-                </div>
-                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950/80 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">PHASE 05</span>
-              </div>
-              <h3 class="text-sm font-bold text-zinc-900 dark:text-white">QA PR &amp; Handover</h3>
-              <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed">
-                Small PR (200-400 lines), mandatory QA PR Template, ephemeral preview, and portfolio README.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-200/60 dark:border-zinc-800/60 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Exit Gate</span>
-              <span class="text-cyan-600 dark:text-cyan-400 font-semibold">QA Sign-off</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EMPIRICAL TOKEN BENCHMARK & AUDIT EVIDENCE SECTION -->
-    <section id="benchmarks" class="py-24 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/60 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="max-w-3xl mb-16">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 mb-3">
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-            <span>Audited Empirical Evidence • Zero Fluff</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white">
-            The Math Behind the ~85% Token Reduction
-          </h2>
-          <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-3 leading-relaxed">
-            AI models do not become efficient by accident. The 85.2% token savings is not a marketing estimate — it is the measured benchmark median across standard utility tasks, derived from 4 mathematically provable architectural vectors.
-          </p>
-        </div>
-
-        <!-- 4 Concrete Proof Vectors -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <!-- Interactive Phase Navigator & Simulator -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          <!-- Vector 1: Surgical Diffing -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-mono font-bold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/80 px-2.5 py-1 rounded-md border border-brand-200 dark:border-brand-800">VECTOR 01 • GENERATION TOKENS</span>
-                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">▼ 95.6% Cut</span>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Surgical Diffing vs Full-File Rewrites</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Conventional agents call <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">write_to_file</code> to replace whole files. In a 450-line file with a 10-line modification, the LLM must generate all 450 lines (~2,150 output tokens). Waterfall strictly enforces <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">replace_file_content</code> targeting only 3–15 unique anchor lines (~95 output tokens).
-              </p>
-            </div>
-            <div class="mt-6 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/60 dark:border-zinc-800 font-mono text-[11px] space-y-1">
-              <div class="text-zinc-500 dark:text-zinc-400">Formula: (2,150 - 95) / 2,150 = 95.58% saved</div>
-              <div class="text-brand-600 dark:text-brand-400 font-semibold">10 Iterations: 21,500 vs 950 tokens (saves 20,550 tokens)</div>
-            </div>
-          </div>
-
-          <!-- Vector 2: Compiler Log Sanitization -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/80 px-2.5 py-1 rounded-md border border-purple-200 dark:border-purple-800">VECTOR 02 • CONTEXT INGESTION</span>
-                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">▼ 98.1% Cut</span>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">MSBuild &amp; CI Output Sanitization</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Raw terminal commands like <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">dotnet build</code> or <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">npm test</code> dump 150–400 lines of standard output into LLM context (~1,850 tokens per run). Waterfall mandates <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">--nologo -clp:ErrorsOnly</code>. On Exit Code 0, stdout is suppressed to 0–3 lines (~35 tokens).
-              </p>
-            </div>
-            <div class="mt-6 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/60 dark:border-zinc-800 font-mono text-[11px] space-y-1">
-              <div class="text-zinc-500 dark:text-zinc-400">Formula: (1,850 - 35) / 1,850 = 98.10% saved</div>
-              <div class="text-purple-600 dark:text-purple-400 font-semibold">Zero context window pollution on passing builds</div>
-            </div>
-          </div>
-
-          <!-- Vector 3: AST Outline Scanning -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-950/80 px-2.5 py-1 rounded-md border border-cyan-200 dark:border-cyan-800">VECTOR 03 • CODE DISCOVERY</span>
-                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">▼ 85.0% Cut</span>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">AST Structural Scanning vs File Dumps</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Reading 5 codebase files of 300 LOC via raw <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">view_file</code> costs ~7,200 context tokens. Waterfall enforces the funnel: <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">smart_outline</code> (symbol signatures only) -&gt; narrow targeted slice (<code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">StartLine/EndLine</code> 20–30 lines), consuming ~1,080 tokens.
-              </p>
-            </div>
-            <div class="mt-6 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/60 dark:border-zinc-800 font-mono text-[11px] space-y-1">
-              <div class="text-zinc-500 dark:text-zinc-400">Formula: (7,200 - 1,080) / 7,200 = 85.00% saved</div>
-              <div class="text-cyan-600 dark:text-cyan-400 font-semibold">Prevents token exhaustion during repository exploration</div>
-            </div>
-          </div>
-
-          <!-- Vector 4: State Machine Anti-Drift -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white dark:bg-zinc-900/80 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-mono font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/80 px-2.5 py-1 rounded-md border border-amber-200 dark:border-amber-800">VECTOR 04 • RETRY PREVENTION</span>
-                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">100% Loop Kill</span>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">PLAN.md State Engine vs Drift Loops</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Unguided AI agents typically lose state after 6–8 tool calls, triggering duplicate refactor loops and repeated test passes (wasting 30,000–60,000 tokens in circular debug loops). The stateful <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">PLAN.md</code> state matrix locks progress atomically with <code class="font-mono bg-zinc-100 dark:bg-zinc-800 px-1 py-0.5 rounded text-zinc-800 dark:text-zinc-200">[x]</code> gates, eliminating loop reruns completely.
-              </p>
-            </div>
-            <div class="mt-6 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/60 dark:border-zinc-800 font-mono text-[11px] space-y-1">
-              <div class="text-zinc-500 dark:text-zinc-400">Impact: 0 repeated tool executions after session restart</div>
-              <div class="text-amber-600 dark:text-amber-400 font-semibold">Immediate re-hydration via Live State header</div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Empirical Comparison Audit Table -->
-        <div class="rounded-3xl border border-zinc-200/80 dark:border-white/10 bg-white/90 dark:bg-zinc-900/90 shadow-xl overflow-hidden backdrop-blur-md">
-          <div class="px-6 py-4 border-b border-zinc-200/80 dark:border-zinc-800 bg-zinc-50/70 dark:bg-zinc-950/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <div>
-              <h4 class="text-sm font-bold text-zinc-900 dark:text-white">Measured Token Audit Comparison</h4>
-              <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Benchmarks tested across Claude 3.5 Sonnet, Haiku, and GPT-4o on standardized development tasks</p>
-            </div>
-            <span class="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/80 px-2.5 py-1 rounded-md border border-emerald-200 dark:border-emerald-800 self-start sm:self-auto">
-              Overall Median: ▼ 85.2% Saved
-            </span>
-          </div>
-
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-xs font-sans">
-              <thead class="border-b border-zinc-200/80 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 font-mono text-[11px] bg-zinc-100/40 dark:bg-zinc-900/40">
-                <tr>
-                  <th class="py-3.5 px-6">Operation / Stage</th>
-                  <th class="py-3.5 px-6">Unconstrained AI Agent</th>
-                  <th class="py-3.5 px-6">Waterfall SDLC Agent</th>
-                  <th class="py-3.5 px-6">Measured Reduction</th>
-                  <th class="py-3.5 px-6">Enforced Mechanism</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-zinc-200/60 dark:divide-zinc-800/60 font-mono text-[12px]">
-                <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition-colors">
-                  <td class="py-4 px-6 font-sans font-medium text-zinc-900 dark:text-white">Single File Edit (450 LOC)</td>
-                  <td class="py-4 px-6 text-rose-500 font-semibold">~2,150 gen tokens</td>
-                  <td class="py-4 px-6 text-emerald-500 font-semibold">~95 gen tokens</td>
-                  <td class="py-4 px-6 text-emerald-600 dark:text-emerald-400 font-bold">▼ 95.6%</td>
-                  <td class="py-4 px-6 font-sans text-xs text-zinc-500">replace_file_content (3–15 lines)</td>
-                </tr>
-                <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition-colors">
-                  <td class="py-4 px-6 font-sans font-medium text-zinc-900 dark:text-white">Compilation &amp; Build</td>
-                  <td class="py-4 px-6 text-rose-500 font-semibold">~1,850 context tokens</td>
-                  <td class="py-4 px-6 text-emerald-500 font-semibold">~35 context tokens</td>
-                  <td class="py-4 px-6 text-emerald-600 dark:text-emerald-400 font-bold">▼ 98.1%</td>
-                  <td class="py-4 px-6 font-sans text-xs text-zinc-500">--nologo -clp:ErrorsOnly filter</td>
-                </tr>
-                <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition-colors">
-                  <td class="py-4 px-6 font-sans font-medium text-zinc-900 dark:text-white">Code Exploration (5 files)</td>
-                  <td class="py-4 px-6 text-rose-500 font-semibold">~7,200 context tokens</td>
-                  <td class="py-4 px-6 text-emerald-500 font-semibold">~1,080 context tokens</td>
-                  <td class="py-4 px-6 text-emerald-600 dark:text-emerald-400 font-bold">▼ 85.0%</td>
-                  <td class="py-4 px-6 font-sans text-xs text-zinc-500">smart_outline + narrow slice reading</td>
-                </tr>
-                <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition-colors">
-                  <td class="py-4 px-6 font-sans font-medium text-zinc-900 dark:text-white">UI Testing Loops</td>
-                  <td class="py-4 px-6 text-rose-500 font-semibold">~18,000 tokens (loops)</td>
-                  <td class="py-4 px-6 text-emerald-500 font-semibold">~2,200 tokens (milestone)</td>
-                  <td class="py-4 px-6 text-emerald-600 dark:text-emerald-400 font-bold">▼ 87.8%</td>
-                  <td class="py-4 px-6 font-sans text-xs text-zinc-500">Dev HMR + 1-shot milestone Playwright</td>
-                </tr>
-                <tr class="bg-brand-50/30 dark:bg-brand-950/20 font-bold">
-                  <td class="py-4 px-6 font-sans text-zinc-900 dark:text-white">Full Feature Branch Median</td>
-                  <td class="py-4 px-6 text-rose-600 dark:text-rose-400">~68,500 tokens</td>
-                  <td class="py-4 px-6 text-emerald-600 dark:text-emerald-400">~10,150 tokens</td>
-                  <td class="py-4 px-6 text-emerald-600 dark:text-emerald-400 text-sm">▼ 85.2% Avg</td>
-                  <td class="py-4 px-6 font-sans text-xs text-brand-600 dark:text-brand-400 font-semibold">Audited across 5 standard tasks</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="px-6 py-3.5 bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200/80 dark:border-zinc-800 text-[11px] text-zinc-500 dark:text-zinc-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-            <span>Audit Reproducibility: Inspect deferred shortcuts via <code class="font-mono text-zinc-700 dark:text-zinc-300">/ponytail-debt</code> or run full codebase bloat hunt via <code class="font-mono text-zinc-700 dark:text-zinc-300">/ponytail-audit</code>.</span>
-            <span class="font-mono text-brand-600 dark:text-brand-400 font-semibold">Honest Median Data</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- MASTER FULL-STACK & MOBILE TECHNOLOGY MATRIX (2026 ACTIVE STANDARDS) -->
-    <section id="tech-matrix" class="py-24 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/60 relative scroll-mt-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">Autonomous Stack System</span>
-          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white mt-2">
-            The 3-Pillar Full-Stack &amp; Mobile Matrix
-          </h2>
-          <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-3">
-            Grounded in audited 2026 production releases. Empowers the AI agent with a deterministic consultation ladder: user-directed lock or automated technical decision mapping with zero stack hallucination.
-          </p>
-        </div>
-
-        <!-- 3 Architecture Pillars Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          
-          <!-- Pillar A: Web & Cloud Infrastructure (Wide 2-col card) -->
-          <div class="md:col-span-2 spotlight-card specular-card p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="flex items-center justify-between mb-6">
-                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono">Pillar A • Web &amp; Cloud</span>
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/60">Verified Stable 2026</span>
-              </div>
-              <h3 class="text-2xl font-bold text-zinc-900 dark:text-white">Web Development &amp; Cloud Infrastructure</h3>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed max-w-2xl">
-                High-throughput enterprise backends paired with high-performance SSR and sub-second instrument dashboards, deployed onto production container runtimes.
-              </p>
-
-              <!-- Tech Items Grid -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-                <div class="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                  <div class="flex items-center gap-2.5 mb-1.5">
-                    <span class="font-bold text-sm text-zinc-900 dark:text-white">ASP.NET Core (.NET 10 LTS)</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-semibold">10.0.12</span>
-                  </div>
-                  <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
-                    C# 14 Minimal APIs (<code class="font-mono text-zinc-700 dark:text-zinc-300">field</code> keyword), Native OpenAPI 3.1, Native AOT compilation, and HybridCache.
-                  </p>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                  <div class="flex items-center gap-2.5 mb-1.5">
-                    <span class="font-bold text-sm text-zinc-900 dark:text-white">Next.js 16 (React 19 + Tailwind v4)</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200 font-semibold">16.3.7</span>
-                  </div>
-                  <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
-                    React 19.3.0 RSC, Server Actions, Turbopack, and Tailwind CSS 4.3.3 CSS-first architecture.
-                  </p>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                  <div class="flex items-center gap-2.5 mb-1.5">
-                    <span class="font-bold text-sm text-zinc-900 dark:text-white">React 19 + Vite (Instrument SPA)</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold">19.3.0</span>
-                  </div>
-                  <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
-                    Instant HMR, fine-grained state management, and high-density tabular data dashboards.
-                  </p>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                  <div class="flex items-center gap-2.5 mb-1.5">
-                    <span class="font-bold text-sm text-zinc-900 dark:text-white">Kubernetes ("Garhwal")</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 font-semibold">v1.37.1</span>
-                  </div>
-                  <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">
-                    Declarative Helm manifests, zero-downtime rolling deploys, and automated health probes.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-8 pt-5 border-t border-zinc-200/60 dark:border-zinc-800/80 flex flex-wrap items-center gap-6 text-xs text-zinc-500 dark:text-zinc-400">
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Contract-First OpenAPI 3.1</span>
-              </span>
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Native AOT Ready</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Pillar B: Native Mobile Engineering (1-col card) -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="flex items-center justify-between mb-6">
-                <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 font-mono">Pillar B • Native Mobile</span>
-                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-purple-50 dark:bg-purple-950/70 text-purple-600 dark:text-purple-400 border border-purple-200/60 dark:border-purple-800/60">Hardware Level</span>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Native Mobile Engineering</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Direct platform integration, compile-time data race safety, and specialized hardware sensor access.
-              </p>
-
-              <div class="space-y-3.5 mt-5">
-                <div class="p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-xs text-zinc-900 dark:text-white">Swift 6.4 (SwiftUI)</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-orange-100 dark:bg-orange-950 text-orange-700 dark:text-orange-300 font-semibold">Swift 6.4</span>
-                  </div>
-                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-                    Complete Concurrency Safety by default (compile-time data race prevention), Structured Concurrency, and iOS/watchOS/visionOS SDKs.
-                  </p>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-xs text-zinc-900 dark:text-white">Kotlin 2.4+ &amp; Compose</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold">BOM 2026.08</span>
-                  </div>
-                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-                    Kotlin v2.4.20 with K2 high-speed compiler, Compose 1.12.1 with Material 3, and Strong Skipping Mode.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Deep OS Sensors</span>
-              <span class="text-purple-600 dark:text-purple-400 font-semibold">Zero-Jank Native</span>
-            </div>
-          </div>
-
-          <!-- Pillar C: Cross-Platform Mobile Engineering (1-col card) -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="flex items-center justify-between mb-6">
-                <span class="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 font-mono">Pillar C • Cross-Platform</span>
-                <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-cyan-50 dark:bg-cyan-950/70 text-cyan-600 dark:text-cyan-400 border border-cyan-200/60 dark:border-cyan-800/60">Single Codebase</span>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Cross-Platform Engineering</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Maximum code sharing and rapid multi-platform reach across iOS, Android, Desktop, and Web.
-              </p>
-
-              <div class="space-y-3.5 mt-5">
-                <div class="p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-xs text-zinc-900 dark:text-white">Flutter 3.47+ (Dart 3.13)</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-semibold">3.47.5</span>
-                  </div>
-                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-                    Impeller graphic engine by default (100% elimination of shader compilation jank), Riverpod state management, and pixel-perfect branding.
-                  </p>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/60">
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-xs text-zinc-900 dark:text-white">React Native 0.87+ (Expo)</span>
-                    <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold">0.87.1</span>
-                  </div>
-                  <p class="text-[11px] text-zinc-500 dark:text-zinc-400 mt-1">
-                    New Architecture enabled by default (Fabric Renderer + TurboModules) sharing TypeScript DTOs directly with Next.js web portals.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Impeller &amp; Fabric</span>
-              <span class="text-cyan-600 dark:text-cyan-400 font-semibold">Shared DTOs</span>
-            </div>
-          </div>
-
-          <!-- AI Autonomous Stack Decision Ladder (Wide 2-col card) -->
-          <div class="md:col-span-2 spotlight-card specular-card p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 font-mono">Decision Ladder • AI Consultation</span>
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-brand-50 dark:bg-brand-950/70 text-brand-600 dark:text-brand-400 border border-brand-200/60 dark:border-brand-800/60">Zero Hallucination</span>
-              </div>
-              <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Deterministic Stack Selection Engine</h3>
-              <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                When requirements or product ideas are submitted, the AI evaluates against this decision matrix to lock the optimal architectural fit:
-              </p>
-
-              <!-- Decision Table -->
-              <div class="mt-5 overflow-x-auto rounded-xl border border-zinc-200/80 dark:border-zinc-800">
-                <table class="w-full text-left text-xs">
-                  <thead class="bg-zinc-100/70 dark:bg-zinc-800/60 text-zinc-700 dark:text-zinc-300 font-semibold font-mono border-b border-zinc-200/80 dark:border-zinc-800">
-                    <tr>
-                      <th class="py-2.5 px-3.5">Business Goal / Requirement</th>
-                      <th class="py-2.5 px-3.5 text-brand-600 dark:text-brand-400">Primary Recommendation</th>
-                      <th class="py-2.5 px-3.5 hidden sm:table-cell">Technical Rationale</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y divide-zinc-200/60 dark:divide-zinc-800/60 text-zinc-600 dark:text-zinc-300">
-                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
-                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Enterprise Core / Financial / Heavy Computing</td>
-                      <td class="py-2.5 px-3.5 font-mono text-purple-600 dark:text-purple-400 font-semibold">.NET 10 LTS + Kubernetes</td>
-                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">Minimal APIs, C# 14, Native AOT speed, auto-scaling K8s</td>
-                    </tr>
-                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
-                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Public SEO / SaaS Landing / E-Commerce</td>
-                      <td class="py-2.5 px-3.5 font-mono text-zinc-900 dark:text-white font-semibold">Next.js 16 + Tailwind v4</td>
-                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">React 19 Server Components, zero client JS bundle, edge caching</td>
-                    </tr>
-                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
-                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Operations Portal / Admin Data Grid</td>
-                      <td class="py-2.5 px-3.5 font-mono text-blue-600 dark:text-blue-400 font-semibold">React 19 (Vite) + .NET 10</td>
-                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">Sub-second HMR, fine-grained state, tabular figures</td>
-                    </tr>
-                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
-                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Fluid Mobile with Custom Animations</td>
-                      <td class="py-2.5 px-3.5 font-mono text-sky-600 dark:text-sky-400 font-semibold">Flutter 3.47+ (Dart 3.13)</td>
-                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">Impeller 60/120fps engine (zero shader jank), Riverpod</td>
-                    </tr>
-                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30">
-                      <td class="py-2.5 px-3.5 font-medium text-zinc-900 dark:text-white">Mobile sharing code &amp; team with Web</td>
-                      <td class="py-2.5 px-3.5 font-mono text-cyan-600 dark:text-cyan-400 font-semibold">React Native 0.87+ (Expo)</td>
-                      <td class="py-2.5 px-3.5 hidden sm:table-cell text-zinc-500 dark:text-zinc-400">New Architecture (Fabric), shared TypeScript DTOs with Next.js</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 text-[11px] text-zinc-500 dark:text-zinc-400 flex items-center justify-between">
-              <span>Dual-Mode Resolution: User-Directed Lock takes 100% precedence over automated recommendations</span>
-              <span class="font-mono text-brand-600 dark:text-brand-400 font-semibold">Strict Rule</span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">Core Engineering Matrix</span>
-          <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900 dark:text-white mt-2">
-            Engineered for Industrial-Scale AI Agents
-          </h2>
-          <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-3">
-            Every layer addresses a known failure mode of LLM coding: context drift, bloated code generation, security oversights, and loose QA integration.
-          </p>
-        </div>
-
-        <!-- Asymmetric Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <!-- Pillar 1: High-IQ Token Economy (Wide 2-col card) -->
-          <div class="md:col-span-2 spotlight-card specular-card p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500/20 via-indigo-500/10 to-transparent border border-brand-500/30 flex items-center justify-center text-brand-600 dark:text-brand-400 shadow-[0_0_24px_rgba(37,99,235,0.18)] mb-6 group-hover:scale-105 transition-transform">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-zinc-900 dark:text-white">High-IQ Token Economy (85.2% Audited Median)</h3>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed max-w-2xl">
-                AST-first structural code scanning via <code class="text-xs font-mono bg-zinc-100 dark:bg-zinc-800 text-brand-600 dark:text-brand-400 px-1.5 py-0.5 rounded">smart_outline</code>. Full file writes are strictly banned; uses surgical diff replacement (3–15 lines) saving 95.6% generation tokens and stopping runaway context burn.
-              </p>
-            </div>
-            <div class="mt-8 pt-5 border-t border-zinc-200/60 dark:border-zinc-800/80 flex flex-wrap items-center gap-6 text-xs text-zinc-500 dark:text-zinc-400">
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Zero-Echo Artifact Delivery</span>
-              </span>
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Filtered Headless CI Logs</span>
-              </span>
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>MSBuild -clp:ErrorsOnly</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Pillar 2: Pragmatic SOLID & OOP (1-col card) -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500/20 via-indigo-500/10 to-transparent border border-purple-500/30 flex items-center justify-center text-purple-600 dark:text-purple-400 shadow-[0_0_24px_rgba(168,85,247,0.18)] mb-6 group-hover:scale-105 transition-transform">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m21.12 6.4-6-3.5a2 2 0 0 0-2 0l-6 3.5A2 2 0 0 0 6 8.13v7.74a2 2 0 0 0 1.12 1.73l6 3.5a2 2 0 0 0 2 0l6-3.5A2 2 0 0 0 22 15.87V8.13a2 2 0 0 0-.88-1.73z"/>
-                  <path d="M12 22V12"/>
-                  <path d="m3.27 6.96 8.73 5.04 8.73-5.04"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Pragmatic SOLID &amp; OOP</h3>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
-                Contextual appropriateness triage. Keeps flat CRUD simple while strictly applying SRP, OCP, LSP, ISP, and DIP on rich domain logic. Composition over inheritance; interface soup strictly banned.
-              </p>
-            </div>
-            <ul class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 space-y-2 text-xs text-zinc-500 dark:text-zinc-400">
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Inheritance capped at max 2 levels</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>C# 14 field-backed properties</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Pillar 3: DevSecOps & NIST SSDF (1-col card) -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-transparent border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-[0_0_24px_rgba(16,185,129,0.18)] mb-6 group-hover:scale-105 transition-transform">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-                  <path d="m9 12 2 2 4-4"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">DevSecOps &amp; NIST SSDF</h3>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
-                Compliant with SP 800-218 (PO.1, PS.1, PW.1, RV.1) and OWASP Top 10. Shift-Left security, automated SAST, Zero-Leak local secret isolation, and immediate quarantine / hotfix protocol.
-              </p>
-            </div>
-            <ul class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 space-y-2 text-xs text-zinc-500 dark:text-zinc-400">
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Pre-flight gitignore secret check</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Zero client-side API key exposure</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Pillar 4: 5 Rules of Clean Design & Crafted Elegance (Wide 2-col card) -->
-          <div class="md:col-span-2 spotlight-card specular-card p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-transparent border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shadow-[0_0_24px_rgba(6,182,212,0.18)] mb-6 group-hover:scale-105 transition-transform">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
-                  <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
-                  <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
-                  <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-zinc-900 dark:text-white">The 5 Rules of Clean Design &amp; Crafted Elegance</h3>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed max-w-2xl">
-                Single dominant CTA, strict 3-tone color limit, disciplined type scale, 3-second visual scan law, and structural whitespace. Fuses clean software engineering with sensory depth: Three.js 3D ambient canvas, Plus Jakarta Sans typography, and Mobbin benchmark intelligence.
-              </p>
-            </div>
-            <div class="mt-8 pt-5 border-t border-zinc-200/60 dark:border-zinc-800/80 flex flex-wrap items-center gap-6 text-xs text-zinc-500 dark:text-zinc-400">
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Three.js 3D Canvas Centerpiece</span>
-              </span>
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Spotlight Cursor Tracking Glow</span>
-              </span>
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Plus Jakarta Sans + JetBrains Mono</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Pillar 5: QA-Centric PR & CI Pipeline (1-col card) -->
-          <div class="spotlight-card specular-card p-8 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500/20 via-orange-500/10 to-transparent border border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400 shadow-[0_0_24px_rgba(245,158,11,0.18)] mb-6 group-hover:scale-105 transition-transform">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="18" cy="18" r="3"/>
-                  <circle cx="6" cy="6" r="3"/>
-                  <path d="M13 6h3a2 2 0 0 1 2 2v7"/>
-                  <line x1="6" x2="6" y1="9" y2="21"/>
-                </svg>
-              </div>
-              <h3 class="text-lg font-bold text-zinc-900 dark:text-white">QA-Centric PR &amp; CI Ladder</h3>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
-                Small PRs (200-400 lines) with complete reproduction instructions for QA. Fail-fast CI ladder (fast to slow), branch protection, and ephemeral preview URLs for instant QA sign-off.
-              </p>
-            </div>
-            <ul class="mt-6 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/80 space-y-2 text-xs text-zinc-500 dark:text-zinc-400">
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Mandatory QA PR Template</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg class="w-3.5 h-3.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Milestone Playwright Desktop (1 proof)</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Pillar 6: Immutable CD & Rollback (1-col card) -->
-          <div class="md:col-span-2 spotlight-card specular-card p-8 sm:p-10 rounded-3xl bg-white/80 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between backdrop-blur-md hover:-translate-y-1 hover:shadow-2xl transition-all group">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500/20 via-pink-500/10 to-transparent border border-rose-500/30 flex items-center justify-center text-rose-600 dark:text-rose-400 shadow-[0_0_24px_rgba(244,63,94,0.18)] mb-6 group-hover:scale-105 transition-transform">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                  <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                  <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                  <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Immutable CD &amp; Zero-Collision Windows Hygiene</h3>
-              <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed max-w-2xl">
-                Build once, promote everywhere. Identical artifact verified on Staging promoted to Production. Automated Windows PowerShell port clearing script preventing 300+ step zombie port collision death spirals.
-              </p>
-            </div>
-            <div class="mt-8 pt-5 border-t border-zinc-200/60 dark:border-zinc-800/80 flex flex-wrap items-center gap-6 text-xs text-zinc-500 dark:text-zinc-400">
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Automated PowerShell Port Handshake</span>
-              </span>
-              <span class="flex items-center gap-2">
-                <svg class="w-4 h-4 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                <span>Automated Conventional Commits</span>
-              </span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 1-CLICK WORKSPACE INSTALLATION TERMINAL -->
-    <section id="installation" class="py-20 border-t border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center mb-10">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-500">Fast Deployment</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900 dark:text-white mt-1">
-            Install Waterfall SDLC in Any Workspace
-          </h2>
-          <p class="text-zinc-600 dark:text-zinc-400 text-sm mt-2">
-            Load the master autonomous dispatcher into your local project environment with a single command.
-          </p>
-        </div>
-
-        <!-- Terminal Card -->
-        <div class="rounded-2xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-xl overflow-hidden">
-          
-          <!-- Terminal Tab Bar -->
-          <div class="flex items-center justify-between px-4 py-3 border-b border-zinc-200 dark:border-zinc-800/80 bg-zinc-50 dark:bg-zinc-900/80">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-              <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500 ml-2">bash / powershell</span>
-            </div>
-
-            <!-- Client Selection Tabs with Developer Logos -->
-            <div class="flex items-center gap-1 bg-zinc-200/60 dark:bg-zinc-800/60 p-0.5 rounded-lg text-xs font-medium">
-              <button onclick="switchTab('antigravity')" id="tab-antigravity" class="tab-btn inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-zinc-900 dark:text-white bg-white dark:bg-zinc-900 shadow-xs transition-all">
-                <svg class="w-3.5 h-3.5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" />
-                </svg>
-                <span>Antigravity / Gemini</span>
-              </button>
-              <button onclick="switchTab('claude')" id="tab-claude" class="tab-btn inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all">
-                <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                </svg>
-                <span>Claude Code</span>
-              </button>
-              <button onclick="switchTab('cursor')" id="tab-cursor" class="tab-btn inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all">
-                <svg class="w-3.5 h-3.5 text-cyan-500" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                </svg>
-                <span>Cursor</span>
-              </button>
-              <button onclick="switchTab('windsurf')" id="tab-windsurf" class="tab-btn inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all">
-                <svg class="w-3.5 h-3.5 text-teal-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 12c3-4 6-4 9 0s6 4 9 0M2 17c3-4 6-4 9 0s6 4 9 0" />
-                </svg>
-                <span>Windsurf</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Terminal Content Area -->
-          <div class="p-6 font-mono text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 relative flex items-center justify-between">
-            <code id="install-command" class="break-all">git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git .gemini/skills/waterfall-sdlc</code>
+          <!-- Left: Clickable Phase Cards -->
+          <div class="lg:col-span-5 space-y-3" id="phase-tabs">
             
-            <!-- Copy Action Button -->
-            <button onclick="copyCommand()" id="copy-btn" class="ml-4 flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/80 hover:bg-brand-100 dark:hover:bg-brand-900 rounded-lg border border-brand-200 dark:border-brand-800 transition-colors" title="Copy to clipboard">
-              <svg id="copy-icon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
-              <span id="copy-text">Copy</span>
+            <button onclick="selectPhase(1)" data-phase="1" class="phase-btn w-full text-left p-4 rounded-xl border border-brand-500 bg-white dark:bg-zinc-900 shadow-sm transition-all flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900 text-brand-600 dark:text-brand-300 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+              <div>
+                <div class="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                  <span>Phase 1 — Spec & Plan</span>
+                  <code class="text-[11px] font-mono text-brand-600 dark:text-brand-400">/plan</code>
+                </div>
+                <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Clarify requirements, lock REQ table (Given/When/Then), generate vertical slices in PLAN.md, stop for user approval.</div>
+              </div>
             </button>
+
+            <button onclick="selectPhase(2)" data-phase="2" class="phase-btn w-full text-left p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+              <div>
+                <div class="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                  <span>Phase 2 — Core & Backend</span>
+                  <code class="text-[11px] font-mono text-zinc-500">ponytail</code>
+                </div>
+                <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Lazy senior developer discipline: standard library first, zero speculative abstractions, minimal surgical diffs.</div>
+              </div>
+            </button>
+
+            <button onclick="selectPhase(3)" data-phase="3" class="phase-btn w-full text-left p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+              <div>
+                <div class="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                  <span>Phase 3 — Frontend & UI</span>
+                  <code class="text-[11px] font-mono text-purple-600 dark:text-purple-400">ui-craft</code>
+                </div>
+                <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Visual direction registers (Cinematic vs. Instrument), typography, design tokens, anti-slop, and /design screen flow.</div>
+              </div>
+            </button>
+
+            <button onclick="selectPhase(4)" data-phase="4" class="phase-btn w-full text-left p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+              <div>
+                <div class="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                  <span>Phase 4 — Automated Verification</span>
+                  <code class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400">Exit Code 0</code>
+                </div>
+                <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Objective machine gates (unit tests, type-check, build), fill AI verified evidence in Acceptance table.</div>
+              </div>
+            </button>
+
+            <button onclick="selectPhase(5)" data-phase="5" class="phase-btn w-full text-left p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+              <div>
+                <div class="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                  <span>Phase 5 — User Acceptance</span>
+                  <code class="text-[11px] font-mono text-amber-600 dark:text-amber-400">/preview</code>
+                </div>
+                <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Port hygiene check, local dev background server, smoke test, and feedback triage into Bug vs. Change.</div>
+              </div>
+            </button>
+
+            <button onclick="selectPhase(6)" data-phase="6" class="phase-btn w-full text-left p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 flex items-center justify-center font-bold text-sm flex-shrink-0">6</div>
+              <div>
+                <div class="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                  <span>Phase 6 — Delivery & Push</span>
+                  <code class="text-[11px] font-mono text-brand-600 dark:text-brand-400">/review + /commit</code>
+                </div>
+                <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Mandatory multi-lens REVIEW.md pass, atomic conventional commits, push only after 100% REQ user acceptance.</div>
+              </div>
+            </button>
+
           </div>
 
-          <!-- Quick Tip Footer -->
-          <div class="px-6 py-3 bg-zinc-50 dark:bg-zinc-900/50 border-t border-zinc-200 dark:border-zinc-800/80 text-[11px] text-zinc-500 flex items-center justify-between">
-            <span>Requires Git &amp; compatible AI Agent runtime</span>
-            <span class="font-mono text-brand-600 dark:text-brand-400">Zero Dependencies Required</span>
+          <!-- Right: Interactive Terminal / Output Simulator -->
+          <div class="lg:col-span-7">
+            <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-900 text-zinc-100 overflow-hidden shadow-2xl">
+              <!-- Window Chrome -->
+              <div class="px-4 py-3 bg-zinc-950/80 border-b border-zinc-800 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                  <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                  <span id="simulator-title" class="ml-2 text-xs font-mono text-zinc-400">Phase 1: Spec & Plan Workflow (/plan)</span>
+                </div>
+                <span class="text-[10px] font-mono text-zinc-500">Live State Engine</span>
+              </div>
+
+              <!-- Terminal Simulated Content -->
+              <div class="p-6 font-mono text-xs leading-relaxed space-y-3 min-h-[380px]" id="simulator-body">
+                <div class="text-zinc-400">// Step 1: Read context & triage requirement</div>
+                <div class="text-brand-400">$ /plan "Implement tenant billing webhook listener"</div>
+                <div class="text-zinc-300">Triage: Level 2 (Feature-Track)</div>
+                <div class="text-zinc-300">Requirements Decomposed:</div>
+                <div class="text-emerald-400">  [REQ-001] Verify Stripe cryptographic signature (HMAC SHA-256)</div>
+                <div class="text-emerald-400">  [REQ-002] Idempotency: Ignore duplicate webhook event IDs</div>
+                <div class="text-emerald-400">  [REQ-003] Dispatch tenant upgrade event to event bus</div>
+                <div class="text-zinc-400">// Vertical Slices Generated in PLAN.md:</div>
+                <div class="text-zinc-300">  Slice 1: Signature Verification & Idempotency Filter (REQ-001, REQ-002)</div>
+                <div class="text-zinc-300">  Slice 2: Tenant Billing Event Dispatch & Route Hook (REQ-003)</div>
+                <div class="text-amber-400">! STOPPED: PLAN.md populated. Awaiting User Approval to execute Slice 1.</div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -1085,107 +348,309 @@
       </div>
     </section>
 
-    <!-- COMPANION SKILLS SUITE (WITH OFFICIAL DEVELOPER LOGOS) -->
-    <section id="skills" class="py-20 border-t border-zinc-200/80 dark:border-zinc-800/80">
+    <!-- SECTION: CORE PRODUCTION SKILL SUITE (BENTO GRID) -->
+    <section id="skills" class="py-16 sm:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="max-w-3xl mb-12">
-          <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-500">Integrated Ecosystem</span>
-          <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white mt-2">
-            The 4 Specialized Companion Skills
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 text-xs font-medium mb-3">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span>Autonomous Skill Ecosystem</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            6 Specialized Production Skills
           </h2>
-          <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-3">
-            Loaded automatically under the Master AGENTS.md dispatcher to provide specialized expertise across each software layer.
+          <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2">
+            Each skill is an isolated domain master. Called on-demand through AGENTS.md routing with zero instruction dilution.
+          </p>
+        </div>
+
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1: ponytail -->
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 spotlight-card specular-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
+                <i data-lucide="scissors" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white flex items-center justify-between">
+                <span>ponytail</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900">Backend / Logic</span>
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                Lazy senior developer mindset. The best code is code never written; second best is standard library. Enforces minimal surgical diffs, bans premature abstractions, and defaults to YAGNI.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-500">
+              Ladder: stdlib → native APIs → shortest correct diff
+            </div>
+          </div>
+
+          <!-- Card 2: ui-craft -->
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 spotlight-card specular-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
+                <i data-lucide="palette" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white flex items-center justify-between">
+                <span>ui-craft</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-900">Frontend / UX</span>
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                Modular senior designer architecture. Distinct visual registers (Cinematic vs. Instrument), typography rules, design tokens, defensive UX states, Thai font mastery, and anti-slop principles.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-500">
+              Workflow: /design → direction → generic check → build
+            </div>
+          </div>
+
+          <!-- Card 3: pr-review-toolkit -->
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 spotlight-card specular-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+                <i data-lucide="shield-alert" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white flex items-center justify-between">
+                <span>pr-review-toolkit</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900">Multi-Lens Review</span>
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                Security-first diff reviewer. Evaluates secrets, IDOR, and injection first, then hunts silent failures across TS, C#, Python, and Dart. Outputs actionable findings to REVIEW.md.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-500">
+              Lenses: Security → Correctness → Silent Failures → Types
+            </div>
+          </div>
+
+          <!-- Card 4: commit-commands -->
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 spotlight-card specular-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4">
+                <i data-lucide="git-commit" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white flex items-center justify-between">
+                <span>commit-commands</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-900">Safe Git Commits</span>
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                Enforces atomic Conventional Commits. Scans pre-commit diffs for secrets, replaces interactive git add with safe git apply --cached, and requires 100% REQ user acceptance before remote push.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-500">
+              Rule: Local commits allowed; remote push requires user approval
+            </div>
+          </div>
+
+          <!-- Card 5: domain-modeling -->
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 spotlight-card specular-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4">
+                <i data-lucide="book-open" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white flex items-center justify-between">
+                <span>domain-modeling</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-cyan-50 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-900">Strategic DDD</span>
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                Level 3 enterprise discipline. Maintains ubiquitous glossary in CONTEXT.md, guarantees business invariants are strictly enforced in one place, and logs architectural trade-offs in docs/adr/.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-500">
+              Standard: docs/DECISIONS.md log + docs/adr/ ADR files
+            </div>
+          </div>
+
+          <!-- Card 6: wayfinder -->
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 spotlight-card specular-card flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-4">
+                <i data-lucide="compass" class="w-5 h-5"></i>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-900 dark:text-white flex items-center justify-between">
+                <span>wayfinder</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-900">Foggy Migration</span>
+              </h3>
+              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
+                Tackles massive, undefined legacy refactors. Charts unknowns into a shared map of Decision Tickets, executes time-boxed spikes, then slices findings into specs before production code.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/80 text-[11px] font-mono text-zinc-500">
+              Pipeline: /wayfinder → /to-spec → /to-tickets → PLAN.md
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: TOKEN BENCHMARK SCOREBOARD -->
+    <section id="benchmarks" class="py-16 sm:py-24 border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-medium mb-3">
+            <i data-lucide="bar-chart-3" class="w-3.5 h-3.5"></i>
+            <span>Empirical Measurements</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            High-IQ Token Economy Scoreboard
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2">
+            AI agents fail when flooded with unneeded tokens. ZillerDX SDLC applies strict token hygiene to maintain peak model IQ.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          <!-- Skill 1: Waterfall SDLC -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm flex flex-col justify-between hover:border-brand-500/50 hover:-translate-y-1 transition-all">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-brand-500/10 dark:bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-600 dark:text-brand-400 mb-5 shadow-sm">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path d="M3 9h18M9 21V9" />
-                </svg>
-              </div>
-              <div class="text-xs font-mono font-semibold text-brand-600 dark:text-brand-400">skills/waterfall-sdlc</div>
-              <h3 class="text-base font-bold text-zinc-900 dark:text-white mt-2">Waterfall SDLC</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                7 sequential quality gates from Requirements, Analysis, Design (CONTEXT.md), Implementation, Testing, Packaging, to Maintenance.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-100 dark:border-zinc-800 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>System Architect</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">NIST SP 800-218</span>
-            </div>
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+            <div class="text-xs font-mono text-zinc-500 mb-2">Diff Strategy</div>
+            <div class="text-3xl font-extrabold text-brand-600 dark:text-brand-400 tabular-nums">3–15 Lines</div>
+            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-2">Surgical anchor diffs instead of dumping 800-line rewrites into context.</div>
           </div>
 
-          <!-- Skill 2: UI Craft -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm flex flex-col justify-between hover:border-cyan-500/50 hover:-translate-y-1 transition-all">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 dark:bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-5 shadow-sm">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" />
-                </svg>
-              </div>
-              <div class="text-xs font-mono font-semibold text-cyan-600 dark:text-cyan-400">skills/ui-craft</div>
-              <h3 class="text-base font-bold text-zinc-900 dark:text-white mt-2">UI Craft</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Crafted Elegance &amp; Sensory Depth, Dual Registers (Cinematic vs Instrument), Thai Typography Hygiene, and defensive UX patterns.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-100 dark:border-zinc-800 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Design Technologist</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">Three.js + Fonts</span>
-            </div>
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+            <div class="text-xs font-mono text-zinc-500 mb-2">Search Discipline</div>
+            <div class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 tabular-nums">0 Artifacts</div>
+            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-2">Strict exclusion of node_modules, dist, bin, obj, and cache from all scans.</div>
           </div>
 
-          <!-- Skill 3: PR Review Toolkit -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm flex flex-col justify-between hover:border-emerald-500/50 hover:-translate-y-1 transition-all">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-5 shadow-sm">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="m9 12 2 2 4-4"/>
-                </svg>
-              </div>
-              <div class="text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400">.agents/skills/pr-review-toolkit</div>
-              <h3 class="text-base font-bold text-zinc-900 dark:text-white mt-2">PR Review Toolkit</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Security-first multi-lens code audit, silent failure detection across 6 stacks, read-only workflow, and evidence-based findings.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-100 dark:border-zinc-800 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Code Audit &amp; Security</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">8 Lenses</span>
-            </div>
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+            <div class="text-xs font-mono text-zinc-500 mb-2">Process Hygiene</div>
+            <div class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 tabular-nums">0 Collisions</div>
+            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-2">Platform-aware port check (PowerShell/POSIX) before dev server launch.</div>
           </div>
 
-          <!-- Skill 4: Commit Commands -->
-          <div class="spotlight-card specular-card p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm flex flex-col justify-between hover:border-indigo-500/50 hover:-translate-y-1 transition-all">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 dark:bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-5 shadow-sm">
-                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="4"/>
-                  <line x1="1.05" y1="12" x2="7" y2="12"/>
-                  <line x1="17.01" y1="12" x2="22.96" y2="12"/>
-                </svg>
-              </div>
-              <div class="text-xs font-mono font-semibold text-indigo-600 dark:text-indigo-400">.agents/skills/commit-commands</div>
-              <h3 class="text-base font-bold text-zinc-900 dark:text-white mt-2">Commit Commands</h3>
-              <p class="text-xs text-zinc-600 dark:text-zinc-400 mt-2 leading-relaxed">
-                Pre-commit secret scanning, non-interactive atomic patch staging (`git apply --cached`), safe branch cleanup, and decision logging.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-zinc-100 dark:border-zinc-800 text-[11px] font-mono text-zinc-400 flex items-center justify-between">
-              <span>Git Automation</span>
-              <span class="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">Conventional Commits</span>
-            </div>
+          <div class="p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+            <div class="text-xs font-mono text-zinc-500 mb-2">Chat Link Hygiene</div>
+            <div class="text-3xl font-extrabold text-purple-600 dark:text-purple-400 tabular-nums">Zero-Echo</div>
+            <div class="text-xs text-zinc-600 dark:text-zinc-400 mt-2">Clean relative links (PLAN.md) without ./ prefix that prevents IDE 404 bugs.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: TASK SCALE TRIAGE MATRIX (LEVELS 1 TO 4) -->
+    <section id="triage" class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 text-xs font-medium mb-3">
+            <i data-lucide="list-checks" class="w-3.5 h-3.5"></i>
+            <span>Scale-Adaptive Governance</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            Task Scale Triage Matrix
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2">
+            Ceremony matches the task scale. Trivial bugs are never blocked by enterprise rituals.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-zinc-50 dark:bg-zinc-950 text-zinc-700 dark:text-zinc-300 border-b border-zinc-200 dark:border-zinc-800 font-mono">
+              <tr>
+                <th class="p-4">Level</th>
+                <th class="p-4">Scope</th>
+                <th class="p-4">PLAN.md Engine</th>
+                <th class="p-4">Verification Gates</th>
+                <th class="p-4">Active Skills & Workflows</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-200 dark:divide-zinc-800 text-zinc-600 dark:text-zinc-400">
+              <tr>
+                <td class="p-4 font-bold text-zinc-900 dark:text-white font-mono">Level 1</td>
+                <td class="p-4">1–2 files, typos, small fixes</td>
+                <td class="p-4 text-zinc-500">Bypass (no PLAN.md)</td>
+                <td class="p-4">Syntax / existing tests (Exit 0)</td>
+                <td class="p-4 font-mono">Direct edit; /commit if asked</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-zinc-900 dark:text-white font-mono">Level 2</td>
+                <td class="p-4">Single endpoint or UI component</td>
+                <td class="p-4">Lean PLAN.md (Phases 2–5)</td>
+                <td class="p-4">Unit tests, build, 0 console errors</td>
+                <td class="p-4 font-mono text-brand-600 dark:text-brand-400">ponytail, ui-craft, /plan, /build, /preview, /review, /commit</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-zinc-900 dark:text-white font-mono">Level 2.5</td>
+                <td class="p-4">Rapid MVP, hackathon, greenfield</td>
+                <td class="p-4">Lean PLAN.md + 1-line assumptions</td>
+                <td class="p-4">Working vertical slice, smoke test</td>
+                <td class="p-4 font-mono text-purple-600 dark:text-purple-400">ponytail, ui-craft + /design, /plan, /build, /preview, /commit</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-zinc-900 dark:text-white font-mono">Level 3</td>
+                <td class="p-4">Enterprise platform, core refactor</td>
+                <td class="p-4">Full PLAN.md + CONTEXT.md & ADRs</td>
+                <td class="p-4">Tests ≥80%, type-check, secret scan</td>
+                <td class="p-4 font-mono text-cyan-600 dark:text-cyan-400">domain-modeling, ponytail, ui-craft, /plan, /build, /preview, /review, /commit</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-bold text-zinc-900 dark:text-white font-mono">Level 4</td>
+                <td class="p-4">Undefined legacy migration</td>
+                <td class="p-4">PLAN.md links wayfinder map</td>
+                <td class="p-4">Decision Tickets, spike-to-spec</td>
+                <td class="p-4 font-mono text-rose-600 dark:text-rose-400">wayfinder via /wayfinder → /to-spec → /to-tickets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: 1-CLICK TERMINAL INSTALLATION -->
+    <section id="installation" class="py-16 sm:py-24 border-t border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 text-xs font-medium mb-3">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span>Multi-Client Integration</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white tracking-tight">
+            Install Into Any AI Agent Workspace
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2">
+            Compatible with Google Antigravity, Claude Code, Cursor, and Windsurf.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <!-- Client Selector Tabs -->
+          <div class="flex items-center gap-2 mb-4 border-b border-zinc-200 dark:border-zinc-800 pb-2 overflow-x-auto text-xs font-semibold">
+            <button onclick="selectClient('antigravity')" id="client-btn-antigravity" class="client-tab px-4 py-2 rounded-lg bg-brand-600 text-white transition-all flex items-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4"></i>
+              <span>Google Antigravity</span>
+            </button>
+            <button onclick="selectClient('claude')" id="client-btn-claude" class="client-tab px-4 py-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex items-center gap-2">
+              <i data-lucide="terminal" class="w-4 h-4"></i>
+              <span>Claude Code</span>
+            </button>
+            <button onclick="selectClient('cursor')" id="client-btn-cursor" class="client-tab px-4 py-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex items-center gap-2">
+              <i data-lucide="mouse-pointer" class="w-4 h-4"></i>
+              <span>Cursor</span>
+            </button>
+            <button onclick="selectClient('windsurf')" id="client-btn-windsurf" class="client-tab px-4 py-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex items-center gap-2">
+              <i data-lucide="wind" class="w-4 h-4"></i>
+              <span>Windsurf</span>
+            </button>
           </div>
 
+          <!-- Terminal Box with Copy Button -->
+          <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-950 p-5 font-mono text-xs text-zinc-200 relative group shadow-xl">
+            <button onclick="copyCommand()" class="absolute top-4 right-4 px-3 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white transition-all flex items-center gap-1.5 text-[11px]">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span id="copy-btn-text">Copy</span>
+            </button>
+            <div class="text-zinc-500 mb-2">// Run in your project root:</div>
+            <pre class="overflow-x-auto text-emerald-400 pt-1" id="install-cmd">git clone https://github.com/ZillerDX/zillerdx-sdlc-skill.git .agents-tmp && cp -r .agents-tmp/.agents . && cp .agents-tmp/AGENTS.md . && rm -rf .agents-tmp</pre>
+          </div>
         </div>
 
       </div>
@@ -1193,188 +658,191 @@
 
   </main>
 
-  <!-- PROFESSIONAL FOOTER -->
-  <footer class="border-t border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 py-12 text-xs text-zinc-500 dark:text-zinc-400">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+  <!-- PROFESSIONAL MINIMAL FOOTER -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
       <div class="flex items-center gap-3">
-        <img src="favicon.svg" alt="Waterfall SDLC Logo" class="w-7 h-7 rounded-lg shadow-sm flex-shrink-0">
-        <span class="font-medium text-zinc-800 dark:text-zinc-200">Waterfall SDLC for AI Agents</span>
-        <span>•</span>
-        <span>MIT Licensed Open Source</span>
+        <img src="favicon.svg" alt="Logo" class="w-6 h-6 rounded-md">
+        <span>© 2026 ZillerDX SDLC & Autonomous Engineering Suite. MIT Licensed.</span>
       </div>
-
       <div class="flex items-center gap-6">
-        <a href="https://github.com/ZillerDX/waterfall-sdlc-skill" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-white transition-colors">GitHub Repository</a>
-        <a href="https://github.com/ZillerDX/waterfall-sdlc-skill/blob/main/AGENTS.md" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-white transition-colors">AGENTS.md Specification</a>
-        <a href="#overview" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Back to Top ↑</a>
+        <a href="https://github.com/ZillerDX/zillerdx-sdlc-skill" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-white transition-colors">GitHub Repository</a>
+        <a href="#overview" class="hover:text-zinc-900 dark:hover:text-white transition-colors">Back to Top</a>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT: APPLICATION LOGIC & THREE.JS AMBIENT SCENE -->
+  <!-- SCRIPT LOGIC: Interactive Simulator, Installation Tabs, Three.js & Theme -->
   <script>
-    // 1. Initialize Lucide Vector Icons
-    if (window.lucide) {
-      lucide.createIcons();
-    }
+    // Initialize Lucide Icons
+    lucide.createIcons();
 
-    // 2. Theme Toggle Mechanics
+    // Theme Toggle Handler
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const darkIcon = document.getElementById('theme-toggle-dark-icon');
-    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
 
     function syncThemeIcons() {
       if (document.documentElement.classList.contains('dark')) {
-        lightIcon.classList.remove('hidden');
-        darkIcon.classList.add('hidden');
+        themeToggleLightIcon.classList.remove('hidden');
+        themeToggleDarkIcon.classList.add('hidden');
       } else {
-        lightIcon.classList.add('hidden');
-        darkIcon.classList.remove('hidden');
+        themeToggleLightIcon.classList.add('hidden');
+        themeToggleDarkIcon.classList.remove('hidden');
       }
     }
-
     syncThemeIcons();
 
     themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
       const isDark = document.documentElement.classList.contains('dark');
-      if (isDark) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
+      localStorage.theme = isDark ? 'dark' : 'light';
       syncThemeIcons();
-      if (window.updateThreeTheme) {
-        window.updateThreeTheme(!isDark);
-      }
+      if (window.updateThreeTheme) window.updateThreeTheme(isDark);
     });
 
-    // 3. Terminal Commands per Workspace
-    const commands = {
-      antigravity: 'git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git .gemini/skills/waterfall-sdlc',
-      claude: 'git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git .claude/skills/waterfall-sdlc',
-      cursor: 'git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git .cursor/skills/waterfall-sdlc',
-      windsurf: 'git clone https://github.com/ZillerDX/waterfall-sdlc-skill.git .windsurf/skills/waterfall-sdlc'
+    // Interactive 6-Phase Simulator Data
+    const phaseData = {
+      1: {
+        title: "Phase 1: Spec & Plan Workflow (/plan)",
+        content: `
+<div class="text-zinc-400">// Step 1: Read context & triage requirement</div>
+<div class="text-brand-400">$ /plan "Implement tenant billing webhook listener"</div>
+<div class="text-zinc-300">Triage: Level 2 (Feature-Track)</div>
+<div class="text-zinc-300">Requirements Decomposed:</div>
+<div class="text-emerald-400">  [REQ-001] Verify Stripe cryptographic signature (HMAC SHA-256)</div>
+<div class="text-emerald-400">  [REQ-002] Idempotency: Ignore duplicate webhook event IDs</div>
+<div class="text-emerald-400">  [REQ-003] Dispatch tenant upgrade event to event bus</div>
+<div class="text-zinc-400">// Vertical Slices Generated in PLAN.md:</div>
+<div class="text-zinc-300">  Slice 1: Signature Verification & Idempotency Filter (REQ-001, REQ-002)</div>
+<div class="text-zinc-300">  Slice 2: Tenant Billing Event Dispatch & Route Hook (REQ-003)</div>
+<div class="text-amber-400">! STOPPED: PLAN.md populated. Awaiting User Approval to execute Slice 1.</div>`
+      },
+      2: {
+        title: "Phase 2: Core Architecture & Backend (ponytail)",
+        content: `
+<div class="text-zinc-400">// Step 2: ponytail lazy developer execution</div>
+<div class="text-brand-400">$ /build Slice 1 (REQ-001, REQ-002)</div>
+<div class="text-zinc-300">Checking Standard Library Seams:</div>
+<div class="text-emerald-400">  ✓ crypto.createHmac ('crypto' stdlib — no external sdk needed)</div>
+<div class="text-emerald-400">  ✓ Set / Redis memory lookup for idempotency key</div>
+<div class="text-zinc-400">// Applying minimal surgical diff to api/webhook.ts (11 lines modified)</div>
+<div class="text-zinc-300">Running slice tests:</div>
+<div class="text-emerald-400">  PASS tests/webhook-signature.test.ts (24ms)</div>
+<div class="text-emerald-400">  PASS tests/webhook-idempotency.test.ts (18ms)</div>
+<div class="text-zinc-300">Checkbox [x] ticked in PLAN.md. Proceeding to Slice 2...</div>`
+      },
+      3: {
+        title: "Phase 3: Frontend & UI Craft (ui-craft + /design)",
+        content: `
+<div class="text-zinc-400">// Step 3: ui-craft visual execution (UI tasks only)</div>
+<div class="text-brand-400">$ /design "Billing Webhook Audit Screen"</div>
+<div class="text-zinc-300">Visual Register: Instrument (Dashboard / Tool)</div>
+<div class="text-zinc-300">Tokens: zinc-900 neutral, tabular numbers, defensive error states</div>
+<div class="text-emerald-400">  ✓ Thai typography: Prompt + Sarabun font pairing verified</div>
+<div class="text-emerald-400">  ✓ Anti-slop audit: 0 solitary spinners, zero Unicode emojis on UI</div>
+<div class="text-zinc-400">// Headless proof check: 1 proof screenshot captured, 0 console errors</div>`
+      },
+      4: {
+        title: "Phase 4: Automated Verification (Exit Code 0)",
+        content: `
+<div class="text-zinc-400">// Step 4: Machine verification gates</div>
+<div class="text-brand-400">$ npm run test:ci && npm run typecheck && npm run lint</div>
+<div class="text-emerald-400">✓ Unit & Integration Tests: 42 passed, 0 failed (Exit Code 0)</div>
+<div class="text-emerald-400">✓ TypeCheck: 0 diagnostics</div>
+<div class="text-emerald-400">✓ Secret Scan: 0 plaintext API keys or credentials detected</div>
+<div class="text-zinc-300">Updating PLAN.md Acceptance Table:</div>
+<div class="text-zinc-300">  | REQ-001 | AI verified (PASS: webhook-signature.test.ts) | ⬜ |</div>
+<div class="text-zinc-300">  | REQ-002 | AI verified (PASS: webhook-idempotency.test.ts) | ⬜ |</div>`
+      },
+      5: {
+        title: "Phase 5: User Acceptance & Local Handover (/preview)",
+        content: `
+<div class="text-zinc-400">// Step 5: Port hygiene & local test handover</div>
+<div class="text-brand-400">$ /preview</div>
+<div class="text-zinc-300">Checking Port 3000: Clean (PID 0)</div>
+<div class="text-emerald-400">Dev server started as background task: http://localhost:3000</div>
+<div class="text-zinc-300">Smoke check: Main route loaded, 0 console errors.</div>
+<div class="text-amber-400">--------------------------------------------------</div>
+<div class="text-zinc-100">Handover to User:</div>
+<div class="text-zinc-300">  • Preview URL: http://localhost:3000/webhooks</div>
+<div class="text-zinc-300">  • What to test: REQ-001 (Send valid HMAC), REQ-002 (Replay event)</div>
+<div class="text-zinc-300">  • Reply "ok REQ-001" or describe defect</div>
+<div class="text-amber-400">! STOPPED: Waiting for User Acceptance feedback.</div>`
+      },
+      6: {
+        title: "Phase 6: Multi-Lens Review & Delivery (/review + /commit)",
+        content: `
+<div class="text-zinc-400">// Step 6: Final delivery gates</div>
+<div class="text-brand-400">$ /review</div>
+<div class="text-emerald-400">✓ Security Lens: Passed (HMAC verified, zero secret leaks)</div>
+<div class="text-emerald-400">✓ Correctness Lens: Passed</div>
+<div class="text-emerald-400">✓ Simplicity Lens: Passed (No extra dependencies added)</div>
+<div class="text-zinc-300">REVIEW.md written. Verdict: Approved.</div>
+<div class="text-brand-400">$ /commit</div>
+<div class="text-emerald-400">✓ 100% REQs marked User Accepted in PLAN.md</div>
+<div class="text-zinc-300">[main 8f24a10] feat(billing): add tenant stripe webhook signature verification</div>
+<div class="text-amber-400">Prompt: "All tests & acceptance verified. Ready to push to origin main? (y/n)"</div>`
+      }
     };
 
-    function switchTab(client) {
-      document.getElementById('install-command').innerText = commands[client];
-      
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('text-zinc-900', 'dark:text-white', 'bg-white', 'dark:bg-zinc-900', 'shadow-xs');
-        btn.classList.add('text-zinc-600', 'dark:text-zinc-400');
+    function selectPhase(phaseNum) {
+      document.querySelectorAll('.phase-btn').forEach(btn => {
+        btn.classList.remove('border-brand-500', 'bg-white', 'dark:bg-zinc-900', 'shadow-sm');
+        btn.classList.add('border-zinc-200', 'dark:border-zinc-800', 'bg-white/70', 'dark:bg-zinc-900/60');
       });
-
-      const activeBtn = document.getElementById('tab-' + client);
+      const activeBtn = document.querySelector(`.phase-btn[data-phase="${phaseNum}"]`);
       if (activeBtn) {
-        activeBtn.classList.remove('text-zinc-600', 'dark:text-zinc-400');
-        activeBtn.classList.add('text-zinc-900', 'dark:text-white', 'bg-white', 'dark:bg-zinc-900', 'shadow-xs');
+        activeBtn.classList.add('border-brand-500', 'bg-white', 'dark:bg-zinc-900', 'shadow-sm');
+        activeBtn.classList.remove('border-zinc-200', 'dark:border-zinc-800', 'bg-white/70', 'dark:bg-zinc-900/60');
       }
+      document.getElementById('simulator-title').textContent = phaseData[phaseNum].title;
+      document.getElementById('simulator-body').innerHTML = phaseData[phaseNum].content;
     }
 
-    // 4. 1-Click Copy with Feedback
-    function copyCommand() {
-      const commandText = document.getElementById('install-command').innerText;
-      navigator.clipboard.writeText(commandText).then(() => {
-        const copyText = document.getElementById('copy-text');
-        copyText.innerText = 'Copied!';
-        setTimeout(() => {
-          copyText.innerText = 'Copy';
-        }, 2000);
-      });
-    }
-
-    // 5. IDE Mockup Tab Switcher
-    const ideSnippets = {
-      plan: `<span class="text-zinc-400">01:</span> <span class="text-purple-600 dark:text-purple-400 font-bold"># PLAN:</span> High-Discipline Autonomous Execution
-<span class="text-zinc-400">02:</span> <span class="text-blue-600 dark:text-blue-400">&gt; **Live State**:</span> Phase 4/5 — Headless Verification | <span class="text-emerald-600 dark:text-emerald-400 font-bold">Status: VERIFYING</span>
-<span class="text-zinc-400">03:</span> 
-<span class="text-zinc-400">04:</span> <span class="text-zinc-500">// Zero Context Drift • NIST SSDF Threat Boundary Sealed</span>
-<span class="text-zinc-400">05:</span> <span class="text-emerald-600 dark:text-emerald-400">[x]</span> 1.0 Memory-First Triage via claude-mem
-<span class="text-zinc-400">06:</span> <span class="text-emerald-600 dark:text-emerald-400">[x]</span> 2.0 Pragmatic SOLID/OOP &amp; Minimal C# 14 Minimal APIs
-<span class="text-zinc-400">07:</span> <span class="text-emerald-600 dark:text-emerald-400">[x]</span> 3.0 Crafted Elegance: Three.js 3D + Plus Jakarta Sans
-<span class="text-zinc-400">08:</span> <span class="text-amber-500 dark:text-amber-400 animate-pulse">[&gt;]</span> 4.0 Milestone Playwright Audit: 1280px Desktop (0 errors)
-<span class="text-zinc-400">09:</span> <span class="text-zinc-400">[ ]</span> 5.0 Atomic Conventional Commit &amp; QA PR Handover`,
-      csharp: `<span class="text-zinc-400">01:</span> <span class="text-purple-600 dark:text-purple-400">var</span> builder = WebApplication.CreateSlimBuilder(args);
-<span class="text-zinc-400">02:</span> builder.Services.AddOpenApi();
-<span class="text-zinc-400">03:</span> <span class="text-purple-600 dark:text-purple-400">var</span> app = builder.Build();
-<span class="text-zinc-400">04:</span> 
-<span class="text-zinc-400">05:</span> <span class="text-zinc-500">// .NET 10 LTS (10.0.12) Minimal API + C# 14 field property</span>
-<span class="text-zinc-400">06:</span> app.MapGet(<span class="text-emerald-600 dark:text-emerald-400">"/api/health"</span>, () =&gt; Results.Ok(<span class="text-blue-600 dark:text-blue-400">new</span> SystemStatus {
-<span class="text-zinc-400">07:</span>     Discipline = <span class="text-emerald-600 dark:text-emerald-400">"Waterfall-SDLC"</span>,
-<span class="text-zinc-400">08:</span>     NistSsdfCompliant = <span class="text-amber-500">true</span>,
-<span class="text-zinc-400">09:</span>     TokenEfficiency = <span class="text-emerald-600 dark:text-emerald-400">"85.2% Saved"</span>
-<span class="text-zinc-400">10:</span> }));
-<span class="text-zinc-400">11:</span> app.Run();`,
-      nextjs: `<span class="text-zinc-400">01:</span> <span class="text-zinc-500">// Next.js 16 (16.3.7) + React 19 RSC + Tailwind v4</span>
-<span class="text-zinc-400">02:</span> <span class="text-purple-600 dark:text-purple-400">export default async function</span> <span class="text-blue-600 dark:text-blue-400">TelemetryPage</span>() {
-<span class="text-zinc-400">03:</span>   <span class="text-purple-600 dark:text-purple-400">const</span> metrics = <span class="text-purple-600 dark:text-purple-400">await</span> fetchMetrics(); <span class="text-zinc-500">// Server Action</span>
-<span class="text-zinc-400">04:</span>   <span class="text-purple-600 dark:text-purple-400">return</span> (
-<span class="text-zinc-400">05:</span>     &lt;<span class="text-blue-600 dark:text-blue-400">main</span> className=<span class="text-emerald-600 dark:text-emerald-400">"grid gap-6 p-8 font-sans"</span>&gt;
-<span class="text-zinc-400">06:</span>       &lt;<span class="text-blue-600 dark:text-blue-400">div</span> className=<span class="text-emerald-600 dark:text-emerald-400">"spotlight-card rounded-2xl p-6"</span>&gt;
-<span class="text-zinc-400">07:</span>         &lt;<span class="text-blue-600 dark:text-blue-400">h1</span> className=<span class="text-emerald-600 dark:text-emerald-400">"text-2xl font-bold tracking-tight"</span>&gt;Live System&lt;/<span class="text-blue-600 dark:text-blue-400">h1</span>&gt;
-<span class="text-zinc-400">08:</span>         &lt;<span class="text-blue-600 dark:text-blue-400">p</span> className=<span class="text-emerald-600 dark:text-emerald-400">"text-sm font-mono tabular-nums"</span>&gt;{metrics.latency}ms&lt;/<span class="text-blue-600 dark:text-blue-400">p</span>&gt;
-<span class="text-zinc-400">09:</span>       &lt;/<span class="text-blue-600 dark:text-blue-400">div</span>&gt;
-<span class="text-zinc-400">10:</span>     &lt;/<span class="text-blue-600 dark:text-blue-400">main</span>&gt;
-<span class="text-zinc-400">11:</span>   );
-<span class="text-zinc-400">12:</span> }`,
-      angular: `<span class="text-zinc-400">01:</span> <span class="text-purple-600 dark:text-purple-400">@Component</span>({
-<span class="text-zinc-400">02:</span>   selector: <span class="text-emerald-600 dark:text-emerald-400">'app-dispatcher'</span>,
-<span class="text-zinc-400">03:</span>   standalone: <span class="text-amber-500">true</span>,
-<span class="text-zinc-400">04:</span>   template: <span class="text-emerald-600 dark:text-emerald-400">\`&lt;div class="spotlight-card p-6"&gt;{{ status() }}&lt;/div&gt;\`</span>
-<span class="text-zinc-400">05:</span> })
-<span class="text-zinc-400">06:</span> <span class="text-purple-600 dark:text-purple-400">export class</span> <span class="text-blue-600 dark:text-blue-400">DispatcherComponent</span> {
-<span class="text-zinc-400">07:</span>   <span class="text-zinc-500">// Single-File Standalone Component + Angular Signals</span>
-<span class="text-zinc-400">08:</span>   status = signal(<span class="text-emerald-600 dark:text-emerald-400">'Phase 4: Headless Verification [PASS]'</span>);
-<span class="text-zinc-400">09:</span> }`,
-      flutter: `<span class="text-zinc-400">01:</span> <span class="text-zinc-500">// Flutter 3.47+ (Dart 3.13) Impeller Graphic Engine</span>
-<span class="text-zinc-400">02:</span> <span class="text-purple-600 dark:text-purple-400">class</span> <span class="text-blue-600 dark:text-blue-400">MetricCard</span> <span class="text-purple-600 dark:text-purple-400">extends</span> ConsumerWidget {
-<span class="text-zinc-400">03:</span>   <span class="text-purple-600 dark:text-purple-400">@override</span>
-<span class="text-zinc-400">04:</span>   Widget build(BuildContext context, WidgetRef ref) {
-<span class="text-zinc-400">05:</span>     <span class="text-purple-600 dark:text-purple-400">final</span> state = ref.watch(telemetryProvider);
-<span class="text-zinc-400">06:</span>     <span class="text-purple-600 dark:text-purple-400">return</span> Container(
-<span class="text-zinc-400">07:</span>       decoration: AppTheme.spotlightDecoration,
-<span class="text-zinc-400">08:</span>       child: Text(<span class="text-emerald-600 dark:text-emerald-400">'\${state.rate} req/s'</span>, style: AppTheme.monoStyle),
-<span class="text-zinc-400">09:</span>     );
-<span class="text-zinc-400">10:</span>   }
-<span class="text-zinc-400">11:</span> }`
+    // Client Installation Command Switcher
+    const clientCommands = {
+      antigravity: 'git clone https://github.com/ZillerDX/zillerdx-sdlc-skill.git .agents-tmp && cp -r .agents-tmp/.agents . && cp .agents-tmp/AGENTS.md . && rm -rf .agents-tmp',
+      claude: 'git clone https://github.com/ZillerDX/zillerdx-sdlc-skill.git ~/.claude/skills/zillerdx-sdlc-skill',
+      cursor: 'git clone https://github.com/ZillerDX/zillerdx-sdlc-skill.git .agents-tmp && cp .agents-tmp/AGENTS.md .cursorrules && rm -rf .agents-tmp',
+      windsurf: 'git clone https://github.com/ZillerDX/zillerdx-sdlc-skill.git .agents-tmp && cp .agents-tmp/AGENTS.md .windsurfrules && rm -rf .agents-tmp'
     };
 
-    function switchIdeTab(tab) {
-      const codeContainer = document.getElementById('ide-code-content');
-      if (codeContainer && ideSnippets[tab]) {
-        codeContainer.innerHTML = '<code>' + ideSnippets[tab] + '</code>';
+    function selectClient(client) {
+      document.querySelectorAll('.client-tab').forEach(tab => {
+        tab.classList.remove('bg-brand-600', 'text-white');
+        tab.classList.add('text-zinc-600', 'dark:text-zinc-400');
+      });
+      const activeTab = document.getElementById(`client-btn-${client}`);
+      if (activeTab) {
+        activeTab.classList.add('bg-brand-600', 'text-white');
+        activeTab.classList.remove('text-zinc-600', 'dark:text-zinc-400');
       }
+      document.getElementById('install-cmd').textContent = clientCommands[client];
+    }
 
-      ['plan', 'csharp', 'nextjs', 'angular', 'flutter'].forEach(t => {
-        const btn = document.getElementById('ide-tab-' + t);
-        if (btn) {
-          if (t === tab) {
-            btn.className = 'px-2 py-1 rounded-md text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/80 font-semibold border border-brand-200/60 dark:border-brand-800/60 transition-all flex-shrink-0';
-          } else {
-            btn.className = 'px-2 py-1 rounded-md text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-all flex-shrink-0';
-          }
-        }
+    function copyCommand() {
+      const text = document.getElementById('install-cmd').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btnText = document.getElementById('copy-btn-text');
+        btnText.textContent = 'Copied!';
+        setTimeout(() => { btnText.textContent = 'Copy'; }, 2000);
       });
     }
 
-    // 6. Spotlight Interactive Cursor Tracking
-    document.addEventListener('mousemove', (e) => {
-      const cards = document.querySelectorAll('.spotlight-card');
-      cards.forEach(card => {
+    // Spotlight cursor tracking
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
       });
     });
 
-    // 7. Three.js Ambient 3D Constellation & Wireframe Centerpiece
-    (function initThreeAmbient() {
+    // Three.js Ambient 3D Visualization
+    (function initThree() {
       const canvas = document.getElementById('hero-three-canvas');
-      if (!canvas || typeof THREE === 'undefined') return;
+      if (!canvas) return;
 
       try {
         const scene = new THREE.Scene();
@@ -1385,7 +853,6 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
 
-        // Responsive Resizing
         function onWindowResize() {
           if (!canvas) return;
           const width = canvas.parentElement.clientWidth;
@@ -1396,15 +863,13 @@
         }
         window.addEventListener('resize', onWindowResize);
 
-        // Core 3D Group
         const networkGroup = new THREE.Group();
         scene.add(networkGroup);
 
-        // Floating Wireframe Geometric Mesh (Icosahedron)
         const geoMesh = new THREE.IcosahedronGeometry(2.3, 1);
         const isDark = document.documentElement.classList.contains('dark');
         const wireMaterial = new THREE.MeshBasicMaterial({
-          color: isDark ? 0x6366f1 : 0x4f46e5,
+          color: isDark ? 0x3b82f6 : 0x2563eb,
           wireframe: true,
           transparent: true,
           opacity: isDark ? 0.35 : 0.18
@@ -1412,7 +877,6 @@
         const icosahedron = new THREE.Mesh(geoMesh, wireMaterial);
         networkGroup.add(icosahedron);
 
-        // Outer Particle Cloud Constellation
         const particleCount = 90;
         const particleGeo = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
@@ -1433,7 +897,6 @@
         const particleSystem = new THREE.Points(particleGeo, particleMat);
         networkGroup.add(particleSystem);
 
-        // Smooth Mouse Parallax Target
         let targetRotX = 0;
         let targetRotY = 0;
 
@@ -1444,25 +907,19 @@
           targetRotX = normY * 0.25;
         });
 
-        // Dynamic Theme Adaptation
         window.updateThreeTheme = function(dark) {
-          wireMaterial.color.setHex(dark ? 0x6366f1 : 0x4f46e5);
+          wireMaterial.color.setHex(dark ? 0x3b82f6 : 0x2563eb);
           wireMaterial.opacity = dark ? 0.35 : 0.18;
           particleMat.color.setHex(dark ? 0x38bdf8 : 0x2563eb);
           particleMat.opacity = dark ? 0.7 : 0.4;
         };
 
-        // Smooth 60fps Animation Loop
-        let frameId;
         function animate() {
-          frameId = requestAnimationFrame(animate);
-
-          // Subtle constant rotation
+          requestAnimationFrame(animate);
           icosahedron.rotation.x += 0.0018;
           icosahedron.rotation.y += 0.0024;
           particleSystem.rotation.y -= 0.0008;
 
-          // Parallax interpolation
           networkGroup.rotation.y += (targetRotY - networkGroup.rotation.y) * 0.04;
           networkGroup.rotation.x += (targetRotX - networkGroup.rotation.x) * 0.04;
 
